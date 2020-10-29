@@ -5,10 +5,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularMaterialModule, CoreModule, EnvServiceProvider, SearchModule, SearchService } from 'toco-lib';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MarkdownModule } from 'ngx-markdown';
+
 import { StaticPagesComponent } from './static-pages/static-pages.component';
-import { MatRadioModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material/radio';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HomeComponent } from './home/home.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -18,12 +17,16 @@ import { PieGridComponent } from './charts/pie-grid/pie-grid.component';
 import { AggregationsComponent } from './aggregations/aggregations.component';
 import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchComponent } from './search/search.component';
+import { SearchListComponent } from './search-list/search-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StaticPagesComponent,
     HomeComponent,
+    SearchComponent,
+    SearchListComponent,
  
     ChartsComponent,
 		PolarChartComponent,
@@ -36,10 +39,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-		// MarkdownModule.forRoot({
-		// 	loader: HttpClient
-    //   }),
     SearchModule,
     AngularMaterialModule,
     FlexLayoutModule,

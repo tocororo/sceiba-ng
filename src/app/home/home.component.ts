@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit {
 				
 				this.organizationsTotal = searchResponse.hits.total;
 
-				searchResponse.aggregations['country'].buckets.forEach(element => {
+				searchResponse.aggregations['sources'].buckets.forEach(element => {
 					if (!element.key.localeCompare("Cuba"))
 						this.cubanOrganizationTotal = element.doc_count;
 				});
 
-				searchResponse.aggregations['types'].buckets.forEach(element => {
+				searchResponse.aggregations['keywords'].buckets.forEach(element => {
 					this.homeCharts.type.push({ name: element.key, value: element.doc_count})
 				});
 				this.homeCharts.total = [
