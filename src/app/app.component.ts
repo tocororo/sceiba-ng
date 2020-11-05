@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnvService } from 'toco-lib';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,13 @@ export class AppComponent {
 
   public footerSites: Array< { name: string, url: string, useRouterLink: boolean } >;
 
-    public footerInformation: Array< { name: string, url: string, useRouterLink: boolean } >;
+  public footerInformation: Array< { name: string, url: string, useRouterLink: boolean } >;
 
-  public constructor()
+  public urlLogin: string;
+
+  public urlSignUp: string;
+
+  public constructor(private env: EnvService)
   { }
 
     public ngOnInit(): void
@@ -29,5 +34,8 @@ export class AppComponent {
         this.footerInformation.push({ name: "Privacidad", url: "https://sceiba-lab.upr.edu.cu/page/politicas", useRouterLink: false});
         this.footerInformation.push({ name: "Contacto", url: "/contact", useRouterLink: true});
         this.footerInformation.push({ name: "FAQs", url: "/faq", useRouterLink: true});
+
+        this.urlLogin = this.env.sceibaHost + "login";
+        this.urlSignUp = this.env.sceibaHost + "signup";
     }
 }
