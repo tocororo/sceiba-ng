@@ -40,8 +40,8 @@ export class HomeComponent implements OnInit {
 					this.homeCharts.type.push({ name: element.key, value: element.doc_count})
 				});
 				this.homeCharts.total = [
-					{name: "Internacionales", value: searchResponse.hits.total - this.cubanOrganizationTotal},
-					{name: "Cubanas", value: this.cubanOrganizationTotal}
+					{name: "Documentos", value: searchResponse.hits.total},
+					// {name: "Cubanas", value: this.cubanOrganizationTotal}
 				]
 				this.loadCharts = true;
 			}

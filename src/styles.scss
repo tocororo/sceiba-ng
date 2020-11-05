@@ -206,7 +206,7 @@ $md-greylight: (
 
 
 /* - colors - */
-$toco-primary: mat-palette($md-blue);
+$toco-primary: mat-palette($md-green);
 $toco-accent: mat-palette($md-greylight);
 //$toco-warn: mat-palette($mat-grey, 200, 100, 900);
 $toco-warn: mat-palette($mat-deep-orange, A700);
@@ -238,6 +238,11 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
     @include toco-app-theme($toco-theme);
 }
 
+.custom {
+    a{
+        color: mat-color($toco-primary);
+    }
+}
 /* autoprefixer grid: autoplace */
 
 html, body { height: 100%; }
@@ -246,11 +251,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .m-1{
     margin: 1em;
 }
+.mb-1{
+    margin-bottom: 2em;
+}
 .m-2{
     margin: 2em;
 }
 .p-1{
     padding: 16px;
+}
+.pt-1{
+    padding-top: 8px;
 }
 .query-input .mat-form-field-wrapper{
     padding-bottom: 0 !important;

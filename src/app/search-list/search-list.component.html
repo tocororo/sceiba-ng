@@ -2,8 +2,8 @@
     <mat-card-content>
       <div *ngFor="let hit of hitList.hits; let pos = index" [ngStyle]="{'margin': '1em 8px'}">
 
-        <h2  style="cursor: pointer;">{{hit.metadata.title}}</h2>
-        <!-- routerLink="/{{hit.metadata.id}}/view" -->
+        <h2 routerLink="/{{hit.metadata.id}}/view" style="cursor: pointer;">{{hit.metadata.title}}</h2>
+        
 
         <p class="p-40" *ngIf="hit.metadata.description">
           {{ hit.metadata.description }}
