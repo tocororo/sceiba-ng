@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularMaterialModule, CoreModule, EnvServiceProvider, SearchModule, SearchService } from 'toco-lib';
+import { AngularMaterialModule, CoreModule, EnvServiceProvider, SearchModule, SearchService, StaticsModule } from 'toco-lib';
 
 import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -19,6 +19,10 @@ import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchComponent } from './search/search.component';
 import { SearchListComponent } from './search-list/search-list.component';
+import { RecordViewComponent } from './record-view/record-view.component';
+import { LinkStaticComponent } from './statics/link/link-static.component';
+import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
+import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { SearchListComponent } from './search-list/search-list.component';
 		PieGridComponent,
 		AggregationsComponent,
 		GaugeChartComponent,
+		RecordViewComponent,
+    LinkStaticComponent,
+    StaticTableLinkComponent,
+    StaticChipsLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +50,7 @@ import { SearchListComponent } from './search-list/search-list.component';
     SearchModule,
     AngularMaterialModule,
     FlexLayoutModule,
+    StaticsModule,
 
     MatRadioModule,
     NgxChartsModule,

@@ -1,41 +1,120 @@
 <div fxLayout="column" fxLayoutAlign="center center">
     <br>
     <br>
-    <h1 style="text-align: center;">Catálogo de Organizaciones Cubanas</h1>
+    <h1 style="text-align: center;">Portal de Publicaciones Científicas Cubanas</h1>
     <br>
     <br>
     <toco-search-query-input [query]="''" (queryChange)="queryChange($event)" style="width: 70%;"></toco-search-query-input>
-    <p  style="text-align: start; width: 70%; margin: 0;">
-        <a [routerLink]="['/search']" class="a-grey">
-            Incluir Organizaciones Internacionales
-        </a>
-    </p>
-    <br>
-    <br>
-    <h4 style="text-align: center; width: 70%;">
-        Con nosotros encontrarás toda la información necesaria de las orgaanizaciones cubanas, pero si lo desea puede incluir la búsqueda internacional y así obtener información detallada. Solo debe escribir un nombre en la caja de búsqueda y presionar Enter, si no lo conoce no se preocupe, puede buscar por sus identificadores como ISSN o los acronimos de la misma. Nuestro objetivo es que usted encuetre lo que busqua.</h4>
-    <h4 style="text-align: center; width: 70%;">
-        También brindamos servicio de API-REST así como OAI-IPMH donde usted puede interconectar sus sistemas con nosotros y así beneficiarse de todas las bondades de estos protocolos 
-    </h4>
-    <!-- <mat-chip-list>
-        <mat-chip [routerLink]="['/search']">
-            {{organizationsTotal}} Organizaciones
-        </mat-chip>
-        <mat-chip [routerLink]="['/search']" [queryParams]="{country: 'Cuba'}">
-            {{cubanOrganizationTotal}} Organizaciones Cubanas
-        </mat-chip>
-    </mat-chip-list> -->
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-        <app-polar-chart *ngIf="loadCharts"
-            [dataChild]="homeCharts.total"
-            [_yAxisLabel]="'Total de Organizaciones'">
-        </app-polar-chart>
-    
-        <app-polar-chart *ngIf="loadCharts"
-            [dataChild]="homeCharts.type"
-            [_yAxisLabel]="'Palabras Claves'">
-        </app-polar-chart>
+    <br>
+    <br>
+    <h4 class="mat-h2 text-center w-70">
+        Sceiba es un repositorio de publicaciones científicas cubanas. Integra diferentes espacios de publicación científica como Revistas Científicas y Repositorios Institucionales.
+        Es una solución informática dentro del proyecto Tocororo, en un esfuerzo por la comunicación científica en Cuba dentro del Programa Nacional de Ciencia, Tecnología e Innovación: Informatización de la Sociedad.
+    </h4>
+    <h4 class="mat-h2 text-center w-70">
+        <strong>
+            Colectamos recursos publicados en Acceso Abierto: Artículos científicos, Ponencias, Datos de Investigación.
+        </strong> 
+    </h4>
+
+    <div class="m-2" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <img src="/assets/images/mes.png" alt="MES" width="280">
+        <mat-card class="mat-elevation-z6 w-20 m-2">
+            <mat-card-header>
+                <mat-card-title> <strong> Registro de Revistas Científicas del MES </strong> </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-h4">
+                El Registro Nacional es la lista nacional oficial de revistas gestionadas por instituciones adscritas al Ministerio de Educación Superior de Cuba. Es mantenido por la Dirección de Ciencia e Informatización del MES...
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <a mat-button href="https://tocororo.upr.edu.cu/revistasmes" color="warn">Acceder</a>
+                
+            </mat-card-actions>
+        </mat-card>
     </div>
 
+    <div class="m-2" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <mat-card class="mat-elevation-z6 w-20 m-2">
+            <mat-card-header>
+                <mat-card-title> <strong> Sistema de Identificación de Organizaciones </strong> </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-h4">
+                La gestión de la lista oficial y pública de organizaciones cubanas que tiene su código REUP y ofrece la posibilidad de identificarlas por los identificadores internacionalmente usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <a mat-button href="https://cuor-lab.upr.edu.cu" color="warn">Acceder</a>
+                
+            </mat-card-actions>
+        </mat-card>
+        <img src="/assets/images/home/organizacion.svg" alt="Organizaciones" width="280">
+    </div>
+
+    <div class="m-2" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <img src="/assets/images/home/checklist_icon.png" alt="Vocabularios" width="280">
+        <mat-card class="mat-elevation-z6 w-20 m-2">
+            <mat-card-header>
+                <mat-card-title> <strong> Vocabularios </strong> </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-h4">
+                Sistema de vocabularios controlados para lograr la estandarización y la unicidad en las búsquedas y evaluación de los resultados...
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <a mat-button href="https://tocororo.upr.edu.cu/vocbench" color="warn">Acceder</a>
+                
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="m-2" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <mat-card class="mat-elevation-z6 w-20 m-2">
+            <mat-card-header>
+                <mat-card-title> <strong> Catálogo de Publicaciones Científicas </strong> </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-h4">
+                Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba. No es un registro oficial o exhautivo de toda revista existente. Incluye el registro de dichas fuentes y su manejo por los editores y gestores del sistema.
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <a mat-button href="https://sceiba-lab.upr.edu.cu" color="warn">Acceder</a>
+                
+            </mat-card-actions>
+        </mat-card>
+        <img src="/assets/images/home/archives_icon.png" alt="Organizaciones" width="280">
+    </div>
+
+    <div class="m-2" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <img src="/assets/images/home/api_icon.png" alt="Vocabularios" width="280">
+        <mat-card class="mat-elevation-z6 w-20 m-2">
+            <mat-card-header>
+                <mat-card-title> <strong> APIs </strong> </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-h4 custom">
+                Servicos de API-Rest para Revistas Científicas registradas en Sceiba, así como vocabularios controlados. Los datos están protegidos de acuerdo a las <a href="https://sceiba-lab.upr.edu.cu/page/politicas" target="_blank">políticas de privacidad</a> del sistema y es compartido según los términos de servicio. Contacte a los administradores para más detalles.
+            </mat-card-content>
+            <mat-card-actions align="start">
+                <a mat-button href="mailto:sceiba@gmail.com" color="warn">Contactar</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <mat-card class="mat-elevation-z6 text-center w-70">
+        <mat-card-content>
+            <h1 class="mat-h1"><strong>Próximamente</strong></h1>
+            <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center">
+                <div class="m-2 mat-h4">
+                    <!-- <mat-icon class="mat-18">people_line</mat-icon> -->
+                    <h2>Personas</h2>
+                    <div>Identificación de personas.</div>
+                    <div>¿Quíenes investigan?</div>
+                </div>
+                <div class="m-2 mat-h4">
+                    <!-- <mat-icon class="mat-18">format_align_justify</mat-icon> -->
+                    <h2>Evaluación</h2>
+                    <div>Evaluación a la ciencia desde</div>
+                    <div>la metodología cubana</div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
 </div>
