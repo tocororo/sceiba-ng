@@ -50,6 +50,11 @@ const routes: Routes = [
     component: StaticPagesComponent,
     data: { src: 'assets/markdown/contact.md', title: 'Contacto' }
   },
+  {
+    path: 'policy',
+    component: StaticPagesComponent,
+    data: { src: 'assets/markdown/policy.md', title: 'Política de Privacidad' }
+  },
 ];
 
 @NgModule({

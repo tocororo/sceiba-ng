@@ -23,6 +23,9 @@ import { RecordViewComponent } from './record-view/record-view.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
 import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
 import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
+import { ContactComponent } from './contact/contact.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
 		RecordViewComponent,
     LinkStaticComponent,
     StaticTableLinkComponent,
-    StaticChipsLinkComponent
+    StaticChipsLinkComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,9 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
     MatRadioModule,
     NgxChartsModule,
     CoreModule,
+    ReactiveFormsModule,
+
+    RecaptchaModule
   ],
   providers: [
     SearchService,
