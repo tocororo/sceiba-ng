@@ -216,10 +216,21 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 @include angular-material-theme($toco-theme);
 @include toco-app-theme($toco-theme);
 
-.alternate-theme {
-    $alternate-primary: mat-palette($md-grey);
+// .alternate-theme {
+//     $alternate-primary: mat-palette($md-grey);
+//     $alternate-accent:  mat-palette($md-azullight);
+//     $toco-warn: mat-palette($md-greylight);
+
+//     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
+
+//     @include angular-material-theme($alternate-theme);
+//     @include toco-app-theme($toco-theme);
+// }
+
+.alternate-theme-footer {
+    $alternate-primary: mat-palette($md-greylight);
     $alternate-accent:  mat-palette($md-azullight);
-    $toco-warn: mat-palette($md-greylight);
+    $toco-warn: mat-palette($md-azul);
 
     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
 
@@ -227,10 +238,10 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
     @include toco-app-theme($toco-theme);
 }
 
-.alternate-theme-footer {
-    $alternate-primary: mat-palette($md-greylight);
-    $alternate-accent:  mat-palette($md-azullight);
-    $toco-warn: mat-palette($md-azul);
+.alternate-theme-userProfile {
+    $alternate-primary: mat-palette($md-green);
+    $alternate-accent:  mat-palette($md-green);
+    $toco-warn: mat-palette($mat-deep-orange, A700);
 
     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
 
@@ -246,7 +257,7 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 /* autoprefixer grid: autoplace */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }
 
 .m-1{
     margin: 1em;

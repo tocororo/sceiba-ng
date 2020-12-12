@@ -7,6 +7,8 @@ import { RecordResolverService } from './record-resolver.service';
 import { RecordViewComponent } from './record-view/record-view.component';
 import { SearchComponent } from './search/search.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
+import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,20 @@ const routes: Routes = [
   {
 		path: 'search',
 		component: SearchComponent
+  },
+  {
+    path: 'account',
+    children: [
+      {
+        path: '',
+        component: UserProfileComponent
+      },
+      {
+        path: 'edit',
+        component: UserProfileEditComponent
+      }
+    ],
+    canActivate: []
 	},
   {
     path: 'faq',

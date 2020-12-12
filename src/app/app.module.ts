@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularMaterialModule, CoreModule, EnvServiceProvider, SearchModule, SearchService, StaticsModule } from 'toco-lib';
+import { AngularMaterialModule, CoreModule, EnvServiceProvider, OrganizationServiceNoAuth, OrganizationsModule, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
 
 import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -26,6 +26,10 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
 import { ContactComponent } from './contact/contact.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
+import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
+import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     LinkStaticComponent,
     StaticTableLinkComponent,
     StaticChipsLinkComponent,
-    ContactComponent
+    ContactComponent,
+    UserProfileComponent,
+    UserProfileEditComponent,
+    InputOrgSearchComponent,
+    InputFileAvatarComponent
+  ],
+  entryComponents:[
+    InputOrgSearchComponent,
+    InputFileAvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -61,11 +73,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     ReactiveFormsModule,
 
-    RecaptchaModule
+    RecaptchaModule,
+    TocoFormsModule
   ],
   providers: [
     SearchService,
-		EnvServiceProvider,
+    EnvServiceProvider,
+    OrganizationServiceNoAuth
   ],
   bootstrap: [AppComponent]
 })
