@@ -30,6 +30,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
+import { SceibaFooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
     UserProfileComponent,
     UserProfileEditComponent,
     InputOrgSearchComponent,
-    InputFileAvatarComponent
+    InputFileAvatarComponent,
+    SceibaFooterComponent
   ],
   entryComponents:[
     InputOrgSearchComponent,

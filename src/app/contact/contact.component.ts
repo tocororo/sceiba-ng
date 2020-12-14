@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material';
 export class ContactComponent implements OnInit {
 
   @Input()
-  public siteKey: string;
+  public siteKey: string = "6LdlTwYaAAAAAGOM4bF2FoCsf7t5wnYgx4_t18xq";
 
   @Input()
   public rows: number = 8;

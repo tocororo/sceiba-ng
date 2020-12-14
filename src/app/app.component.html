@@ -38,13 +38,17 @@
 
 
 <mat-menu #menuNetwork="matMenu">
-  <a mat-menu-item href="https://www.facebook.com/" target="_blank">
+  <a mat-menu-item href="https://www.facebook.com/sceiba/" target="_blank">
       <!-- <mat-icon>info</mat-icon> -->
       Facebook
   </a>
-  <a mat-menu-item href="https://twitter.com/" target="_blank">
+  <a mat-menu-item href="https://twitter.com/SceibaCu" target="_blank">
       <!-- <mat-icon>question_answer</mat-icon> -->
       Twitter
+  </a>
+  <a mat-menu-item href="https://github.com/tocororo/iroko" target="_blank">
+      <!-- <mat-icon>question_answer</mat-icon> -->
+      GitHub
   </a>
 </mat-menu>
 
@@ -82,5 +86,5 @@
 <router-outlet></router-outlet> 
 
 <div  [ngStyle]="{'margin-top': '2em'}">
-  <toco-footer [sites]="footerSites" [information]="footerInformation"></toco-footer>
+  <app-footer [sites]="footerSites" [information]="footerInformation"></app-footer>
 </div>

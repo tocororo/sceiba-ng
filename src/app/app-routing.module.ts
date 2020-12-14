@@ -33,7 +33,7 @@ const routes: Routes = [
 		component: SearchComponent
   },
   {
-    path: 'account',
+    path: 'profile',
     children: [
       {
         path: '',
