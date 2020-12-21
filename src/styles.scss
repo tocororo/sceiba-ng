@@ -228,14 +228,14 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 // }
 
 .alternate-theme-footer {
-    $alternate-primary: mat-palette($md-greylight);
-    $alternate-accent:  mat-palette($md-azullight);
-    $toco-warn: mat-palette($md-azul);
+    $alternate-primary: mat-palette($mat-grey, 800);
+    $alternate-accent:  mat-palette($md-blue);
+    $toco-warn: mat-palette($mat-red);
 
     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
 
     @include angular-material-theme($alternate-theme);
-    @include toco-app-theme($toco-theme);
+    // @include toco-app-theme($toco-theme);
 }
 
 .alternate-theme-userProfile {
@@ -268,6 +268,9 @@ body { margin: 0; }
 .m-2{
     margin: 2em;
 }
+.mt-2{
+    margin-top: 2em;
+}
 .p-1{
     padding: 16px;
 }
@@ -289,5 +292,20 @@ body { margin: 0; }
  }
  .tooltip-red{
     // background: #b71c1c !important;
-     background: mat-color($toco-primary, A700);
+     background: mat-color($toco-warn, A700);
+ }
+
+ .tooltip-beta-red{
+    background: mat-color($toco-warn, A700);
+    font-size: larger;
+ }
+ .triangle{
+    border-left: 80px solid mat-color($toco-warn, A700) !important;
+ }
+ .primary-color{
+     background-color: mat-color($toco-primary);
+     color: #fff;
+     padding: 16px;
+     margin: 16px;
+     border-radius: 4px;
  }

@@ -1,98 +1,79 @@
 <div class="alternate-theme-footer">
 
     <mat-toolbar class="footer-height" fxLayout='row wrap' fxLayout.mx="column" fxLayoutAlign="center center" color="primary">
-        <ng-container *ngIf="image">
-            <a href="/">
-                <img src="{{ image }}" alt="Sceiba" width="150"
-                    style="padding-top: .9em; padding-bottom: .9em;">
-            </a>
-        </ng-container>
 
         <mat-toolbar-row 
             fxLayout='row wrap'
             fxLayout.mx="column"
-            fxLayoutAlign="center start"
+            fxLayoutAlign="center center"
             fxLayoutGap="20px"
         >
-            <div fxFlex="30%" fxFlex.xs="100%">
-                
-                <div fxLayout='column wrap' fxLayoutAlign="center center" fxLayoutGap="1em">
-
-                    <img src="/assets/images/tocororo.png" alt="Tocororo" width="90" height="90">
-                    <span class="text-initial" style="max-width: 30em; text-align: center;">Proyecto Nacional Tocororo, un esfuerzo por la comunicación científica en Cuba. </span>
-
-                    <a mat-raised-button href="/sources/new/journal" color="warn">Inclúyete</a>
-                </div>
+            <div fxFlex="25%" fxFlex.xs="100%" fxLayoutAlign="center center">
+                <img src="/assets/images/tocororo.png" alt="Tocororo" width="170" height="170">
             </div>
-            <div fxLayout='column wrap' fxFlex="30%" fxFlex.xs="100%">
-                <span class="text-large">Sitios de Interés</span>
-                <ng-container *ngFor="let item of sites">
-                    <a mat-button
-                        class="aling-left"
-                        color="warn"
-                        *ngIf="item.useRouterLink"
-                        [routerLink]="[item.url]"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
-                    >
-                        {{ item.name }}
-                    </a>
-                    <a mat-button
-                        class="aling-left"
-                        color="warn"
-                        *ngIf=" ! item.useRouterLink"
-                        href="{{ item.url }}"
-                        target="_blank"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
-                    >
-                        {{ item.name }}
-                    </a>
-                </ng-container>
+            <div fxLayout='column wrap' fxFlex="40%" fxFlex.xs="100%">
+                <span [ngStyle.xs]="{'text-align': 'justify'}">
+                    Sceiba  busca mantener datos estandarizados, validados y por tanto confiables sobre los resultados de investigación en Cuba, de diferentes organizaciones de investigación, mayormente académicas.
+                </span>
             </div>
-            <div fxLayout='column wrap' fxFlex="30%" fxFlex.xs="100%">
-                <span class="text-large">Información General</span>
+            <div fxLayout='row wrap' fxFlex="25%" fxFlex.xs="100%" fxLayoutAlign="center center" fxLayoutGap="1em">
+                <a mat-mini-fab href="https://www.facebook.com/sceiba/" target="_blank" color="accent" matTooltip="Facebook">
+                    <mat-icon svgIcon="facebook" class="mat-18"></mat-icon>
+                </a>
+                <a mat-mini-fab href="https://twitter.com/SceibaCu" target="_blank" color="accent" matTooltip="Twitter">
+                    <mat-icon svgIcon="twitter" class="mat-18"></mat-icon>
+                </a>
+                <a mat-mini-fab href="https://github.com/tocororo/iroko" target="_blank" color="accent" matTooltip="GitHub">
+                    <mat-icon svgIcon="github" class="mat-18">home</mat-icon>
+                </a>
+            </div>
+            
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div fxLayout='row wrap' fxLayout.xs='column' fxLayoutAlign="center center" fxFlex="100%" style="margin-top: 1em;">
+                <mat-divider style="width: 100%;"></mat-divider>
                 <ng-container *ngFor="let item of information">
                     <a mat-button
                         class="aling-left"
-                        color="warn"
+                        
                         [routerLink]="[item.url]"
                         *ngIf="item.useRouterLink"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
+                        [ngStyle.xs]="{'line-height': 'initial', 'padding': '10px 16px', 'width': '100%', 'text-align': 'center'}"
                     >
                         {{ item.name }}
                     </a>
                     <a mat-button
                         class="aling-left"
-                        color="warn"
+                        
                         *ngIf=" ! item.useRouterLink"
                         href="{{ item.url }}"
                         target="_blank"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
+                        [ngStyle.xs]="{'line-height': 'initial', 'padding': '10px 16px', 'width': '100%', 'text-align': 'center'}"
                     >
                         {{ item.name }}
                     </a>
                 </ng-container>
             </div>
         </mat-toolbar-row>
-
-        <!-- <mat-toolbar-row fxLayout='row wrap' fxLayout.mx="column" fxLayoutAlign="center center" fxLayoutGap="15px" style="padding-bottom: 15px;">
-            <a mat-mini-fab matTooltip="Facebook" href="https://facebook.com" color="accent"
-                style="font-size: x-large; margin-bottom: 15px !important;">
-                f
-            </a>
-            <a mat-mini-fab matTooltip="Twitter" href="https://twitter.com" color="accent" 
-                style="font-size: x-large; margin-bottom: 15px !important;">
-                t
-            </a>
-        </mat-toolbar-row> -->
+        <mat-toolbar-row>
+            <span style="font-size: small; width: 100%; text-align: center;">
+                Sceiba es de código y acceso abierto y distribuyen sus contenidos, a no ser que se indique lo contrario, bajo la <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: white;"> Licencia Creative Commons CC by 4.0 </a>
+            </span>
+        </mat-toolbar-row>
 
     </mat-toolbar>
 
     <mat-toolbar fxLayout='column wrap' fxLayoutAlign="center center" style="padding: 1em;">
-        <a href="https://sceiba-lab.upr.edu.cu" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
+        <a href="https://sceiba.cu"style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
             <img src="/assets/images/sceiba-logo.png" alt="Sceiba" width="120" height="50">
         </a>
-        <a href="https://sceiba-lab.upr.edu.cu" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
-            Portal de publicaciones cientificas cubanas
+        <a href="https://sceiba.cu" style="color: rgb(0, 0, 0, 0.87); text-decoration: none; text-align: center;">
+            Portal de publicaciones cientificas cubanas.
+        </a>
+        <a href="https://invenio-software.org/" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none; text-align: center;">
+            Desarrollado con Invenio
         </a>
     </mat-toolbar>
 </div>
+
+<!-- <span class="text-initial" style="max-width: 30em; text-align: center;">Proyecto Nacional Tocororo, un esfuerzo por la comunicación científica en Cuba. </span> -->
