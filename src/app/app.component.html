@@ -3,24 +3,27 @@
 
   <mat-toolbar-row
       fxLayout="row wrap"
-      fxLayout.xs="column"
       fxLayoutAlign="space-between center"
       style="height: auto !important; min-height: 80px;"
   >
-      <a class="color-white" [routerLink]="['/']" style="white-space: normal;">
-          <img src="assets/images/sceiba-logo-white.png" alt="Sceiba" width="120">
-      </a>
-      
-      <div
-          appearance="legacy"
-          aria-label="Menu de Inicio"
-          fxLayout="row wrap"
-          fxLayoutGap="15px"
-      >
+    <div style="width: 190px; display: flex; align-items: center;">
+        <div class="triangle">
+            <span matTooltipClass="tooltip-beta-red" matTooltip="Este es un producto BETA configurado con propósitos de prueba:
+            Algunas características pueden no funcionar correctamente."> <strong> BETA </strong> </span>
+        </div>
+        <a class="color-white" [routerLink]="['/']" style="white-space: normal;">
+            <img src="assets/images/sceiba-logo-white.png" alt="Sceiba" width="120">
+        </a>
+    </div>
 
-          <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
-              <mat-icon>share</mat-icon>
-          </button>
+    <div
+        class="center-elements"
+        appearance="legacy"
+        aria-label="Menu de Inicio"
+        fxLayout="row wrap"
+        fxLayoutAlign="center"
+        fxLayoutGap="15px"
+    >
 
           <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
               <mat-icon class="mat-18">help</mat-icon>
@@ -29,8 +32,23 @@
           <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="">
               <mat-icon class="mat-18">more_vert</mat-icon>
           </button>
+            <button mat-icon-button [matMenuTriggerFor]="menuApps" matTooltip="Aplicaciones">
+                <mat-icon>apps</mat-icon>
+            </button>
 
-      </div>
+            <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
+                <mat-icon>share</mat-icon>
+            </button>
+
+            <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
+                <mat-icon class="mat-18">help</mat-icon>
+            </button>
+
+          <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="">
+              <mat-icon class="mat-18">more_vert</mat-icon>
+          </button>
+
+    </div>
 
   </mat-toolbar-row>
 
@@ -38,13 +56,17 @@
 
 
 <mat-menu #menuNetwork="matMenu">
-  <a mat-menu-item href="https://www.facebook.com/" target="_blank">
+  <a mat-menu-item href="https://www.facebook.com/sceiba/" target="_blank">
       <!-- <mat-icon>info</mat-icon> -->
       Facebook
   </a>
-  <a mat-menu-item href="https://twitter.com/" target="_blank">
+  <a mat-menu-item href="https://twitter.com/SceibaCu" target="_blank">
       <!-- <mat-icon>question_answer</mat-icon> -->
       Twitter
+  </a>
+  <a mat-menu-item href="https://github.com/tocororo/iroko" target="_blank">
+      <!-- <mat-icon>question_answer</mat-icon> -->
+      GitHub
   </a>
 </mat-menu>
 
@@ -79,8 +101,29 @@
     </a>
   </mat-menu>
 
-<router-outlet></router-outlet> 
+<mat-menu #menuApps="matMenu">
+<div fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <a href="https://sceiba.cu" target="__blanck" class="apps" matTooltip="Sceiba">
+        <img src="/assets/images/sceiba-logo-tree.png" alt="Sceiba">
+    </a>
+    <a href="https://orgs.sceiba.cu" target="__blanck" class="apps" matTooltip="Organizaciones">
+        <img src="/assets/images/home/organizacion.svg" alt="Organizaciones">
+    </a>
+    <a href="https://sceiba.cu" target="__blanck" class="apps" matTooltip="Vocabularios">
+        <img src="/assets/images/home/checklist_icon.png" alt="Vocabularios">
+    </a>
+    <a href="https://catalogo.sceiba.cu" target="__blanck" class="apps" matTooltip="Catálogo">
+        <img src="/assets/images/home/archives_icon.png" alt="Catálogo">
+    </a>
+    <mat-divider class="w-90"></mat-divider>
+    <a href="https://sceiba.cu" target="__blanck" class="apps">
+        <img class="MES" src="/assets/images/mes.png" alt="Registro de Revistas Científicas del MES" matTooltip="Registro de Revistas Científicas del MES">
+    </a>
+</div>
+</mat-menu>
+
+<router-outlet></router-outlet>
 
 <div  [ngStyle]="{'margin-top': '2em'}">
-  <toco-footer [sites]="footerSites" [information]="footerInformation"></toco-footer>
+  <app-footer [sites]="footerSites" [information]="footerInformation"></app-footer>
 </div>

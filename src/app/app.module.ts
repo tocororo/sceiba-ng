@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularMaterialModule, CoreModule, EnvServiceProvider, SearchModule, SearchService, StaticsModule } from 'toco-lib';
+import { AngularMaterialModule, CoreModule, EnvServiceProvider, OrganizationServiceNoAuth, OrganizationsModule, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
 
 import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -23,6 +23,14 @@ import { RecordViewComponent } from './record-view/record-view.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
 import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
 import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
+import { ContactComponent } from './contact/contact.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
+import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
+import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
+import { SceibaFooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +39,7 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
     HomeComponent,
     SearchComponent,
     SearchListComponent,
- 
+
     ChartsComponent,
 		PolarChartComponent,
 		BarVerticalComponent,
@@ -41,7 +49,17 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
 		RecordViewComponent,
     LinkStaticComponent,
     StaticTableLinkComponent,
-    StaticChipsLinkComponent
+    StaticChipsLinkComponent,
+    ContactComponent,
+    UserProfileComponent,
+    UserProfileEditComponent,
+    InputOrgSearchComponent,
+    InputFileAvatarComponent,
+    SceibaFooterComponent
+  ],
+  entryComponents:[
+    InputOrgSearchComponent,
+    InputFileAvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -55,10 +73,15 @@ import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link
     MatRadioModule,
     NgxChartsModule,
     CoreModule,
+    ReactiveFormsModule,
+
+    RecaptchaModule,
+    TocoFormsModule
   ],
   providers: [
     SearchService,
-		EnvServiceProvider,
+    EnvServiceProvider,
+    OrganizationServiceNoAuth
   ],
   bootstrap: [AppComponent]
 })
