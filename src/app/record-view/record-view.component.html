@@ -10,52 +10,52 @@
         </button> -->
         <span>Información del Documento</span>
     </mat-toolbar-row>
-    <mat-toolbar-row></mat-toolbar-row>
-    <mat-toolbar-row></mat-toolbar-row>
-    <mat-toolbar-row></mat-toolbar-row>
 </mat-toolbar>
-<div fxLayout="row" fxLayoutAlign="center" style="margin-top: -8em;">
+<div fxLayout="row" fxLayoutAlign="center" >
     <mat-card style="width: 80%;">
         <mat-card-header>
             <mat-card-title>{{record.title}}</mat-card-title>
             <!-- ID -->
-            <mat-card-subtitle class="pt-1" *ngIf="record.id"> Sceiba id: {{ record.id }}</mat-card-subtitle>
+            <mat-card-subtitle class="pt-1" *ngIf="record.id">
+              <p> Sceiba ID: {{ record.id }}</p>
+            </mat-card-subtitle>
             <!-- STATUS -->
             <!-- <mat-card-subtitle class="pt-1" *ngIf="record.status">Estatus: {{ record.status }}</mat-card-subtitle> -->
         </mat-card-header>
 
+
         <mat-card-content>
 
             <!-- SOURCE -->
-            <static-link 
-                *ngIf="record.source"
+            <static-link
+                *ngIf="record.source_repo"
                 [className]="'custom'"
-                [desc]="'Fuente'"
+                [desc]="'Recolectado en: '"
                 [routerlink]="'/search'"
-                [queryparams]="{sources: record.source.name}"
-                [value]="record.source.name">
+                [queryparams]="{sources: record.source_repo.name}"
+                [value]="record.source_repo.name">
             </static-link>
 
-            <!-- KEYWOARD -->
-            <static-chips-link 
-                *ngIf="record.keywords && record.keywords.length" 
-                [desc]="'Listado de Palabras Claves'" 
-                [value]="record.keywords"
-                [routerlink]="'/search'"
-                [queryparamVariable]="'keywords'">
-            </static-chips-link>
+
 
             <!-- CREATORS -->
-            <static-table-link 
-                *ngIf="record.creators && record.creators.length" 
-                [desc]="'Listado de autores'" 
+            <static-table-link
+                *ngIf="record.creators && record.creators.length"
+                [desc]="'Listado de autores'"
                 [value]="record.creators"
                 [routerlink]="'/search'"
                 [queryparamVariable]="['creators', 'q']"
                 [columnsObjectProperty]="['name', 'affiliations']"
                 [columnsHeaderText]="['Nombre', 'Afiliación']">
             </static-table-link>
-
+            <!-- KEYWOARD -->
+            <static-chips-link
+                *ngIf="record.keywords && record.keywords.length"
+                [desc]="'Listado de Palabras Claves'"
+                [value]="record.keywords"
+                [routerlink]="'/search'"
+                [queryparamVariable]="'keywords'">
+            </static-chips-link>
             <!-- DESCRIPTION -->
             <mat-card class="mb-1">
                 <mat-card-content>
@@ -67,85 +67,85 @@
                             <a mat-button href="{{ identifier.value }}" target="blanck" color="primary">Leer en la fuente</a>
                         </ng-container>
                     </ng-container>
-                    
+
                 </mat-card-actions>
             </mat-card>
 
             <!-- identifiers -->
-            <static-table 
-                *ngIf="record.identifiers && record.identifiers.length" 
-                [desc]="'Listado de los identificadores'" 
+            <static-table
+                *ngIf="record.identifiers && record.identifiers.length"
+                [desc]="'Listado de los identificadores'"
                 [value]="record.identifiers"
                 [columnsObjectProperty]="['idtype', 'value']"
                 [columnsHeaderText]="['Tipo de identificador', 'Valor']">
             </static-table>
 
             <!-- SOURCES -->
-            <static-chips 
-                *ngIf="record.sources && record.sources.length" 
-                [desc]="'Fuentes'" 
+            <static-chips
+                *ngIf="record.sources && record.sources.length"
+                [desc]="'Fuentes'"
                 [value]="record.sources">
             </static-chips>
 
             <!-- TYPES -->
-            <static-chips 
-                *ngIf="record.types && record.types.length" 
-                [desc]="'Tipos de recurso'" 
+            <static-chips
+                *ngIf="record.types && record.types.length"
+                [desc]="'Tipos de recurso'"
                 [value]="record.types">
             </static-chips>
 
             <!-- FORMATS -->
-            <static-chips 
-                *ngIf="record.formats && record.formats.length" 
-                [desc]="'Formatos en que se publicó'" 
+            <static-chips
+                *ngIf="record.formats && record.formats.length"
+                [desc]="'Formatos en que se publicó'"
                 [value]="record.formats">
             </static-chips>
 
             <!-- COVERAGES -->
-            <!-- <static-chips 
-                *ngIf="record.coverages && record.coverages.length" 
-                [desc]="'Formatos en que se publicó'" 
+            <!-- <static-chips
+                *ngIf="record.coverages && record.coverages.length"
+                [desc]="'Formatos en que se publicó'"
                 [value]="record.coverages">
             </static-chips> -->
 
             <!-- PUBLISHER -->
-            <static-text 
-                *ngIf="record.publisher" 
+            <static-text
+                *ngIf="record.publisher"
                 [desc]="'Publicado por'"
                 [value]="record.publisher">
             </static-text>
 
             <!-- RIGHTS -->
-            <static-chips 
-                *ngIf="record.rights && record.rights.length" 
-                [desc]="'Derechos del artículo'" 
+            <static-chips
+                *ngIf="record.rights && record.rights.length"
+                [desc]="'Derechos del artículo'"
                 [value]="record.rights">
             </static-chips>
 
             <!-- PUBLICATION DATE -->
-            <static-text 
-                *ngIf="record.publication_date" 
+            <static-text
+                *ngIf="record.publication_date"
                 [desc]="'Fecha de Publicación'"
                 [value]="record.publication_date">
             </static-text>
 
             <!-- LANGUAGE-->
-            <static-text 
-                *ngIf="record.language" 
+            <static-text
+                *ngIf="record.language"
                 [desc]="'Lenguage'"
                 [value]="record.language">
             </static-text>
 
             <!-- CONTRIBUTORS -->
-            <!-- <static-table 
-                *ngIf="record.contributors && record.contributors.length" 
-                [desc]="'Listado de contribuyentes'" 
+            <!-- <static-table
+                *ngIf="record.contributors && record.contributors.length"
+                [desc]="'Listado de contribuyentes'"
                 [value]="record.contributors"
                 [columnsObjectProperty]="['name', 'roles']"
                 [columnsHeaderText]="['Nombre', 'Roles']">
             </static-table> -->
 
-            
+
 
 
 

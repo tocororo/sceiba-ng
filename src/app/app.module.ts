@@ -1,36 +1,37 @@
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
+import { AngularMaterialModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
+import { AggregationsComponent } from './aggregations/aggregations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularMaterialModule, CoreModule, EnvServiceProvider, OrganizationServiceNoAuth, OrganizationsModule, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
-
-import { StaticPagesComponent } from './static-pages/static-pages.component';
-import { MatRadioModule } from '@angular/material/radio';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { HomeComponent } from './home/home.component';
-import { ChartsComponent } from './charts/charts.component';
-import { PolarChartComponent } from './charts/polar-chart/polar-chart.component';
 import { BarVerticalComponent } from './charts/bar-vertical/bar-vertical.component';
-import { PieGridComponent } from './charts/pie-grid/pie-grid.component';
-import { AggregationsComponent } from './aggregations/aggregations.component';
+import { ChartsComponent } from './charts/charts.component';
 import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { SearchComponent } from './search/search.component';
-import { SearchListComponent } from './search-list/search-list.component';
+import { PieGridComponent } from './charts/pie-grid/pie-grid.component';
+import { PolarChartComponent } from './charts/polar-chart/polar-chart.component';
+import { ContactComponent } from './contact/contact.component';
+import { SceibaFooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 import { RecordViewComponent } from './record-view/record-view.component';
+import { SearchListComponent } from './search-list/search-list.component';
+import { SearchComponent } from './search/search.component';
+import { StaticPagesComponent } from './static-pages/static-pages.component';
+import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
 import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
-import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
-import { ContactComponent } from './contact/contact.component';
-import { RecaptchaModule } from 'ng-recaptcha';
-import { ReactiveFormsModule } from '@angular/forms';
-import { UserProfileComponent } from './user/user-profile/user-profile.component';
-import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
-import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
-import { SceibaFooterComponent } from './footer/footer.component'
+import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
+import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -80,8 +81,8 @@ import { SceibaFooterComponent } from './footer/footer.component'
   ],
   providers: [
     SearchService,
-    EnvServiceProvider,
-    OrganizationServiceNoAuth
+    OrganizationServiceNoAuth,
+    { provide: Environment, useValue: environment }
   ],
   bootstrap: [AppComponent]
 })

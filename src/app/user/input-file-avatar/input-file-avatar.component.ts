@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { InputControl, MessageHandler, StatusCode } from 'toco-lib';
 
@@ -58,5 +58,8 @@ export class InputFileAvatarComponent extends InputControl implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(this.content.formControl.value);
   }
 
+  onClick(){
+
+  }
 
 }

@@ -2,8 +2,8 @@ import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { take, map } from 'rxjs/operators';
-import { EnvService, Record, SearchResponse, SearchService } from 'toco-lib';
+import { map, take } from 'rxjs/operators';
+import { Environment, Record, SearchResponse, SearchService } from 'toco-lib';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,10 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
   private http: HttpClient;
 
   constructor(
-    private router: Router, 
-    private service: SearchService, 
-    private env: EnvService, 
-    private handler: HttpBackend) { 
+    private router: Router,
+    private service: SearchService,
+    private env: Environment,
+    private handler: HttpBackend) {
 
       this.http = new HttpClient(handler);
     }

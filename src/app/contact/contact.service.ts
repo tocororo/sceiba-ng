@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthBackend, EnvService } from 'toco-lib'
+import { AuthBackend, Environment } from 'toco-lib';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ContactService {
   public backend: AuthBackend = AuthBackend.sceiba
 
   constructor(
-    private env: EnvService,
+    private env: Environment,
     private http: HttpClient) { }
 
   public send(body): Observable<any>{

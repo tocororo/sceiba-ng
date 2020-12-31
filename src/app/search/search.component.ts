@@ -1,14 +1,13 @@
-import { Component, Inject, OnInit } from "@angular/core";
 import { HttpParams } from "@angular/common/http";
-import { SearchResponse, Organization, AggregationsSelection, Record } from "toco-lib";
-import { SearchService } from "toco-lib";
-import {  PageEvent } from "@angular/material";
+import { Component, OnInit } from "@angular/core";
+import { PageEvent } from "@angular/material";
 import {
   ActivatedRoute,
-  Router,
+
   NavigationExtras,
-  Params,
+  Params, Router
 } from "@angular/router";
+import { AggregationsSelection, Record, SearchResponse, SearchService } from "toco-lib";
 
 @Component({
   selector: "app-search",
@@ -20,7 +19,7 @@ export class SearchComponent implements OnInit {
   aggr_keys:Array<any>
   search_type:Boolean = true
   typeChart: "Polar Chart" | "Vertical Bar" | /* "Pie Grid" | */ "Gauge Chart"= "Polar Chart"
-  
+
   layoutPosition = [
     {
       name: "Derecha",
@@ -78,7 +77,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    
+
     this.query = "";
 
     this.activatedRoute.queryParamMap.subscribe({
@@ -109,15 +108,15 @@ export class SearchComponent implements OnInit {
               break;
           }
         }
-        
+
         this.updateFetchParams();
         this.fetchSearchRequest();
 
-       
+
       },
 
       error: (e) => {},
-      
+
       complete: () => {},
     });
   }
@@ -149,12 +148,19 @@ export class SearchComponent implements OnInit {
         // this.pageEvent.length = response.hits.total;
         this.sr = response;
 
+
         this.aggr_keys = [
           {value: this.sr.aggregations.creators, key: 'Creadores'},
           {value: this.sr.aggregations.keywords, key: 'Palabras Claves'},
           {value: this.sr.aggregations.sources, key: 'Fuentes'},
           {value: this.sr.aggregations.terms, key: 'Términos'},
         ]
+        this.sr.aggregations.creators['label'] = 'Autores';
+        this.sr.aggregations.keywords['label'] = 'Palabras Clave';
+        this.sr.aggregations.sources['label'] = 'Fuentes';
+        this.sr.aggregations.terms['label'] = 'Términos';
+
+        console.log(this.sr)
       },
       (error: any) => {
         console.log("ERROPR");

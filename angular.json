@@ -44,11 +44,13 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": false,
+              "namedChunks": true,
+              "commonChunk": true,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "verbose": true,
               "budgets": [
                 {
                   "type": "initial",
