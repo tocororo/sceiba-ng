@@ -120,35 +120,36 @@
         </div>
     </div>
 
-
-    <div class="container" style="margin: 2em auto;">
-        <img src="/assets/images/home/seiba.jpg" alt="" style="width: 100%;">
-        <div class="content">
-            <h1 class="mat-display-2 text-center" style="margin: 0;"> Próximamente </h1>
-            <div fxLayout="column" fxLayoutAlign="center center">
-                <p>
-                    <strong>• Personas</strong>
+    <mat-card class="mat-elevation-z1 w-70 m-1 mb-1">
+        <mat-card-title style="text-align: center;">Próximamente</mat-card-title>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around start">
+                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
+                    <img src="/assets/images/proximamente/person.png" height="100" style="margin-bottom: 6px;">
+                    <strong class="mat-h2">Personas</strong>
                     Sistema de identificación de personas relacionadas con la Investigación en Cuba.
-                </p>
-                <p>
-                    <strong> • Evaluación </strong>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
+                    <img src="/assets/images/proximamente/eval.png" height="100" style="margin-bottom: 6px;">
+                    <strong class="mat-h2">Evaluación </strong>
                     Implementación de metodologías propias de evaluación a nivel institucional y otras escalas, desde la conexión entre los resultados y las fuentes, las organizaciones y personas involucradas en las diferentes líneas de investigación.
-                </p>
-                <p>
-                    <strong>• Carpetas personales</strong>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
+                    <img src="/assets/images/proximamente/folder.png" height="100" style="margin-bottom: 6px;">
+                    <strong class="mat-h2">Carpetas personales</strong>
                     Apartados de documentos y suscripciones a temáticas de interés, búsquedas anteriores y mucho más en la personalización de la interacción de los usuarios con Sceiba.
-                </p>
+                </div>
             </div>
-        </div>
-    </div>
+        </mat-card-content>
+    </mat-card>
 
 
-    <!-- <mat-card class="mat-elevation-z1 w-70 m-1 mb-1">
+    <mat-card class="mat-elevation-z1 w-70 m-1 mb-1">
         <mat-card-title>Contacte con nosotros</mat-card-title>
         <mat-card-content>
             <app-contact></app-contact>
         </mat-card-content>
-    </mat-card> -->
+    </mat-card>
 
     <mat-divider [ngStyle.xs]="{ width: '100%'}" [ngStyle]="{ width: '90%'}"></mat-divider>
     <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">

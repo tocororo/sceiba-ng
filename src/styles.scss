@@ -228,7 +228,7 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 // }
 
 .alternate-theme-footer {
-    $alternate-primary: mat-palette($mat-grey, 800);
+    $alternate-primary: mat-palette($mat-grey, 600);
     $alternate-accent:  mat-palette($md-blue);
     $toco-warn: mat-palette($mat-red);
 

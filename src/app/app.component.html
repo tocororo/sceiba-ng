@@ -12,11 +12,8 @@
             Algunas características pueden no funcionar correctamente."> <strong> BETA </strong> </span>
         </div>
         <a class="color-white" [routerLink]="['/']" style="white-space: normal;">
-            <img src="assets/icons/sceiba_white.svg" alt="Sceiba" style="height: 40px; width: 40px">
+            <img src="/assets/images/sceiba-logo-white.png" alt="Sceiba" style="height: 40px;">
         </a>
-        <button mat-icon-button [matMenuTriggerFor]="menuApps" matTooltip="Aplicaciones">
-          <mat-icon>apps</mat-icon>
-        </button>
     </div>
     <div
       appearance="legacy"
@@ -24,10 +21,10 @@
       fxLayout="row wrap"
       fxLayoutGap="15px"
     >
-    <a class="color-white" [routerLink]="['/']" style="white-space: normal">
+    <!-- <a class="color-white" [routerLink]="['/']" style="white-space: normal">
       Sceiba
 
-    </a>
+    </a> -->
     </div>
 
     <div
@@ -39,17 +36,20 @@
         fxLayoutGap="15px"
     >
 
-            <!-- <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
-                <mat-icon>share</mat-icon>
-            </button> -->
+      <button mat-icon-button [matMenuTriggerFor]="menuApps" matTooltip="Aplicaciones">
+        <mat-icon>apps</mat-icon>
+      </button>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
+          <mat-icon>share</mat-icon>
+      </button> -->
 
-            <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
-                <mat-icon class="mat-18">help</mat-icon>
-            </button>
+      <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
+          <mat-icon class="mat-18">help</mat-icon>
+      </button>
 
-            <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="Usuario">
-                <mat-icon class="mat-18">account_circle</mat-icon>
-            </button>
+      <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="Usuario">
+          <mat-icon class="mat-18">account_circle</mat-icon>
+      </button>
 
     </div>
 

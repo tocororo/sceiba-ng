@@ -8,19 +8,22 @@
             fxLayoutAlign="center center"
             fxLayoutGap="20px"
         >
-            <div fxLayout='column wrap' fxFlex="40%" fxFlex.xs="100%">
+            <div fxLayout='column wrap' fxFlex="0 1 calc(10px+100px)" fxFlex.xs="100%">
+                <img src="/assets/images/sceiba-logo-tree.png" alt="Sceiba" width="150">
+            </div>
+            <div fxLayout='column wrap' fxFlex="1 1 calc(10px+280px)" fxFlex.xs="100%">
                 <span [ngStyle.xs]="{'text-align': 'justify'}">
                     Sceiba  busca mantener datos estandarizados, validados y por tanto confiables sobre los resultados de investigación en Cuba, de diferentes organizaciones de investigación, mayormente académicas.
                 </span>
             </div>
-            <div fxLayout='row wrap' fxFlex="25%" fxFlex.xs="100%" fxLayoutAlign="center center" fxLayoutGap="1em">
-                <a mat-mini-fab href="https://www.facebook.com/sceiba/" target="_blank" color="accent" matTooltip="Facebook">
+            <div fxLayout='row wrap' fxFlex.xs="100%" fxLayoutAlign="center center" fxLayoutGap="1em">
+                <a mat-mini-fab href="https://www.facebook.com/sceiba/" target="_blank" color="warn" matTooltip="Facebook">
                     <mat-icon svgIcon="facebook" class="mat-18"></mat-icon>
                 </a>
-                <a mat-mini-fab href="https://twitter.com/SceibaCu" target="_blank" color="accent" matTooltip="Twitter">
+                <a mat-mini-fab href="https://twitter.com/SceibaCu" target="_blank" color="warn" matTooltip="Twitter">
                     <mat-icon svgIcon="twitter" class="mat-18"></mat-icon>
                 </a>
-                <a mat-mini-fab href="https://github.com/tocororo" target="_blank" color="accent" matTooltip="GitHub">
+                <a mat-mini-fab href="https://github.com/tocororo" target="_blank" color="warn" matTooltip="GitHub">
                     <mat-icon svgIcon="github" class="mat-18">home</mat-icon>
                 </a>
             </div>
@@ -60,21 +63,16 @@
 
     </mat-toolbar>
 
-    <mat-toolbar fxLayout='column wrap' fxLayoutAlign="center center" style="padding: 1em;">
+    <!-- <mat-toolbar fxLayout='column wrap' fxLayoutAlign="center center" style="padding: 1em;">
         <a href="https://sceiba.cu"style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
             <img src="/assets/images/sceiba-logo.png" alt="Sceiba" width="120" height="50">
         </a>
         <a href="https://sceiba.cu" style="color: rgb(0, 0, 0, 0.87); text-decoration: none; text-align: center;">
             Portal de publicaciones cientificas cubanas.
         </a>
-        <!-- <a href="https://invenio-software.org/" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none; text-align: center;">
-            Desarrollado con Invenio
-        </a> -->
+    </mat-toolbar> -->
+    <mat-toolbar fxLayoutAlign="center center" fxLayout='column wrap' style="margin-top: .5em">
+    <img src="/assets/images/tocororo.png" alt="Tocororo" width="90" height="90">
+    <span class="text-initial" style="max-width: 30em; text-align: center;">Proyecto Tocororo, un esfuerzo por la comunicación científica en Cuba. </span>
     </mat-toolbar>
-    <mat-toolbar fxLayoutAlign="center center" fxLayout='column wrap' >
-  <img src="/assets/images/tocororo.png" alt="Tocororo" width="50" height="50">
-  <span class="text-initial" style="max-width: 30em; text-align: center;">Proyecto Tocororo, un esfuerzo por la comunicación científica en Cuba. </span>
-</mat-toolbar>
 </div>
-
-<!-- <span class="text-initial" style="max-width: 30em; text-align: center;">Proyecto Nacional Tocororo, un esfuerzo por la comunicación científica en Cuba. </span> -->
