@@ -1,15 +1,20 @@
+
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { environment } from 'src/environments/environment';
-import { AngularMaterialModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
-import { AggregationsComponent } from './aggregations/aggregations.component';
+
+import { AngularMaterialModule, CoreModule, StaticsModule, TocoFormsModule, 
+  SearchModule, SearchService, Environment, OrganizationServiceNoAuth } from 'toco-lib';
+
 import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
+
+import { AggregationsComponent } from './aggregations/aggregations.component';
 import { AppComponent } from './app.component';
 import { BarVerticalComponent } from './charts/bar-vertical/bar-vertical.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -30,8 +35,6 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
-
-
 
 @NgModule({
   declarations: [
@@ -63,21 +66,21 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     InputFileAvatarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
-    AppRoutingModule,
-    SearchModule,
-    AngularMaterialModule,
-    FlexLayoutModule,
-    StaticsModule,
-
-    MatRadioModule,
-    NgxChartsModule,
-    CoreModule,
     ReactiveFormsModule,
-
+    MatRadioModule,
+    FlexLayoutModule,
+    NgxChartsModule,
     RecaptchaModule,
-    TocoFormsModule
+
+    AngularMaterialModule,
+    CoreModule,
+    StaticsModule,
+    TocoFormsModule,
+    SearchModule,
+
+    AppRoutingModule,
   ],
   providers: [
     SearchService,
