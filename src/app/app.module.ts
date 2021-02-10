@@ -85,7 +85,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
   providers: [
     SearchService,
     OrganizationServiceNoAuth,
-    { provide: Environment, useValue: environment }
+    { provide: Environment, useValue: environment },
   ],
   bootstrap: [AppComponent]
 })

@@ -18,27 +18,35 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
     private router: Router,
     private service: SearchService,
     private env: Environment,
-    private handler: HttpBackend) {
+    private handler: HttpBackend)
+    {
 
       this.http = new HttpClient(handler);
     }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): SearchResponse<Record> | Observable<SearchResponse<Record>> | Promise<SearchResponse<Record>> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : SearchResponse<Record> | Observable<SearchResponse<Record>> | Promise<SearchResponse<Record>>
+  {
     let uuid = route.paramMap.get('uuid');
+
 		return this.getRecordById(uuid).pipe(
-            take(1),
-            map(node => {
-                if (node) {
-                    return node;
-				}
-				else {
-                    this.router.navigate(['/']);
-                }
-            })
-        );
+      take(1),
+      map(node => {
+          if (node)
+          {
+            return node;
+          }
+          else
+          {
+            this.router.navigate(['/']);
+          }
+      })
+    );
   }
 
-  getRecordById(id: string): Observable<SearchResponse<Record>> {
+  getRecordById(id: string): Observable<SearchResponse<Record>>
+  {
+    // TODO: Esta línea es ineficiente, puede ser optimizada. 
     const req = this.env.sceibaApi + this.prefix + '/' + id;
 
     return this.http.get<SearchResponse<Record>>(req);
