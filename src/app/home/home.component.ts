@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SearchService } from 'toco-lib';
+import { timer } from 'rxjs';
 
 @Component({
   selector: "app-home",
@@ -46,14 +47,14 @@ export class HomeComponent implements OnInit {
     //   }
     // });
 
-    // this.showSlides(this.slideIndex);
-    // timer(10000,10000).subscribe(x => {
-    //   if (this.slideIndex > 4){
-    //     this.slideIndex = 1
-    //   }
-    //   this.slideIndex += 1;
-    //   this.showSlides(this.slideIndex);
-    // });
+    this.showSlides(this.slideIndex);
+    timer(10000,10000).subscribe(x => {
+      if (this.slideIndex > 4){
+        this.slideIndex = 1
+      }
+      this.slideIndex += 1;
+      this.showSlides(this.slideIndex);
+    });
   }
 
   public queryChange(event?: string): void {

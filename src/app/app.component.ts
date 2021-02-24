@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Environment } from 'toco-lib';
+import { Router } from '@angular/router';
 
 
 
@@ -16,9 +17,9 @@ export class AppComponent {
 
   public urlLogin: string;
 
-  public urlSignUp: string;
+  public urlSignUp: string;  
 
-  public constructor(private env: Environment)
+  public constructor(private env: Environment, private router: Router)
   { }
 
     public ngOnInit(): void
@@ -41,5 +42,9 @@ export class AppComponent {
 
         this.urlLogin = this.env.sceibaHost + "login";
         this.urlSignUp = this.env.sceibaHost + "signup";
+    }
+
+    public get isHome(){
+      return this.router.url == '/';
     }
 }

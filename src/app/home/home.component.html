@@ -1,14 +1,16 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-    <br>
-    <br>
-    <h1 class="mat-display-3" style="text-align: center;">Publicaciones Científicas Cubanas</h1>
-    <br>
-    <br>
-    <toco-search-query-input [query]="''" (queryChange)="queryChange($event)" style="width: 70%;"></toco-search-query-input>
 
-    <br>
-    <br>
-    <!-- <div class="w-80" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
+        <div class="pt-50 ph-10">
+            <h3 class="mat-display-2" style="text-align: center;">Publicaciones Científicas Cubanas</h3>
+        </div>
+        <div class="w-70 ph-10" fxFlex="70%" ngClass.xs="w-100">    
+            <toco-search-query-input [query]="''" (queryChange)="queryChange($event)" style="width: 100%;" [buttonColor]="'accent'" ></toco-search-query-input>
+        </div>
+    </div>    
+    <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
+    
+    <div class="w-50 pt-50 ph-10" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
         <div  fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-label class="mat-display-4" style="margin-bottom: 0;">{{ documentTotal }}</mat-label>
             <mat-label class="mat-display-1 text-center" style="margin-left: .5em; margin-bottom: 0;">
@@ -24,41 +26,41 @@
             <mat-divider></mat-divider>
             <mat-label class="mat-h2">
                 <div mat-line class="mat-display-1" style="margin-bottom: 0;">1233</div>
-                <div mat-line>Organizaciones</div>
+                <div mat-line>Personas</div>
             </mat-label>
             <mat-divider></mat-divider>
             <mat-label class="mat-h2">
                 <div mat-line class="mat-display-1" style="margin-bottom: 0;">1233</div>
-                <div mat-line>Organizaciones</div>
+                <div mat-line>Temáticas</div>
             </mat-label>
         </div>
-    </div> -->
+    </div>
 
     <!-- SLIDES -->
-    <!-- <div class="container">
+    <div class="container">
 
         <div class="mySlides fade">
-          <div class="numbertext">{{ slideIndex }} / 4</div>
-          <img src="/assets/images/home/slide/img_nature_wide.jpg" style="width:100%">
-          <div class="text">
+        <div class="numbertext">{{ slideIndex }} / 4</div>
+        <img src="/assets/images/home/slide/img_nature_wide.jpg" style="width:100%">
+        <div class="text">
             Las publicaciones en revistas científicas constituyen un importante indicador empleado para medir el desarrollo de la ciencia y la tecnología en los países.
-          </div>
+        </div>
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">{{ slideIndex }} / 4</div>
-          <img src="/assets/images/home/slide/img_snow_wide.jpg" style="width:100%">
-          <div class="text">
+        <div class="numbertext">{{ slideIndex }} / 4</div>
+        <img src="/assets/images/home/slide/img_snow_wide.jpg" style="width:100%">
+        <div class="text">
             Sceiba en el registro, gestión, accesibilidad y evaluación de las publicaciones científicas cubanas.
-          </div>
+        </div>
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">{{ slideIndex }} / 4</div>
-          <img src="/assets/images/home/slide/img_mountains_wide.jpg" style="width:100%">
-          <div class="text">
+        <div class="numbertext">{{ slideIndex }} / 4</div>
+        <img src="/assets/images/home/slide/img_mountains_wide.jpg" style="width:100%">
+        <div class="text">
             Espacio de colaboración e interrelaciones entre instituciones, investigadores, profesores, editores, bibliotecarios y otros profesionales de Cuba y el resto del mundo.
-          </div>
+        </div>
         </div>
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>
@@ -75,90 +77,198 @@
             <mat-icon class="mat-18">navigate_next</mat-icon>
         </a>
         <div style="text-align:center; margin-top: -20px;">
-          <span class="dot" (click)="currentSlide(1)"></span>
-          <span class="dot" (click)="currentSlide(2)"></span>
-          <span class="dot" (click)="currentSlide(3)"></span>
-          <span class="dot" (click)="currentSlide(4)"></span>
-        </div>
-    </div> -->
-
-    <div class="mat-h2 primary-color mat-elevation-z2" [ngStyle.xs]="{ width: 'auto'}">
-      Sceiba aporta soluciones tecnológicas y sociales que contribuyen al incremento de los contenidos científico tecnológico en las redes cubanas y a su visibilidad internacional. Tributa al mejoramiento de la calidad de la revista científica institucional, viabiliza la adopción del acceso abierto como modelo principal para la comunicación científica y el acceso a la información. Permite implementar un mejor flujo de comunicación, conectar a los actores principales, generalizar líneas de comportamiento y buenas prácticas para lograr los mayores beneficios
-  </div>
-    <div class="w-70 mt-2" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" [ngStyle.xs]="{ width: '100%'}">
-
-        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center start" [ngStyle.xs]="{ width: '100%'}">
-          <div fxLayout="column" class="aling-center" [ngStyle.xs]="{ 'max-width': '100%'}">
-            <a href="https://catalogo.sceiba.cu" target="_blank" matTooltop="Click para acceder">
-                <img matCardImage src="/assets/images/home/archives_icon.png" class="w-img">
-            </a>
-            <p><strong>Catálogo de Publicaciones Científicas Cubanas</strong></p>
-            <p>Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba. No es un registro oficial o exhaustivo de toda revista cubana existente. Incluye el registro de dichas fuentes y su manejo por los editores y gestores del sistema.</p>
-        </div>
-            <div fxLayout="column" class="aling-center" [ngStyle.xs]="{ 'max-width': '100%'}">
-                <a href="https://orgs.sceiba.cu" target="_blank" matTooltop="Click para acceder">
-                    <img matCardImage src="/assets/images/home/organizacion.svg" class="w-img">
-                </a>
-                <p><strong>Sistema de identificación de Organizaciones</strong></p>
-                <p>Gestiona lista oficial y pública de organizaciones cubanas
-                que tienen código REUP. Ofrece la posibilidad de identificarlas por los identificadores internacionalmente usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.</p>
-            </div>
-            <div fxLayout="column" class="aling-center" [ngStyle.xs]="{ 'max-width': '100%'}">
-                <a href="https://vocs.sceiba.cu" target="_blank" matTooltop="Click para acceder">
-                    <img matCardImage src="/assets/images/home/checklist_icon.png" class="w-img">
-                </a>
-                <p><strong>Vocabularios</strong></p>
-                <p>Sistema de vocabularios y términos controlados para lograr la estandarización y la unicidad en las búsquedas y evaluación de los resultados</p>
-            </div>
-            <div fxLayout="column" class="aling-center" [ngStyle.xs]="{ 'max-width': '100%'}">
-              <a href="https://revistasmes.sceiba.cu" target="_blank" matTooltop="Click para acceder">
-                  <img matCardImage src="/assets/images/mes.png" class="w-img" style="width: 224px;">
-              </a>
-              <p><strong>Registro de Revistas Científicas del MES</strong></p>
-              <p>El Registro es la lista nacional oficial de revistas gestionadas por instituciones adscritas al Ministerio de Educación Superior de Cuba. Es mantenido por las Direcciones de Ciencia e Informatización del MES.</p>
-          </div>
+        <span class="dot" (click)="currentSlide(1)"></span>
+        <span class="dot" (click)="currentSlide(2)"></span>
+        <span class="dot" (click)="currentSlide(3)"></span>
+        <span class="dot" (click)="currentSlide(4)"></span>
         </div>
     </div>
 
-    <mat-card class="mat-elevation-z1 w-70 m-1 mb-1">
-        <mat-card-title style="text-align: center;">Próximamente</mat-card-title>
-        <mat-card-content>
-            <div fxLayout="row wrap" fxLayoutAlign="space-around start">
-                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
-                    <img src="/assets/images/proximamente/person.png" height="100" style="margin-bottom: 6px;">
-                    <strong class="mat-h2">Personas</strong>
-                    Sistema de identificación de personas relacionadas con la Investigación en Cuba.
-                </div>
-                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
-                    <img src="/assets/images/proximamente/eval.png" height="100" style="margin-bottom: 6px;">
-                    <strong class="mat-h2">Evaluación </strong>
-                    Implementación de metodologías propias de evaluación a nivel institucional y otras escalas, desde la conexión entre los resultados y las fuentes, las organizaciones y personas involucradas en las diferentes líneas de investigación.
-                </div>
-                <div fxLayout="column" fxLayoutAlign="center center" style="width: 30%; min-width: 15em; margin: .5em; text-align: center;">
-                    <img src="/assets/images/proximamente/folder.png" height="100" style="margin-bottom: 6px;">
-                    <strong class="mat-h2">Carpetas personales</strong>
-                    Apartados de documentos y suscripciones a temáticas de interés, búsquedas anteriores y mucho más en la personalización de la interacción de los usuarios con Sceiba.
-                </div>
+    <div class="pt-50" ngClass.xs="pt-20">  
+        <h1 class="mat-display-1 text-center" style="margin: 0;"> Productos y Servicios </h1>
+        <div class="pt-20" ngClass.xs="pt-5" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">                
+                    <mat-card-header>   
+                        <div mat-card-avatar class="product1-image"></div>                                         
+                        <mat-card-title>Sceiba Catálogo</mat-card-title>
+                        <mat-card-subtitle>Catálogo de Publicaciones Científicas Cubanas</mat-card-subtitle>
+                    </mat-card-header>                    
+                    <mat-card-content>
+                    <p>
+                        Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba. 
+                        No es un registro oficial o exhaustivo de toda revista cubana existente. Incluye el registro de dichas 
+                        fuentes y su manejo por los editores y gestores del sistema.
+                    </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button>Acceder</button>                
+                    </mat-card-actions>
+                </mat-card>
             </div>
-        </mat-card-content>
-    </mat-card>
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">                
+                    <mat-card-header>   
+                        <div mat-card-avatar class="product2-image"></div>                                         
+                        <mat-card-title>Sceiba Organizaciones</mat-card-title>
+                        <mat-card-subtitle>Sistema de identificación de Organizaciones</mat-card-subtitle>
+                    </mat-card-header>                    
+                    <mat-card-content>
+                    <p>
+                        Gestiona lista oficial y pública de organizaciones cubanas
+                    que tienen código REUP. Ofrece la posibilidad de identificarlas por los identificadores internacionalmente 
+                    usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.
+                    </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button>Acceder</button>                
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">                
+                    <mat-card-header>   
+                        <div mat-card-avatar class="product3-image"></div>                                         
+                        <mat-card-title>Sceiba Vocabularios</mat-card-title>
+                        <mat-card-subtitle>Sistema de tesauros y ontologías</mat-card-subtitle>
+                    </mat-card-header>                    
+                    <mat-card-content>
+                    <p>
+                        Sistema de vocabularios y términos controlados para lograr la estandarización y la unicidad en las 
+                        búsquedas y evaluación de los resultados.
+                    </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button>Acceder</button>                
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">                
+                    <mat-card-header>   
+                        <div mat-card-avatar class="product4-image"></div>                                         
+                        <mat-card-title>Directorio MES</mat-card-title>
+                        <mat-card-subtitle>Registro de Revistas Científicas del MES</mat-card-subtitle>
+                    </mat-card-header>                    
+                    <mat-card-content>
+                    <p>
+                        El Registro es la lista nacional oficial de revistas gestionadas por instituciones adscritas al 
+                        Ministerio de Educación Superior de Cuba. Es mantenido por las Direcciones de Ciencia e Informatización 
+                        de dicho ministerio.
+                    </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button>Acceder</button>                
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
 
 
-    <mat-card class="mat-elevation-z1 w-70 m-1 mb-1">
-        <mat-card-title>Contacte con nosotros</mat-card-title>
-        <mat-card-content>
-            <app-contact></app-contact>
-        </mat-card-content>
-    </mat-card>
 
-    <mat-divider [ngStyle.xs]="{ width: '100%'}" [ngStyle]="{ width: '90%'}"></mat-divider>
-    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
-        <img src="/assets/images/upr.png" width="93" height="108" style="margin:1em">
-        <img src="/assets/images/uh.png" width="93" height="108" style="margin:1em">
-        <img src="/assets/images/lamolina.jpg" width="93" height="108" style="margin:1em">
-        <img src="/assets/images/usil.png" width="93" height="108" style="margin:1em">
-        <img src="/assets/images/hasselt.png" width="140" height="108" style="margin:1em">
-        <img src="/assets/images/antwerpent.png" width="93" height="108" style="margin:1em">
-        <img src="/assets/images/mes.png" width="209" height="68" style="margin:1em">
-     </div>
+    <img src="assets/icons/sceiba.middle.top.svg" alt="" style="margin-bottom: -4px; width: 100%;">
+    <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
+        <div class="w-70 white-title" fxLayout="center">
+            <p>
+                Sceiba aporta soluciones tecnológicas y sociales que contribuyen al incremento de los contenidos
+                    científico tecnológico en las redes cubanas y a su visibilidad internacional. 
+                    Tributa al mejoramiento de la calidad de la revista científica institucional, 
+                    viabiliza la adopción del acceso abierto como modelo principal para la comunicación científica
+                    y el acceso a la información. Permite implementar un mejor flujo de comunicación, conectar a 
+                    los actores principales, generalizar líneas de comportamiento y buenas prácticas para lograr 
+                    los mayores beneficios.
+            </p>
+            
+        </div>
+    </div>
+    <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
+
+
+        
+    <div class="pt-50" ngClass.xs="pt-20">  
+        <h1 class="mat-display-1 text-center" style="margin: 0;"> Próximamente </h1>
+        <div class="cards-nexts" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
+            <div fxFlex=25%>
+                <mat-card class="bgtranparent">
+                    <mat-card-header>                        
+                        <div mat-card-avatar class="card1-header-image"></div>
+                        <mat-card-title>Personas</mat-card-title>
+                        <mat-card-subtitle>ORCID Cubano</mat-card-subtitle>
+                    </mat-card-header>                    
+                    <mat-card-content>
+                    <p>
+                        Sistema de identificación de personas relacionadas con la Investigación en Cuba.
+                    </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div fxFlex=25%>
+                <mat-card class="bgtranparent">
+                <mat-card-header>                        
+                    <div mat-card-avatar class="card2-header-image"></div>
+                    <mat-card-title>Evaluación</mat-card-title>
+                    <mat-card-subtitle>Metodologías propias</mat-card-subtitle>
+                </mat-card-header>                    
+                <mat-card-content>
+                    <p>
+                    Implementación de metodologías propias de evaluación a nivel institucional y otras escalas, desde la conexión entre los resultados y las fuentes, las organizaciones y personas involucradas en las diferentes líneas de investigación.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+                </mat-card>
+            </div>
+            <div fxFlex=25%>
+                <mat-card class="bgtranparent">
+                <mat-card-header>                        
+                    <div mat-card-avatar class="card3-header-image"></div>
+                    <mat-card-title>Carpetas personales</mat-card-title>
+                    <mat-card-subtitle>Tus intereses y experiencias.</mat-card-subtitle>
+                </mat-card-header>                    
+                <mat-card-content>
+                    <p>
+                    Apartados de documentos y suscripciones a temáticas de interés, búsquedas anteriores y mucho más en la personalización de la interacción de los usuarios con Sceiba.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+                </mat-card>               
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="pt-50" ngClass.xs="pt-20" fxLayout="column" fxLayoutAlign="center center">  
+        <h1 class="mat-display-1 text-center" style="margin: 0;"> Participantes </h1>    
+        <!-- <mat-divider [ngStyle.xs]="{ width: '100%'}" [ngStyle]="{ width: '90%'}"></mat-divider> -->
+        <div class="pt-30 w-80" ngClass.xs="pt-20 w-100" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <img src="/assets/images/upr.png" width="93" height="108" style="margin:1em">
+            <img src="/assets/images/uh.png" width="93" height="108" style="margin:1em">
+            <img src="/assets/images/lamolina.jpg" width="93" height="108" style="margin:1em">
+            <img src="/assets/images/usil.png" width="93" height="108" style="margin:1em">
+            <img src="/assets/images/hasselt.png" width="140" height="108" style="margin:1em">
+            <img src="/assets/images/antwerpent.png" width="93" height="108" style="margin:1em">
+            <img src="/assets/images/mes.png" width="209" height="68" style="margin:1em">
+        </div>
+    </div>
+
+    <mat-card class="mat-elevation-z1 w-70 m-1 mb-1 ligth-green-card">
+            <mat-card-title>Contacte con nosotros</mat-card-title>
+            <mat-card-content>
+                <app-contact></app-contact>
+            </mat-card-content>
+        </mat-card>
+
+    
 </div>
+
