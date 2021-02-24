@@ -39,20 +39,20 @@ $md-blue: (
 );
 
 $md-green: (
-    50 : #e0f1ef,
-    100 : #b3ddd8,
-    200 : #80c7be,
-    300 : #4db0a3,
-    400 : #269f90,
-    500 : #008e7c,
-    600 : #008674,
-    700 : #007b69,
-    800 : #00715f,
-    900 : #005f4c,
-    A100 : #90ffe4,
-    A200 : #5dffd8,
-    A400 : #2affcc,
-    A700 : #10ffc6,
+    50 : #e0f0e8,
+    100 : #b3d8c5,
+    200 : #80bf9f,
+    300 : #4da578,
+    400 : #26915b,
+    500 : #007e3e,
+    600 : #007638,
+    700 : #006b30,
+    800 : #006128,
+    900 : #004e1b,
+    A100 : #81ffa0,
+    A200 : #4eff79,
+    A400 : #1bff52,
+    A700 : #02ff3f,
     contrast: (
         50 : #000000,
         100 : #000000,
@@ -75,12 +75,12 @@ $md-grey: (
     50 : #e7e6e6,
     100 : #c3c1c1,
     200 : #9b9898,
-    300 : #726e6e,
-    400 : #544f4f,
-    500 : #363030,
-    600 : #302b2b,
-    700 : #292424,
-    800 : #221e1e,
+    300 : #736f6f,
+    400 : #555050,
+    500 : #373131,
+    600 : #312c2c,
+    700 : #2a2525,
+    800 : #231f1f,
     900 : #161313,
     A100 : #f66767,
     A200 : #f33737,
@@ -207,9 +207,9 @@ $md-greylight: (
 
 /* - colors - */
 $toco-primary: mat-palette($md-green);
-$toco-accent: mat-palette($md-greylight);
+$toco-accent: mat-palette($md-grey);
 //$toco-warn: mat-palette($mat-grey, 200, 100, 900);
-$toco-warn: mat-palette($mat-deep-orange, A700);
+$toco-warn: mat-palette($mat-deep-orange);
 
 $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 
@@ -228,9 +228,9 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 // }
 
 .alternate-theme-footer {
-    $alternate-primary: mat-palette($mat-grey, 600);
+    $alternate-primary: mat-palette($mat-grey, 800);
     $alternate-accent:  mat-palette($md-blue);
-    $toco-warn: mat-palette($mat-red);
+    $toco-warn: mat-palette($mat-deep-orange);
 
     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
 
@@ -240,8 +240,8 @@ $toco-theme: mat-light-theme($toco-primary, $toco-accent, $toco-warn);
 
 .alternate-theme-userProfile {
     $alternate-primary: mat-palette($md-green);
-    $alternate-accent:  mat-palette($md-green);
-    $toco-warn: mat-palette($mat-deep-orange, A700);
+    $alternate-accent:  mat-palette($md-grey);
+    $toco-warn: mat-palette($mat-deep-orange);
 
     $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $toco-warn);
 
@@ -309,3 +309,25 @@ body { margin: 0; }
      margin: 16px;
      border-radius: 4px;
  }
+ .bg-primary-color {
+    background-color: mat-color($toco-primary);
+}
+
+ .ligth-green {
+    //background-color: mat-color($toco-primary, 50);
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    max-width: 400px;
+    border: 1px solid;
+    border-color: mat-color($toco-primary);
+ }
+
+ .ligth-green-card {
+    //background-color: mat-color($toco-primary, 50);
+    background-color: rgba(0,127,63,0.1);
+    color: black;    
+    border: 1px solid;
+    border-color: mat-color($toco-primary);
+ }
+
+ 

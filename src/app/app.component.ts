@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatomoInjector } from 'ngx-matomo';
 import { Environment } from 'toco-lib';
 
@@ -20,7 +21,7 @@ export class AppComponent {
 
   public urlSignUp: string;
 
-  public constructor(private env: Environment,private matomoInjector: MatomoInjector)
+  public constructor(private env: Environment,private matomoInjector: MatomoInjector, private router: Router)
   {
     this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
   }
@@ -45,5 +46,9 @@ export class AppComponent {
 
         this.urlLogin = this.env.sceibaHost + "login";
         this.urlSignUp = this.env.sceibaHost + "signup";
+    }
+
+    public get isHome(){
+      return this.router.url == '/';
     }
 }
