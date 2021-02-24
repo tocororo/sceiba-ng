@@ -40,34 +40,22 @@
     <div class="container">
 
         <div class="mySlides fade">
-        <div class="numbertext">{{ slideIndex }} / 4</div>
-        <img src="/assets/images/home/slide/img_nature_wide.jpg" style="width:100%">
-        <div class="text">
-            Las publicaciones en revistas científicas constituyen un importante indicador empleado para medir el desarrollo de la ciencia y la tecnología en los países.
-        </div>
+        <div class="numbertext">{{ slideIndex }} / 4</div>        
+            <div class="text" markdown [src]="'/assets/markdown/home.slider1.md'"></div>
         </div>
 
         <div class="mySlides fade">
         <div class="numbertext">{{ slideIndex }} / 4</div>
-        <img src="/assets/images/home/slide/img_snow_wide.jpg" style="width:100%">
-        <div class="text">
-            Sceiba en el registro, gestión, accesibilidad y evaluación de las publicaciones científicas cubanas.
-        </div>
+            <div class="text" markdown [src]="'/assets/markdown/home.slider2.md'"></div>
         </div>
 
         <div class="mySlides fade">
         <div class="numbertext">{{ slideIndex }} / 4</div>
-        <img src="/assets/images/home/slide/img_mountains_wide.jpg" style="width:100%">
-        <div class="text">
-            Espacio de colaboración e interrelaciones entre instituciones, investigadores, profesores, editores, bibliotecarios y otros profesionales de Cuba y el resto del mundo.
-        </div>
+            <div class="text" markdown [src]="'/assets/markdown/home.slider3.md'"></div>
         </div>
         <div class="mySlides fade">
-            <div class="numbertext">{{ slideIndex }} / 4</div>
-            <img src="/assets/images/home/slide/img_lights_wide.jpg" style="width:100%">
-            <div class="text">
-                El uso de identificadores persistentes para organizaciones y autores son pilares en la evaluación y para el control y monitoreo de la calidad de los resultados de investigación.
-            </div>
+            <div class="numbertext">{{ slideIndex }} / 4</div>            
+            <div class="text" markdown [src]="'/assets/markdown/home.slider4.md'"></div>
         </div>
 
         <a class="prev" (click)="plusSlides(-1)">
@@ -95,11 +83,7 @@
                         <mat-card-subtitle>Catálogo de Publicaciones Científicas Cubanas</mat-card-subtitle>
                     </mat-card-header>                    
                     <mat-card-content>
-                    <p>
-                        Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba. 
-                        No es un registro oficial o exhaustivo de toda revista cubana existente. Incluye el registro de dichas 
-                        fuentes y su manejo por los editores y gestores del sistema.
-                    </p>
+                        <div class="p" markdown [src]="'/assets/markdown/home.catalog.md'"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     <button mat-button>Acceder</button>                
@@ -114,11 +98,7 @@
                         <mat-card-subtitle>Sistema de identificación de Organizaciones</mat-card-subtitle>
                     </mat-card-header>                    
                     <mat-card-content>
-                    <p>
-                        Gestiona lista oficial y pública de organizaciones cubanas
-                    que tienen código REUP. Ofrece la posibilidad de identificarlas por los identificadores internacionalmente 
-                    usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.
-                    </p>
+                        <div class="p" markdown [src]="'/assets/markdown/home.orgs.md'"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     <button mat-button>Acceder</button>                
@@ -133,10 +113,7 @@
                         <mat-card-subtitle>Sistema de tesauros y ontologías</mat-card-subtitle>
                     </mat-card-header>                    
                     <mat-card-content>
-                    <p>
-                        Sistema de vocabularios y términos controlados para lograr la estandarización y la unicidad en las 
-                        búsquedas y evaluación de los resultados.
-                    </p>
+                        <div class="p" markdown [src]="'/assets/markdown/home.vocabularios.md'"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     <button mat-button>Acceder</button>                
@@ -151,11 +128,7 @@
                         <mat-card-subtitle>Registro de Revistas Científicas del MES</mat-card-subtitle>
                     </mat-card-header>                    
                     <mat-card-content>
-                    <p>
-                        El Registro es la lista nacional oficial de revistas gestionadas por instituciones adscritas al 
-                        Ministerio de Educación Superior de Cuba. Es mantenido por las Direcciones de Ciencia e Informatización 
-                        de dicho ministerio.
-                    </p>
+                        <div class="p" markdown [src]="'/assets/markdown/home.mes.md'"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     <button mat-button>Acceder</button>                
@@ -170,15 +143,7 @@
     <img src="assets/icons/sceiba.middle.top.svg" alt="" style="margin-bottom: -4px; width: 100%;">
     <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
         <div class="w-70 white-title" fxLayout="center">
-            <p>
-                Sceiba aporta soluciones tecnológicas y sociales que contribuyen al incremento de los contenidos
-                    científico tecnológico en las redes cubanas y a su visibilidad internacional. 
-                    Tributa al mejoramiento de la calidad de la revista científica institucional, 
-                    viabiliza la adopción del acceso abierto como modelo principal para la comunicación científica
-                    y el acceso a la información. Permite implementar un mejor flujo de comunicación, conectar a 
-                    los actores principales, generalizar líneas de comportamiento y buenas prácticas para lograr 
-                    los mayores beneficios.
-            </p>
+            <div class="p" markdown [src]="'/assets/markdown/home.sceiba.md'"></div>
             
         </div>
     </div>
@@ -197,9 +162,7 @@
                         <mat-card-subtitle>ORCID Cubano</mat-card-subtitle>
                     </mat-card-header>                    
                     <mat-card-content>
-                    <p>
-                        Sistema de identificación de personas relacionadas con la Investigación en Cuba.
-                    </p>
+                        <div class="p" markdown [src]="'/assets/markdown/home.persons.md'"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     <button mat-button>LIKE</button>
@@ -215,9 +178,7 @@
                     <mat-card-subtitle>Metodologías propias</mat-card-subtitle>
                 </mat-card-header>                    
                 <mat-card-content>
-                    <p>
-                    Implementación de metodologías propias de evaluación a nivel institucional y otras escalas, desde la conexión entre los resultados y las fuentes, las organizaciones y personas involucradas en las diferentes líneas de investigación.
-                    </p>
+                    <div class="p" markdown [src]="'/assets/markdown/home.evaluations.md'"></div>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-button>LIKE</button>
@@ -233,9 +194,7 @@
                     <mat-card-subtitle>Tus intereses y experiencias.</mat-card-subtitle>
                 </mat-card-header>                    
                 <mat-card-content>
-                    <p>
-                    Apartados de documentos y suscripciones a temáticas de interés, búsquedas anteriores y mucho más en la personalización de la interacción de los usuarios con Sceiba.
-                    </p>
+                    <div class="p" markdown [src]="'/assets/markdown/home.fields.md'"></div>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-button>LIKE</button>

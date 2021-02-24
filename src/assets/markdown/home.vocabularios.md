@@ -1,0 +1,1 @@
+Sistema de vocabularios y términos controlados para lograr la estandarización y la unicidad en las búsquedas y evaluación de los resultados.

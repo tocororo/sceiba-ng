@@ -1,0 +1,1 @@
+El Registro es la lista nacional oficial de revistas gestionadas por instituciones adscritas al Ministerio de Educación Superior de Cuba. Es mantenido por las Direcciones de Ciencia e Informatización de dicho ministerio.

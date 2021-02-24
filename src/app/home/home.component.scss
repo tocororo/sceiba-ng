@@ -132,7 +132,7 @@
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 20px;
     height: 20px;
     padding: 16px;
@@ -154,11 +154,11 @@
 
 /* Caption text */
 .text {
-    color: #ffffff;
+    color: #007f3f;
     font-size: xx-large;
     padding: 10px 50px;
-    position: absolute;
-    bottom: 100px;
+    //position: absolute;
+    //bottom: 100px;
     // width: 95%;
     text-align: center;
 }
