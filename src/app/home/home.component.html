@@ -2,10 +2,10 @@
 <div fxLayout="column" fxLayoutAlign="center center">
     <div class="w-100 bg-primary-color" fxLayoutAlign="center center">
         <div class="pt-50 ph-10">
-            <h3 class="mat-display-2" style="text-align: center;">Publicaciones Científicas Cubanas</h3>
+            <h3 class="mat-display-2" style="text-align: center; color: white;">Publicaciones Científicas Cubanas</h3>
         </div>        
     </div>  
-    <mat-toolbar color="primary" style="font-size: initial;">       
+    <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">       
         <mat-toolbar-row fxLayoutAlign="center center" style="height: auto; white-space: normal;">
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex="70%" fxFlex.lt-sm="100%">
                 <toco-search-query-input [buttonColor]="'accent'" [query]="''" (queryChange)="queryChange($event)" class="w-100"></toco-search-query-input>                
@@ -78,7 +78,7 @@
         </div>
     </div> -->
 
-    <div class="pt-50" ngClass.xs="pt-20">
+    <div class="pt-50" ngClass.xs="pt-20 ph-30 pb-20">
         <h1 class="mat-display-1 text-center" style="margin: 0;"> Productos y Servicios </h1>
         <div class="pt-20" ngClass.xs="pt-5" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
             <div class="pt-20" fxFlex=30%>
@@ -89,15 +89,7 @@
                         <mat-card-subtitle>Catálogo de Publicaciones Científicas Cubanas</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-<<<<<<< HEAD
                         <div class="p" markdown [src]="'/assets/markdown/home.catalog.md'"></div>
-=======
-                    <p>
-                        Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba.
-                        No es un registro oficial o exhaustivo de toda revista cubana existente. Incluye el registro de dichas
-                        fuentes y su manejo por los editores y gestores del sistema.
-                    </p>
->>>>>>> aef9ee787f624e16575f0e56b7eba5ad5aab3b4c
                     </mat-card-content>
                     <mat-card-actions>
                     <a mat-button href="https://catalogo.sceiba.cu" target="_blank" class="apps" matTooltip="Catálogo">Acceder</a>
@@ -112,15 +104,7 @@
                         <mat-card-subtitle>Sistema de identificación de Organizaciones</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-<<<<<<< HEAD
                         <div class="p" markdown [src]="'/assets/markdown/home.orgs.md'"></div>
-=======
-                    <p>
-                        Gestiona lista oficial y pública de organizaciones cubanas
-                    que tienen código REUP. Ofrece la posibilidad de identificarlas por los identificadores internacionalmente
-                    usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.
-                    </p>
->>>>>>> aef9ee787f624e16575f0e56b7eba5ad5aab3b4c
                     </mat-card-content>
                     <mat-card-actions>
                       <a mat-button href="https://orgs.sceiba.cu" target="_blank" class="apps" matTooltip="Organizaciones">Acceder</a>
@@ -135,14 +119,7 @@
                         <mat-card-subtitle>Sistema de tesauros y ontologías</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-<<<<<<< HEAD
                         <div class="p" markdown [src]="'/assets/markdown/home.vocabularios.md'"></div>
-=======
-                    <p>
-                        Sistema de vocabularios y términos controlados para lograr la estandarización y la unicidad en las
-                        búsquedas y evaluación de los resultados.
-                    </p>
->>>>>>> aef9ee787f624e16575f0e56b7eba5ad5aab3b4c
                     </mat-card-content>
                     <mat-card-actions>
                       <a mat-button href="https://vocabularios.sceiba.cu" target="_blank" class="apps" matTooltip="Vocabularios">Acceder</a>
@@ -157,15 +134,7 @@
                         <mat-card-subtitle>Registro de Revistas Científicas del MES</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-<<<<<<< HEAD
                         <div class="p" markdown [src]="'/assets/markdown/home.mes.md'"></div>
-=======
-                    <p>
-                        El Registro es la lista nacional oficial de revistas gestionadas por instituciones adscritas al
-                        Ministerio de Educación Superior de Cuba. Es mantenido por las Direcciones de Ciencia e Informatización
-                        de dicho ministerio.
-                    </p>
->>>>>>> aef9ee787f624e16575f0e56b7eba5ad5aab3b4c
                     </mat-card-content>
                     <mat-card-actions>
                       <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="Revistas MES">Acceder</a>
@@ -180,28 +149,15 @@
     <img src="assets/icons/sceiba.middle.top.svg" alt="" style="margin-bottom: -4px; width: 100%;">
     <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
         <div class="w-70 white-title" fxLayout="center">
-<<<<<<< HEAD
             <div class="p" markdown [src]="'/assets/markdown/home.sceiba.md'"></div>
             
-=======
-            <p>
-                Sceiba aporta soluciones tecnológicas y sociales que contribuyen al incremento de los contenidos
-                    científico tecnológico en las redes cubanas y a su visibilidad internacional.
-                    Tributa al mejoramiento de la calidad de la revista científica institucional,
-                    viabiliza la adopción del acceso abierto como modelo principal para la comunicación científica
-                    y el acceso a la información. Permite implementar un mejor flujo de comunicación, conectar a
-                    los actores principales, generalizar líneas de comportamiento y buenas prácticas para lograr
-                    los mayores beneficios.
-            </p>
-
->>>>>>> aef9ee787f624e16575f0e56b7eba5ad5aab3b4c
         </div>
     </div>
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
 
 
 
-    <div class="pt-50" ngClass.xs="pt-20">
+    <div class="pt-50" ngClass.xs="pt-20 ph-30 pb-20">
         <h1 class="mat-display-1 text-center" style="margin: 0;"> Próximamente </h1>
         <div class="cards-nexts" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
             <div fxFlex=25%>
@@ -252,7 +208,7 @@
     </div>
 
 
-    <div class="pt-50" ngClass.xs="pt-20" fxLayout="column" fxLayoutAlign="center center">
+    <div class="pt-50" ngClass.xs="pt-20 pb-20" fxLayout="column" fxLayoutAlign="center center">
         <h1 class="mat-display-1 text-center" style="margin: 0;"> Participantes </h1>
         <!-- <mat-divider [ngStyle.xs]="{ width: '100%'}" [ngStyle]="{ width: '90%'}"></mat-divider> -->
         <div class="pt-30 w-80" ngClass.xs="pt-20 w-100" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">

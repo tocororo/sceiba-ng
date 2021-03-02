@@ -9,12 +9,24 @@
             fxLayoutGap="20px"  
             style="width:100%"          
         >
-            <div class="footer-logo" fxFlex=30% fxLayoutAlign="center center" fxLayout="row">
+            <div class="footer-logo" 
+                fxFlex=30% 
+                fxFlex.xs=100% 
+                fxLayoutAlign="center center" 
+                fxLayout="row"
+                [ngStyle.xs]="{'padding-top': '40px', 'padding-bottom': '20px'}"
+            >
                 <img src="/assets/images/tocororo.png" alt="Tocororo" width="50" height="50">
                 <span class="text-initial" style="max-width: 30em; padding-left: 10px; color: white;">
                     Proyecto Tocororo, un esfuerzo por la comunicación científica en Cuba. </span>
             </div>
-            <div class="footer-social"fxLayout="row wrap" fxFlex.xs="100%" fxLayoutAlign="center center" fxLayoutGap="1em">
+            <div class="footer-social" 
+            fxLayout="row wrap" 
+            fxFlex.xs="100%" 
+            fxLayoutAlign="center center" 
+            fxLayoutGap="1em"
+            [ngStyle.xs]="{'place-content': 'flex-end'}"
+            >
                 <a mat-mini-fab href="https://www.facebook.com/sceiba/" target="_blank" color="accent" matTooltip="Facebook">
                     <mat-icon svgIcon="facebook" class="mat-18"></mat-icon>
                 </a>
@@ -32,7 +44,9 @@
                 fxLayout="row wrap"
                 fxLayout.xs="column"
                 fxLayoutAlign="center center"
-                fxLayoutGap="16px">
+                fxLayoutGap="16px"
+                [ngStyle.xs]="{'place-content': 'flex-end'}"
+            >
                 <!-- <span class="text-large">Sitios de Interés</span> -->
                 <ng-container *ngFor="let item of sites">
                     <a mat-button
@@ -59,31 +73,33 @@
     
             <mat-toolbar-row 
                 fxLayout="row wrap"
-                fxLayout.xs="column"
                 fxLayoutAlign="center center"
-                fxLayoutGap="16px">
-                <ng-container *ngFor="let item of information">
-                    <a mat-button
-                        class="aling-left"
-                        [routerLink]="[item.url]"
-                        *ngIf="item.useRouterLink"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
-                        [ngStyle.xs]="{width: 'inherit'}"
-                    >
-                        {{ item.name }}
-                    </a>
-                    <a mat-button
-                        class="aling-left"
-                        *ngIf=" ! item.useRouterLink"
-                        href="{{ item.url }}"
-                        target="_blank"
-                        [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
-                        [ngStyle.xs]="{width: 'inherit'}"
-                    >
-                        {{ item.name }}
-                    </a>
-                </ng-container>
-            </mat-toolbar-row>           
+            >
+                <div class="pt-30 w-80" ngClass.xs="pt-20 w-100" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+                    <ng-container *ngFor="let item of information">
+                        <a mat-button
+                            class="aling-left"
+                            [routerLink]="[item.url]"
+                            *ngIf="item.useRouterLink"
+                            [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
+                            [ngStyle.xs]="{width: 'inherit'}"
+                        >
+                            {{ item.name }}
+                        </a>
+                        <a mat-button
+                            class="aling-left"
+                            *ngIf=" ! item.useRouterLink"
+                            href="{{ item.url }}"
+                            target="_blank"
+                            [ngStyle]="{'line-height': 'initial', 'padding': '10px 16px'}"
+                            [ngStyle.xs]="{width: 'inherit'}"
+                        >
+                            {{ item.name }}
+                        </a>
+                    </ng-container>
+                </div>
+            </mat-toolbar-row>    
+
             <mat-toolbar-row fxLayout="row wrap" fxFlex="100%" fxLayoutAlign="center center">
                 <p class="mat-h5" style="width: 80%; text-align: center; color:white; margin: 0; padding-top: 40px;">
                     Sceiba es de código y acceso abierto y distribuye sus contenidos, 
