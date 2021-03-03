@@ -10,7 +10,7 @@
             style="width:100%"          
         >
             <div class="footer-logo" 
-                fxFlex=30% 
+                fxFlex=40% 
                 fxFlex.xs=100% 
                 fxLayoutAlign="center center" 
                 fxLayout="row"
@@ -20,13 +20,26 @@
                 <span class="text-initial" style="max-width: 30em; padding-left: 10px; color: white;">
                     Proyecto Tocororo, un esfuerzo por la comunicación científica en Cuba. </span>
             </div>
-            <div class="footer-social" 
+            <div class="footer-rigtside" 
             fxLayout="row wrap" 
-            fxFlex.xs="100%" 
             fxLayoutAlign="center center" 
             fxLayoutGap="1em"
             [ngStyle.xs]="{'place-content': 'flex-end'}"
             >
+                <a href="https://www.vliruos.be/en/projects/project/22?pid=4202"style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
+                    <img src="/assets/images/vliruos_white.svg" alt="Proyecto VLIR" width="240">
+                </a>  
+                
+            </div>
+        </div>
+
+        <mat-toolbar-row
+                fxLayout="row wrap"
+                fxLayoutAlign="center center"                
+                fxLayoutGap="1em"
+                style="padding-top: 40px;"
+            >
+                
                 <a mat-mini-fab href="https://www.facebook.com/sceiba/" target="_blank" color="accent" matTooltip="Facebook">
                     <mat-icon svgIcon="facebook" class="mat-18"></mat-icon>
                 </a>
@@ -35,9 +48,10 @@
                 </a>
                 <a mat-mini-fab href="https://github.com/tocororo" target="_blank" color="accent" matTooltip="GitHub">
                     <mat-icon svgIcon="github" class="mat-18">home</mat-icon>
-                </a>
-            </div>
-        </div>
+                </a>                    
+                
+                
+            </mat-toolbar-row>
     
         <mat-toolbar class="footer-height" fxLayout="row wrap" fxLayout.mx="column" fxLayoutAlign="center center" color="primary">
             <mat-toolbar-row
@@ -105,9 +119,12 @@
                     Sceiba es de código y acceso abierto y distribuye sus contenidos, 
                     <br>a no ser que se indique lo contrario, bajo la Licencia <a class="a-grey" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">  Creative Commons CC by 4.0</a>
                 </p>
-            </mat-toolbar-row>            
+            </mat-toolbar-row> 
+
+            
 
         </mat-toolbar>
+    
     
     <div fxLayout="column wrap" fxLayoutAlign="center center" style="padding: 1em;">
         <a href="https://sceiba.cu"style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
