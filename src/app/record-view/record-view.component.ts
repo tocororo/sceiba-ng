@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Record, SearchResponse } from 'toco-lib';
+import { Record } from 'toco-lib';
 
 @Component({
   selector: 'app-record-view',
@@ -14,15 +14,17 @@ export class RecordViewComponent implements OnInit {
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   public ngOnInit(): void
-	{
-		/* Gets the `Organization` data. */
-		this._activatedRoute.data.subscribe(
-			(data) => {
-				this.record = data.record.metadata;
-				console.log(data);
-        
-			}
-		);
-	}
+  {
+    console.log('on init... ')
+    /* Gets the `Record` data. */
+    this._activatedRoute.data.subscribe(
+      (data) => {
+        this.record = data.record.metadata;
+        console.log('AAAAAAAAAAAAAA')
+        console.log(data);
+
+      }
+    );
+  }
 
 }

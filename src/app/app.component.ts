@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatomoInjector } from 'ngx-matomo';
 import { Environment } from 'toco-lib';
 
 
@@ -21,9 +20,11 @@ export class AppComponent {
 
   public urlSignUp: string;
 
-  public constructor(private env: Environment,private matomoInjector: MatomoInjector, private router: Router)
+  public constructor(private env: Environment,
+    // private matomoInjector: MatomoInjector,
+    private router: Router)
   {
-    this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
+    // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
   }
 
     public ngOnInit(): void

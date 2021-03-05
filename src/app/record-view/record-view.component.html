@@ -11,7 +11,10 @@
         <span>Información del Documento</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<div fxLayout="row" fxLayoutAlign="center" >
+
+<toco-progress [loading]="!record"></toco-progress>
+
+<div fxLayout="row" fxLayoutAlign="center" *ngIf="record">
     <mat-card style="width: 80%;">
         <mat-card-header>
             <mat-card-title>{{record.title}}</mat-card-title>

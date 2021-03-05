@@ -7,7 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { MatomoModule } from 'ngx-matomo';
 import {
   AngularMaterialModule, CoreModule,
   Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule
@@ -84,7 +83,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     SearchModule,
 
     AppRoutingModule,
-    MatomoModule,
+    // MatomoModule,
   ],
   providers: [
     SearchService,
