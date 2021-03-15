@@ -7,17 +7,21 @@ class EnvironmentImpl implements Environment {
   sceibaApi = 'https://sceiba.cu/api/';
   cuorApi = 'https://orgs.sceiba.cu/api/';
 
-  appHost = 'https://192.168.1.100:4200';
+  appHost = 'https://localhsot:4200';
   appName = 'Sceiba';
 
   websiteUsername_Twitter = '@SceibaCuba';
   websiteUsername_Facebook = '@sceiba';
 
-  oauthRedirectUri = 'https://192.168.1.100:4200/';
-  oauthClientId = 'uLYRoa4mN5870eBby4bElHkrzpDUPFlWTios9njy';
+  oauthRedirectUri = 'https://localhsot:4200/';
+  oauthClientId = 'bh9bv1TXPH7HO8ulSgVUs8rBknmEn5xlH6kDdKqH';
   oauthScope = 'user:email';
   topOrganizationPID = '';
   cachableUrls = [];
+
+  matomoUrl = 'https://crai-stats.upr.edu.cu/';
+  matomoSiteId = 7;
+
 }
 
 export const environment = new EnvironmentImpl();
