@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthConfig, JwksValidationHandler, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
-import { Environment, User } from 'toco-lib';
+import { AuthConfig, JwksValidationHandler, OAuthService, OAuthStorage, OAuthErrorEvent } from 'angular-oauth2-oidc';
+import { Environment, User, UserProfileService, Response } from 'toco-lib';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 
@@ -29,10 +31,11 @@ export class AppComponent {
   public constructor(private env: Environment,
     // private matomoInjector: MatomoInjector,
     private router: Router,
-    private oauthStorage: OAuthStorage,
     private oauthService: OAuthService,
+    private oauthStorage: OAuthStorage,
+    private userService: UserProfileService,
     private environment: Environment,
-
+    protected http: HttpClient
 )
   {
     this.configure()
@@ -76,6 +79,24 @@ export class AppComponent {
       this.oauthService.configure(authConfig);
       this.oauthService.tokenValidationHandler = new JwksValidationHandler();
       this.oauthService.loadDiscoveryDocumentAndTryLogin();
+      this.oauthService.events.subscribe(event => {
+        if (event instanceof OAuthErrorEvent) {
+          console.error(event);
+        } else {
+          console.warn("EVENT:", event);
+          if (event.type == 'token_received'){
+            this.getUserInfo().subscribe({
+              next: (response) => {
+                console.log(response)
+              },
+        
+              error: (e) => {},
+        
+              complete: () => {},
+            });
+          }
+        }
+      });
     }
     public login() {
       console.log('hi');
@@ -91,6 +112,18 @@ export class AppComponent {
         let claims = this.oauthService.getIdentityClaims();
         if (!claims) return null;
         return claims['given_name'];
+    }
+
+    getUserInfo(): Observable<Response<any>> {
+      let token = this.oauthStorage.getItem('access_token');
+      let headers = new HttpHeaders()
+      headers.set('Authorization', 'Bearer ' + token);
+      headers = headers.set('Content-Type', 'application/json');
+      headers = headers.set('Access-Control-Allow-Origin', '*');
+      const options = {
+        headers: headers
+      };            
+      return this.http.get<Response<any>>(this.env.sceibaApi + 'me', options);
     }
   
 }

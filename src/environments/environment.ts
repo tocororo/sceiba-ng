@@ -2,9 +2,9 @@ import { Environment } from 'toco-lib';
 
 class EnvironmentImpl implements Environment {
   production = false;
-  sceibaHost = 'https://sceiba.cu/';
+  sceibaHost = 'https://10.2.83.224:5000/';
   cuorHost = 'https://orgs.sceiba.cu/';
-  sceibaApi = 'https://sceiba.cu/api/';
+  sceibaApi = 'https://10.2.83.224:5000/api/';
   cuorApi = 'https://orgs.sceiba.cu/api/';
 
   appHost = 'https://localhsot:4200';

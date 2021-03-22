@@ -52,4 +52,6 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
 
     return this.http.get<SearchResponse<Record>>(req);
   }
+
+
 }
