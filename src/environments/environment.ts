@@ -22,6 +22,7 @@ class EnvironmentImpl implements Environment {
   matomoUrl = 'https://crai-stats.upr.edu.cu/';
   matomoSiteId = 7;
 
+  
 }
 
 export const environment = new EnvironmentImpl();
