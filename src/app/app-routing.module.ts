@@ -1,6 +1,7 @@
+
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { HomeComponent } from './home/home.component';
 import { RecordResolverService } from './record-resolver.service';
@@ -11,29 +12,25 @@ import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 
-const routes: Routes = [
 
+const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
   {
-		path:':uuid/view',
-		component: RecordViewComponent,
-		resolve: {
-			'record': RecordResolverService
-		}
-	},
-  {
-		path: 'search',
-		component: SearchComponent
+    path: ':uuid/view',
+    component: RecordViewComponent,  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
+    resolve: {
+      'record': RecordResolverService
+    }
   },
   {
-		path: 'search',
-		component: SearchComponent
+    path: 'search',
+    component: SearchComponent  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
   },
   {
-    path: 'profile',
+    path: 'profile',  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
     children: [
       {
         path: '',
@@ -45,7 +42,9 @@ const routes: Routes = [
       }
     ],
     canActivate: []
-	},
+  },
+
+  // TODO: poner los StaticPages en un módulo aparte y que use lazy loading (loadChildren).
   {
     path: 'faq',
     component: StaticPagesComponent,

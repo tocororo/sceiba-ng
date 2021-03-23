@@ -1,3 +1,5 @@
+
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -5,9 +7,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { environment } from 'src/environments/environment';
-import { AngularMaterialModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule } from 'toco-lib';
+import { MarkdownModule } from 'ngx-markdown';
+import { MatomoModule } from 'ngx-matomo';
+import {
+  AngularMaterialModule, CoreModule,
+  Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule
+} from 'toco-lib';
+import { environment } from '../environments/environment';
 import { AggregationsComponent } from './aggregations/aggregations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +38,15 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+
+
+
+
+export function storageFactory() : OAuthStorage {
+  return sessionStorage
+}
+
+
 
 
 
@@ -63,26 +80,33 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     InputFileAvatarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
-    AppRoutingModule,
-    SearchModule,
-    AngularMaterialModule,
-    FlexLayoutModule,
-    StaticsModule,
-
-    MatRadioModule,
-    NgxChartsModule,
-    CoreModule,
     ReactiveFormsModule,
-
+    MatRadioModule,
+    FlexLayoutModule,
+    NgxChartsModule,
     RecaptchaModule,
-    TocoFormsModule
+
+    AngularMaterialModule,
+    CoreModule,
+    StaticsModule,
+    TocoFormsModule,
+    SearchModule,
+
+    AppRoutingModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient
+      }),
+    OAuthModule.forRoot(),
+    MatomoModule
+
   ],
   providers: [
     SearchService,
     OrganizationServiceNoAuth,
-    { provide: Environment, useValue: environment }
+    { provide: Environment, useValue: environment },
+    { provide: OAuthStorage, useFactory: storageFactory },
   ],
   bootstrap: [AppComponent]
 })

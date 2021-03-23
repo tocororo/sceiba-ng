@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { Environment } from 'toco-lib';
+import { Router } from '@angular/router';
+import { AuthConfig, JwksValidationHandler, OAuthService, OAuthStorage, OAuthErrorEvent } from 'angular-oauth2-oidc';
+import { Environment, User, UserProfileService, Response } from 'toco-lib';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 
 
 
@@ -16,13 +22,30 @@ export class AppComponent {
 
   public urlLogin: string;
 
-  public urlSignUp: string;
+  public sceibaHost: string;
 
-  public constructor(private env: Environment)
-  { }
+  public user: User;
+
+  public urlSignUp: string = 'https://personas.sceiba.cu/auth/realms/sceiba/clients-registrations/openid-connect/sceiba-angular-dev';
+
+  public constructor(private env: Environment,
+    // private matomoInjector: MatomoInjector,
+    private router: Router,
+    private oauthService: OAuthService,
+    private oauthStorage: OAuthStorage,
+    private userService: UserProfileService,
+    private environment: Environment,
+    protected http: HttpClient
+)
+  {
+    this.configure()
+    // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
+  }
 
     public ngOnInit(): void
     {
+      this.sceibaHost = this.environment.sceibaHost;
+      
         this.footerSites =  Array();
         this.footerInformation =  Array();
 
@@ -38,8 +61,99 @@ export class AppComponent {
         // this.footerInformation.push({ name: "Privacidad", url: "https://sceiba-lab.upr.edu.cu/page/politicas", useRouterLink: false});
         this.footerInformation.push({ name: "Contacto", url: "/contact", useRouterLink: true});
 
+        /* this.urlLogin = this.env.sceibaHost + "login";
+        this.urlSignUp = this.env.sceibaHost + "signup"; */
 
-        this.urlLogin = this.env.sceibaHost + "login";
-        this.urlSignUp = this.env.sceibaHost + "signup";
+
     }
+
+  
+    
+  
+
+    public get isHome(){
+      return this.router.url == '/';
+    }
+
+    private configure() {
+      this.oauthService.configure(authConfig);
+      this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+      this.oauthService.loadDiscoveryDocumentAndTryLogin();
+      this.oauthService.events.subscribe(event => {
+        if (event instanceof OAuthErrorEvent) {
+          console.error(event);
+        } else {
+          console.warn("EVENT:", event);
+          if (event.type == 'token_received'){
+            this.getUserInfo().subscribe({
+              next: (response) => {
+                console.log(response)
+              },
+        
+              error: (e) => {},
+        
+              complete: () => {},
+            });
+          }
+        }
+      });
+    }
+    public login() {
+      console.log('hi');
+      
+      this.oauthService.initImplicitFlow();
+    }
+  
+    public logoff() {
+        this.oauthService.logOut();
+    }
+  
+    public get name() {
+        let claims = this.oauthService.getIdentityClaims();
+        if (!claims) return null;
+        return claims['given_name'];
+    }
+
+    getUserInfo(): Observable<Response<any>> {
+      let token = this.oauthStorage.getItem('access_token');
+      let headers = new HttpHeaders()
+      headers.set('Authorization', 'Bearer ' + token);
+      headers = headers.set('Content-Type', 'application/json');
+      headers = headers.set('Access-Control-Allow-Origin', '*');
+      const options = {
+        headers: headers
+      };            
+      return this.http.get<Response<any>>(this.env.sceibaApi + 'me', options);
+    }
+  
 }
+
+export const authConfig: AuthConfig = {
+ 
+  // Url of the Identity Provider
+  issuer: "https://personas.sceiba.cu/auth/realms/sceiba",
+
+  loginUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/auth',
+
+  tokenEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/token',
+ 
+  logoutUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/logout',
+
+  oidc: true,
+
+  requireHttps: true,
+
+  userinfoEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/userinfo',
+
+  // URL of the SPA to redirect the user to after login
+  redirectUri: 'https://localhost:4200',
+ 
+  // The SPA's id. The SPA is registered with this id at the auth-server
+  clientId: 'sceiba-angular-dev',
+
+
+  // set the scope for the permissions the client should request
+  // The first three are defined by OIDC. The 4th is a usecase-specific one
+  scope: 'openid profile email',
+}
+
