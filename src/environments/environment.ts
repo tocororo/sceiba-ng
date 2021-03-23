@@ -14,6 +14,7 @@ class EnvironmentImpl implements Environment {
   oauthScope = 'user:email';
   topOrganizationPID = '';
   cachableUrls = [];
+  
 }
 
 export const environment = new EnvironmentImpl();
