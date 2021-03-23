@@ -1,9 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthConfig, JwksValidationHandler, OAuthService, OAuthStorage, OAuthErrorEvent } from 'angular-oauth2-oidc';
-import { Environment, User, UserProfileService, Response } from 'toco-lib';
+import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Environment, Response, User, UserProfileService } from 'toco-lib';
 
 
 
@@ -115,15 +115,27 @@ export class AppComponent {
     }
 
     getUserInfo(): Observable<Response<any>> {
-      let token = this.oauthStorage.getItem('access_token');
-      let headers = new HttpHeaders()
-      headers.set('Authorization', 'Bearer ' + token);
-      headers = headers.set('Content-Type', 'application/json');
-      headers = headers.set('Access-Control-Allow-Origin', '*');
-      const options = {
-        headers: headers
-      };            
-      return this.http.get<Response<any>>(this.env.sceibaApi + 'me', options);
+      // let token = this.oauthStorage.getItem('access_token');
+      // let headers = new HttpHeaders()
+      // headers.set('Authorization', 'Bearer ' + token);
+      // headers = headers.set('Content-Type', 'application/json');
+      // headers = headers.set('Access-Control-Allow-Origin', '*');
+      // const options = {
+      //   headers: headers
+      // };
+      return this.http.get<Response<any>>(this.env.sceibaApi + 'me');
+    }
+
+    me(){
+      this.getUserInfo().subscribe({
+        next: (response) => {
+          console.log(response)
+        },
+  
+        error: (e) => {},
+  
+        complete: () => {},
+      });
     }
   
 }
