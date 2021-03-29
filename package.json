@@ -32,6 +32,8 @@
     "@angular/router": "~8.2.14",
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "@swimlane/ngx-charts": "^11.0.0",
     "angular-oauth2-oidc": "^8.0.4",
     "express": "^4.15.2",
