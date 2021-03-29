@@ -34,6 +34,7 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
       map(node => {
           if (node)
           {
+            console.log('OOOOOOOOOOOOOOOO', node)
             return node;
           }
           else
@@ -46,9 +47,11 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
 
   getRecordById(id: string): Observable<SearchResponse<Record>>
   {
-    // TODO: Esta línea es ineficiente, puede ser optimizada. 
+    // TODO: Esta línea es ineficiente, puede ser optimizada.
     const req = this.env.sceibaApi + this.prefix + '/' + id;
 
     return this.http.get<SearchResponse<Record>>(req);
   }
+
+
 }

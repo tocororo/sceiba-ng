@@ -21,3 +21,25 @@ mat-toolbar.footer-height{
     text-align: left;
     white-space: normal !important;
 }
+
+.a-grey{
+    color: rgb(230, 228, 228);
+    text-decoration: none;
+}
+.a-grey:hover{
+    text-decoration: underline;
+}
+
+.footer-logo {
+    padding-left: 40px;
+}
+
+.footer-social {
+    padding-right: 120px;
+    margin-left: auto;
+}
+
+.footer-rigtside{
+    padding-right: 40px;
+    margin-left: auto;
+}

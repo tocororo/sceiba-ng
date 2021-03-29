@@ -1,20 +1,23 @@
 
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { RecaptchaModule } from 'ng-recaptcha';
-
-import { AngularMaterialModule, CoreModule, StaticsModule, TocoFormsModule, 
-  SearchModule, SearchService, Environment, OrganizationServiceNoAuth } from 'toco-lib';
-
-import { AppRoutingModule } from './app-routing.module';
+import { MarkdownModule } from 'ngx-markdown';
+import { MatomoModule } from 'ngx-matomo';
+import {
+  AngularMaterialModule, CoreModule,
+  Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule
+} from 'toco-lib';
 import { environment } from '../environments/environment';
-
 import { AggregationsComponent } from './aggregations/aggregations.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarVerticalComponent } from './charts/bar-vertical/bar-vertical.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -35,6 +38,17 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+
+
+
+
+export function storageFactory() : OAuthStorage {
+  return sessionStorage
+}
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -81,11 +95,23 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     SearchModule,
 
     AppRoutingModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient
+      }),
+    OAuthModule.forRoot({
+      resourceServer: {
+          allowedUrls: [environment.sceibaApi],
+          sendAccessToken: true
+      }
+  }),
+    MatomoModule
+
   ],
   providers: [
     SearchService,
     OrganizationServiceNoAuth,
     { provide: Environment, useValue: environment },
+    { provide: OAuthStorage, useFactory: storageFactory },
   ],
   bootstrap: [AppComponent]
 })

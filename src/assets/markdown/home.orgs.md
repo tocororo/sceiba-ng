@@ -1,0 +1,1 @@
+Gestiona lista oficial y pública de organizaciones cubanas que tienen código REUP. Ofrece la posibilidad de identificarlas por los identificadores internacionalmente usados y estandarizados desde la red cubana, en este caso el código de GRID, de ROR, de Wikidata y de ISNI.
