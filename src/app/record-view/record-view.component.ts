@@ -21,8 +21,8 @@ export class RecordViewComponent implements OnInit {
     this._activatedRoute.data.subscribe(
       (data) => {
         this.record = data.record.metadata;
-        console.log('AAAAAAAAAAAAAA')
-        console.log(data);
+        /* console.log('AAAAAAAAAAAAAA')
+        console.log(data); */
         this.metadata.meta.updateTag({name:"DC.title", content:this.record.title});
         this.record.creators.forEach(creator => {
         this.metadata.meta.updateTag({name:"DC.creator", content:creator['name']});
