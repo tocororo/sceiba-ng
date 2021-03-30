@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthConfig, JwksValidationHandler, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
-import { Environment, User } from 'toco-lib';
+import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
+import { Observable } from 'rxjs';
+import { Environment, Response, User, UserProfileService } from 'toco-lib';
 
 
 
@@ -29,10 +31,11 @@ export class AppComponent {
   public constructor(private env: Environment,
     // private matomoInjector: MatomoInjector,
     private router: Router,
-    private oauthStorage: OAuthStorage,
     private oauthService: OAuthService,
+    private oauthStorage: OAuthStorage,
+    private userService: UserProfileService,
     private environment: Environment,
-
+    protected http: HttpClient
 )
   {
     this.configure()
@@ -42,7 +45,7 @@ export class AppComponent {
     public ngOnInit(): void
     {
       this.sceibaHost = this.environment.sceibaHost;
-      
+
         this.footerSites =  Array();
         this.footerInformation =  Array();
 
@@ -61,12 +64,40 @@ export class AppComponent {
         /* this.urlLogin = this.env.sceibaHost + "login";
         this.urlSignUp = this.env.sceibaHost + "signup"; */
 
+        this.oauthService.events.subscribe(event => {
+          if (event instanceof OAuthErrorEvent) {
+            console.error(event);
+          } else {
+            console.warn("EVENT:", event);
+            if (event.type == 'token_received'){
+              this.getUserInfo().subscribe({
+                next: (response) => {
+                  console.log(response)
+                },
 
+                error: (e) => {},
+
+                complete: () => {},
+              });
+            }
+          }
+        });
+        if (this.oauthService.getAccessToken()){
+          this.getUserInfo().subscribe({
+            next: (response) => {
+              console.log(response)
+            },
+
+            error: (e) => {},
+
+            complete: () => {},
+          });
+        }
     }
 
-  
-    
-  
+
+
+
 
     public get isHome(){
       return this.router.url == '/';
@@ -79,31 +110,55 @@ export class AppComponent {
     }
     public login() {
       console.log('hi');
-      
+
       this.oauthService.initImplicitFlow();
     }
-  
+
     public logoff() {
         this.oauthService.logOut();
     }
-  
+
     public get name() {
         let claims = this.oauthService.getIdentityClaims();
         if (!claims) return null;
         return claims['given_name'];
     }
-  
+
+    getUserInfo(): Observable<Response<any>> {
+      // let token = this.oauthStorage.getItem('access_token');
+      // let headers = new HttpHeaders()
+      // headers.set('Authorization', 'Bearer ' + token);
+      // headers = headers.set('Content-Type', 'application/json');
+      // headers = headers.set('Access-Control-Allow-Origin', '*');
+      // const options = {
+      //   headers: headers
+      // };
+      return this.http.get<Response<any>>(this.env.sceibaApi + 'me');
+    }
+
+    me(){
+      this.getUserInfo().subscribe({
+        next: (response) => {
+          console.log(response)
+        },
+
+        error: (e) => {},
+
+        complete: () => {},
+      });
+    }
+
 }
 
 export const authConfig: AuthConfig = {
- 
+
   // Url of the Identity Provider
   issuer: "https://personas.sceiba.cu/auth/realms/sceiba",
 
   loginUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/auth',
 
   tokenEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/token',
- 
+
   logoutUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/logout',
 
   oidc: true,
@@ -114,7 +169,7 @@ export const authConfig: AuthConfig = {
 
   // URL of the SPA to redirect the user to after login
   redirectUri: 'https://localhost:4200',
- 
+
   // The SPA's id. The SPA is registered with this id at the auth-server
   clientId: 'sceiba-angular-dev',
 

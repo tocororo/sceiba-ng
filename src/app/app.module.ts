@@ -98,7 +98,12 @@ export function storageFactory() : OAuthStorage {
     MarkdownModule.forRoot({
       loader: HttpClient
       }),
-    OAuthModule.forRoot(),
+    OAuthModule.forRoot({
+      resourceServer: {
+          allowedUrls: [environment.sceibaApi],
+          sendAccessToken: true
+      }
+  }),
     MatomoModule
 
   ],
