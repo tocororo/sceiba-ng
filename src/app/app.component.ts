@@ -5,10 +5,6 @@ import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuth
 import { Observable } from 'rxjs';
 import { Environment, Response, User, UserProfileService } from 'toco-lib';
 
-
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,8 +31,7 @@ export class AppComponent {
     private oauthStorage: OAuthStorage,
     private userService: UserProfileService,
     private environment: Environment,
-    protected http: HttpClient
-)
+    protected http: HttpClient)
   {
     this.configure()
     // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
@@ -95,9 +90,10 @@ export class AppComponent {
         }
     }
 
-
-
-
+    public setLanguage(): void
+    {
+      //TODO: ...
+    }
 
     public get isHome(){
       return this.router.url == '/';
@@ -108,6 +104,7 @@ export class AppComponent {
       this.oauthService.tokenValidationHandler = new JwksValidationHandler();
       this.oauthService.loadDiscoveryDocumentAndTryLogin();
     }
+
     public login() {
       console.log('hi');
 
@@ -147,7 +144,6 @@ export class AppComponent {
         complete: () => {},
       });
     }
-
 }
 
 export const authConfig: AuthConfig = {
@@ -178,4 +174,3 @@ export const authConfig: AuthConfig = {
   // The first three are defined by OIDC. The 4th is a usecase-specific one
   scope: 'openid profile email',
 }
-
