@@ -19,7 +19,6 @@ class EnvironmentImpl implements Environment {
   topOrganizationPID = '';
   cachableUrls = [];
 
-
   matomoUrl = 'https://crai-stats.upr.edu.cu/';
   matomoSiteId = 7;
 }
