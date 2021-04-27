@@ -40,7 +40,7 @@
         [matMenuTriggerFor]="menuLanguages"
         matTooltip="Idioma (se está Haciendo!!!)"
       >
-        <mat-icon class="mat-18">help</mat-icon>
+        <mat-icon class="mat-18">translate</mat-icon>
       </button>
 
       <!-- <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
@@ -105,14 +105,14 @@
 </mat-toolbar>
 
 <mat-menu #menuLanguages="matMenu">
-  <a mat-menu-item (click)="setLanguage()">
-    <mat-icon>info</mat-icon>
-    Español
+  <a *ngFor="let lang of languages; let i=index" mat-menu-item (click)="setLanguage(i)">
+    <mat-icon *ngIf="i == languageSelected; else elseTemplate_radio_button_unchecked">radio_button_checked</mat-icon>
+    {{ lang.text }}
   </a>
-  <a mat-menu-item (click)="setLanguage()">
-    <mat-icon>security</mat-icon>
-    English
-  </a>
+
+  <ng-template #elseTemplate_radio_button_unchecked>
+    <mat-icon>radio_button_unchecked</mat-icon>
+  </ng-template>
 </mat-menu>
 
 <!-- <mat-menu #menuNetwork="matMenu">
