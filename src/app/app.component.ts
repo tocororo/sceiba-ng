@@ -6,6 +6,34 @@ import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuth
 import { Observable } from 'rxjs';
 import { Environment, Response, User, UserProfileService } from 'toco-lib';
 
+export const authConfig: AuthConfig = {
+
+  // Url of the Identity Provider. 
+  issuer: 'https://personas.sceiba.cu/auth/realms/sceiba',
+
+  loginUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/auth',
+
+  tokenEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/token',
+
+  logoutUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/logout',
+
+  oidc: true,
+
+  requireHttps: true,
+
+  userinfoEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/userinfo',
+
+  // URL of the SPA to redirect the user to after login. 
+  redirectUri: 'https://localhost:4200',
+
+  // The SPA's id. The SPA is registered with this id at the auth-server. 
+  clientId: 'sceiba-angular-dev',
+
+  // Sets the scope for the permissions the client should request. 
+  // The first three are defined by OIDC. The 4th is a usecase-specific one. 
+  scope: 'openid profile email',
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -121,16 +149,16 @@ export class AppComponent
     switch((this.languageSelected = index))
     {
       case 0:  /* Spanish */
-        {
-          this._translate.use('es');
-          return;
-        }
+      {
+        this._translate.use('es');
+        return;
+      }
 
       case 1:  /* English */
-        {
-          this._translate.use('en');
-          return;
-        }
+      {
+        this._translate.use('en');
+        return;
+      }
     }
   }
 
@@ -154,7 +182,8 @@ export class AppComponent
     this.oauthService.logOut();
   }
 
-  public get name() {
+  public get name()
+  {
     let claims = this.oauthService.getIdentityClaims();
     if (!claims) return null;
     return claims['given_name'];
@@ -172,7 +201,8 @@ export class AppComponent
     return this.http.get<Response<any>>(this.env.sceibaApi + 'me');
   }
 
-  me() {
+  public me()
+  {
     this.getUserInfo().subscribe({
       next: (response) => {
         console.log(response)
@@ -183,33 +213,28 @@ export class AppComponent
       complete: () => { },
     });
   }
-}
 
-export const authConfig: AuthConfig = {
+  // /**
+  //  * hasPermission return true if the user have permission
+  //  */
+  // public get hasPermission(): boolean {
+  //   let permission = new Permission();
 
-  // Url of the Identity Provider
-  issuer: "https://personas.sceiba.cu/auth/realms/sceiba",
+  //   if (permission.hasPermissions("curator") || permission.hasPermissions("admin")){
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  loginUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/auth',
+  // /**
+  //  * hasPermission return true if the user have permission
+  //  */
+  // public get hasPermissionAdmin(): boolean {
+  //   let permission = new Permission();
 
-  tokenEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/token',
-
-  logoutUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/logout',
-
-  oidc: true,
-
-  requireHttps: true,
-
-  userinfoEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/userinfo',
-
-  // URL of the SPA to redirect the user to after login
-  redirectUri: 'https://localhost:4200',
-
-  // The SPA's id. The SPA is registered with this id at the auth-server
-  clientId: 'sceiba-angular-dev',
-
-
-  // set the scope for the permissions the client should request
-  // The first three are defined by OIDC. The 4th is a usecase-specific one
-  scope: 'openid profile email',
+  //   if (permission.hasPermissions("admin")){
+  //     return true;
+  //   }
+  //   return false;
+  // }
 }
