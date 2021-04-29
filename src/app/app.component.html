@@ -8,10 +8,9 @@
       <div class="triangle">
         <span
           matTooltipClass="tooltip-beta-red"
-          matTooltip="Este es un producto BETA configurado con propósitos de prueba.
-        Algunas características pueden no funcionar correctamente."
+          matTooltip="{{ 'BETA_TOOLTIP' | translate }}"
         >
-          <strong> BETA </strong>
+          <strong>{{ 'BETA' | translate }}</strong>
         </span>
       </div>
       <a
@@ -105,9 +104,9 @@
 </mat-toolbar>
 
 <mat-menu #menuLanguages="matMenu">
-  <a *ngFor="let lang of languages; let i=index" mat-menu-item (click)="setLanguage(i)">
+  <a *ngFor="let lang of languageTexts; let i=index" mat-menu-item (click)="setLanguage(i)">
     <mat-icon *ngIf="i == languageSelected; else elseTemplate_radio_button_unchecked">radio_button_checked</mat-icon>
-    {{ lang.text }}
+    {{ lang }}
   </a>
 
   <ng-template #elseTemplate_radio_button_unchecked>

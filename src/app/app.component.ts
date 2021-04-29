@@ -1,17 +1,10 @@
 import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs';
 import { Environment, Response, User, UserProfileService } from 'toco-lib';
-
-/**
- * Language data for a menu item. 
- */
-export class MenuItemLangData {
-  text: string;
-  abbr: string;
-}
 
 @Component({
   selector: 'app-root',
@@ -21,9 +14,13 @@ export class MenuItemLangData {
 export class AppComponent
 {
   /**
-   * Returns the available languages. 
+   * Returns the available language texts. 
    */
-  public languages: MenuItemLangData[];
+  public languageTexts: string[];
+  /**
+   * Returns the available language abbreviations. 
+   */
+  public languageAbbrs: string[];
   /**
    * Returns the language selected. 
    * The default language is Spanish; that is, the zero index. 
@@ -48,21 +45,23 @@ export class AppComponent
     private oauthService: OAuthService,
     private oauthStorage: OAuthStorage,
     private userService: UserProfileService,
-    private environment: Environment,
-    protected http: HttpClient) {
+    protected http: HttpClient,
+    private _translate: TranslateService)
+  {
     this.configure()
     // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
   }
 
   public ngOnInit(): void
   {
-    this.languages = [
-      { text: 'Español', abbr: 'es' },
-      { text: 'English', abbr: 'en' }
-    ];
+    this.languageTexts = [ 'Español', 'English' ];
+    this.languageAbbrs = [ 'es', 'en' ];
     this.languageSelected = 0;  /* The default language is Spanish; that is, the zero index. */
+    this._translate.setDefaultLang('es');
+    this._translate.use('es');
+    this._translate.addLangs(this.languageAbbrs);
 
-    this.sceibaHost = this.environment.sceibaHost;
+    this.sceibaHost = this.env.sceibaHost;
 
     this.footerSites = Array();
     this.footerInformation = Array();
@@ -119,9 +118,20 @@ export class AppComponent
    */
   public setLanguage(index: number): void
   {
-    this.languageSelected = index;
+    switch((this.languageSelected = index))
+    {
+      case 0:  /* Spanish */
+        {
+          this._translate.use('es');
+          return;
+        }
 
-    //TODO: finishing... 
+      case 1:  /* English */
+        {
+          this._translate.use('en');
+          return;
+        }
+    }
   }
 
   public get isHome() {
