@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SearchService } from 'toco-lib';
 import { timer } from 'rxjs';
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-home",
@@ -21,7 +22,11 @@ export class HomeComponent implements OnInit {
 
   slideIndex = 1;
 
-  public constructor(private router: Router, private activatedRoute: ActivatedRoute, private _searchService: SearchService) { }
+  public constructor(private _router: Router,
+    private _activatedRoute: ActivatedRoute,
+    private _searchService: SearchService,
+    public transServ: TranslateService)
+  { }
 
   public ngOnInit(): void {
     // this._searchService.getRecords(null).subscribe({
@@ -48,7 +53,7 @@ export class HomeComponent implements OnInit {
     // });
 
     this.showSlides(this.slideIndex);
-    timer(10000,10000).subscribe(x => {
+    timer(10000, 10000).subscribe(x => {
       if (this.slideIndex > 4){
         this.slideIndex = 1
       }
@@ -58,8 +63,8 @@ export class HomeComponent implements OnInit {
   }
 
   public queryChange(event?: string): void {
-    this.router.navigate(["search"], {
-      relativeTo: this.activatedRoute,
+    this._router.navigate(["search"], {
+      relativeTo: this._activatedRoute,
       queryParams: { q: event },
       queryParamsHandling: "",
     });

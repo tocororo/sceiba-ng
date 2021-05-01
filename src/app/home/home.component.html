@@ -2,9 +2,9 @@
 <div fxLayout="column" fxLayoutAlign="center center">
     <div class="w-100 bg-primary-color" fxLayoutAlign="center center">
         <div class="pt-50 ph-10">
-            <h3 class="mat-display-2" style="text-align: center; color: white;">Publicaciones Científicas Cubanas</h3>
-        </div>        
-    </div>  
+            <h3 class="mat-display-2" style="text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
+        </div>
+    </div>
     <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">       
         <mat-toolbar-row fxLayoutAlign="center center" style="height: auto; white-space: normal;">
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex="70%" fxFlex.lt-sm="100%">
@@ -14,7 +14,6 @@
     </mat-toolbar>
 
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
-
 
     <!-- <div class="w-50 pt-50 ph-10" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
         <div  fxLayout.xs="column" fxLayoutAlign="center center">
@@ -40,28 +39,29 @@
                 <div mat-line>Temáticas</div>
             </mat-label>
         </div>
-    </div>
+    </div> -->
 
     <!-- SLIDES -->
     <div class="container">
 
         <div class="mySlides fade">
-        <div class="numbertext">{{ slideIndex }} / 4</div>        
-            <div class="text" markdown [src]="'/assets/markdown/home.slider1.md'"></div>
+            <div class="numbertext">{{ slideIndex }} / 4</div>        
+            <div class="text" markdown [src]="'/assets/markdown/home.slider1.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
 
         <div class="mySlides fade">
-        <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider2.md'"></div>
+            <div class="numbertext">{{ slideIndex }} / 4</div>
+            <div class="text" markdown [src]="'/assets/markdown/home.slider2.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
 
         <div class="mySlides fade">
-        <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider3.md'"></div>
+            <div class="numbertext">{{ slideIndex }} / 4</div>
+            <div class="text" markdown [src]="'/assets/markdown/home.slider3.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
+
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>            
-            <div class="text" markdown [src]="'/assets/markdown/home.slider4.md'"></div>
+            <div class="text" markdown [src]="'/assets/markdown/home.slider4.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
 
         <a class="prev" (click)="plusSlides(-1)">
@@ -70,29 +70,30 @@
         <a class="next" (click)="plusSlides(1)">
             <mat-icon class="mat-18">navigate_next</mat-icon>
         </a>
+
         <div style="text-align:center; margin-top: -20px;">
-        <span class="dot" (click)="currentSlide(1)"></span>
-        <span class="dot" (click)="currentSlide(2)"></span>
-        <span class="dot" (click)="currentSlide(3)"></span>
-        <span class="dot" (click)="currentSlide(4)"></span>
+            <span class="dot" (click)="currentSlide(1)"></span>
+            <span class="dot" (click)="currentSlide(2)"></span>
+            <span class="dot" (click)="currentSlide(3)"></span>
+            <span class="dot" (click)="currentSlide(4)"></span>
         </div>
     </div>
 
     <div class="pt-50" ngClass.xs="pt-20 ph-30 pb-20">
-        <h1 class="mat-display-1 text-center" style="margin: 0;"> Productos y Servicios </h1>
+        <h1 class="mat-display-1 text-center" style="margin: 0;">{{ 'PROD_SERV' | translate }}</h1>
         <div class="pt-20" ngClass.xs="pt-5" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
             <div class="pt-20" fxFlex=30%>
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product1-image"></div>
-                        <mat-card-title>Sceiba Catálogo</mat-card-title>
-                        <mat-card-subtitle>Catálogo de Publicaciones Científicas Cubanas</mat-card-subtitle>
+                        <mat-card-title>{{ 'SCEIBA_CATALOGO' | translate }}</mat-card-title>
+                        <mat-card-subtitle>{{ 'SCEIBA_CATALOGO_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.catalog.md'"></div>
+                        <div class="p" markdown [src]="'/assets/markdown/home.catalog.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                    <a mat-button href="https://catalogo.sceiba.cu" target="_blank" class="apps" matTooltip="Catálogo">Acceder</a>
+                        <a mat-button href="https://catalogo.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -100,14 +101,14 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product2-image"></div>
-                        <mat-card-title>Sceiba Organizaciones</mat-card-title>
-                        <mat-card-subtitle>Sistema de identificación de Organizaciones</mat-card-subtitle>
+                        <mat-card-title>{{ 'SCEIBA_ORGANIZACIONES' | translate }}</mat-card-title>
+                        <mat-card-subtitle>{{ 'SCEIBA_ORGANIZACIONES_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.orgs.md'"></div>
+                        <div class="p" markdown [src]="'/assets/markdown/home.orgs.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                      <a mat-button href="https://orgs.sceiba.cu" target="_blank" class="apps" matTooltip="Organizaciones">Acceder</a>
+                        <a mat-button href="https://orgs.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -115,14 +116,14 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product3-image"></div>
-                        <mat-card-title>Sceiba Vocabularios</mat-card-title>
-                        <mat-card-subtitle>Sistema de tesauros y ontologías</mat-card-subtitle>
+                        <mat-card-title>{{ 'SCEIBA_VOCABULARIOS' | translate }}</mat-card-title>
+                        <mat-card-subtitle>{{ 'SCEIBA_VOCABULARIOS_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.vocabularios.md'"></div>
+                        <div class="p" markdown [src]="'/assets/markdown/home.vocabularios.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                      <a mat-button href="https://vocabularios.sceiba.cu" target="_blank" class="apps" matTooltip="Vocabularios">Acceder</a>
+                        <a mat-button href="https://vocabularios.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'VOCABULARIOS' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -130,21 +131,19 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product4-image"></div>
-                        <mat-card-title>Directorio MES</mat-card-title>
-                        <mat-card-subtitle>Registro de Revistas Científicas del MES</mat-card-subtitle>
+                        <mat-card-title>{{ 'DIRECTORIO_MES' | translate }}</mat-card-title>
+                        <mat-card-subtitle>{{ 'DIRECTORIO_MES_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.mes.md'"></div>
+                        <div class="p" markdown [src]="'/assets/markdown/home.mes.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                      <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="Revistas MES">Acceder</a>
+                        <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'REVISTAS_MES' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
         </div>
     </div>
-
-
 
     <img src="assets/icons/sceiba.middle.top.svg" alt="" style="margin-bottom: -4px; width: 100%;">
     <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
@@ -154,8 +153,6 @@
         </div>
     </div>
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
-
-
 
     <div class="pt-50" ngClass.xs="pt-20 ph-30 pb-20">
         <h1 class="mat-display-1 text-center" style="margin: 0;"> Próximamente </h1>
@@ -204,9 +201,7 @@
                 </mat-card>
             </div>
         </div>
-
     </div>
-
 
     <div class="pt-50" ngClass.xs="pt-20 pb-20" fxLayout="column" fxLayoutAlign="center center">
         <h1 class="mat-display-1 text-center" style="margin: 0;"> Participantes </h1>
@@ -223,11 +218,10 @@
     </div>
 
     <mat-card class="mat-elevation-z1 w-70 m-1 mb-1 ligth-green-card">
-            <mat-card-title>Contacte con nosotros</mat-card-title>
-            <mat-card-content>
-                <app-contact></app-contact>
-            </mat-card-content>
-        </mat-card>
+        <mat-card-title>Contacte con nosotros</mat-card-title>
+        <mat-card-content>
+            <app-contact></app-contact>
+        </mat-card-content>
+    </mat-card>
 
 </div>
-

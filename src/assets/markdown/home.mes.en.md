@@ -1,0 +1,1 @@
+The Register is the official national list of journals managed by institutions attached to the Ministry of Cuban Higher Education. It is maintained by the Authorities of Science and Informatization of this Ministry.
