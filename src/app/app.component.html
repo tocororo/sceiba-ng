@@ -29,7 +29,7 @@
     <div
       class="center-elements"
       appearance="legacy"
-      aria-label="Menu de Inicio"
+      aria-label="'MENU_INICIO' | translate"
       fxLayout="row wrap"
       fxLayoutAlign="center"
       fxLayoutGap="15px"
@@ -211,11 +211,11 @@
       href="https://catalogo.sceiba.cu"
       target="_blank"
       class="apps"
-      matTooltip="Catálogo"
+      matTooltip="{{ 'CATALOGO' | translate }}"
     >
       <img
         src="/assets/icons/catalog.svg"
-        alt="Catálogo"
+        [alt]="'CATALOGO' | translate"
         style="width: 55px; height: 55px"
       />
     </a>
@@ -223,11 +223,11 @@
       href="https://orgs.sceiba.cu"
       target="_blank"
       class="apps"
-      matTooltip="Organizaciones"
+      matTooltip="{{ 'ORGANIZACIONES' | translate }}"
     >
       <img
         src="/assets/icons/organizacion.svg"
-        alt="Organizaciones"
+        [alt]="'ORGANIZACIONES' | translate"
         style="width: 55px; height: 55px"
       />
     </a>
@@ -235,11 +235,11 @@
       href="https://vocabularios.sceiba.cu"
       target="_blank"
       class="apps"
-      matTooltip="Vocabularios"
+      matTooltip="{{ 'VOCABULARIOS' | translate }}"
     >
       <img
         src="/assets/icons/vocabs.svg"
-        alt="Vocabularios"
+        [alt]="'VOCABULARIOS' | translate"
         style="width: 55px; height: 55px"
       />
     </a>
@@ -248,12 +248,12 @@
       href="https://revistasmes.sceiba.cu"
       target="_blank"
       class="apps"
-      matTooltip="Registro de Revistas Científicas del MES"
+      matTooltip="{{ 'REG_REV_CIENT_MES' | translate }}"
     >
       <img
         class="app-featured"
         src="/assets/icons/mes.svg"
-        alt="Registro de Revistas Científicas del MES"
+        [alt]="'REG_REV_CIENT_MES' | translate"
         style="width: 55px; height: 55px"
       />
     </a>

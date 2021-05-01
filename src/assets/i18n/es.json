@@ -1,6 +1,8 @@
 {
+    "CONJUNCION_Y": "y",
     "BETA": "BETA",
     "BETA_TOOLTIP": "Este es un producto BETA configurado con propósitos de prueba. Algunas características pueden no funcionar correctamente.",
+    "MENU_INICIO": "Menu de inicio",
     "IDIOMA": "Idioma",
     "REDES_SOC": "Redes sociales",
     "APLICACIONES": "Aplicaciones",
@@ -18,5 +20,15 @@
     "SEGURIDAD": "Seguridad",
     "ADMINISTRACION": "Administración",
     "SALIR": "Salir",
-    "YO": "Yo"
+    "YO": "Yo",
+    "CATALOGO": "Catálogo",
+    "ORGANIZACIONES": "Organizaciones",
+    "VOCABULARIOS": "Vocabularios",
+    "REG_REV_CIENT_MES": "Registro de Revistas Científicas del MES",
+    "PROYECTO_TOCORORO": "Proyecto Tocororo, un esfuerzo por la comunicación científica en Cuba",
+    "PROYECTO_VLIR": "Proyecto VLIR",
+    "SCEIBA_PRIVACIDAD_1": "Sceiba es de código y acceso abierto y distribuye sus contenidos,",
+    "SCEIBA_PRIVACIDAD_2": "a no ser que se indique lo contrario, bajo la",
+    "PORTAL_PUB": "Portal de publicaciones científicas cubanas",
+    "DESARROLLADO_CON": "Desarrollado con"
 }

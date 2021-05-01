@@ -1,6 +1,8 @@
 {
+    "CONJUNCION_Y": "and",
     "BETA": "BETA",
     "BETA_TOOLTIP": "This is a BETA product configured for testing purposes. Some features can not work properly.",
+    "MENU_INICIO": "Start menu",
     "IDIOMA": "Language",
     "REDES_SOC": "Social networks",
     "APLICACIONES": "Applications",
@@ -18,5 +20,15 @@
     "SEGURIDAD": "Security",
     "ADMINISTRACION": "Settings",
     "SALIR": "Exit",
-    "YO": "Me"
+    "YO": "Me",
+    "CATALOGO": "Catalog",
+    "ORGANIZACIONES": "Organizations",
+    "VOCABULARIOS": "Vocabularies",
+    "REG_REV_CIENT_MES": "MES Registry of Scientific Journals",
+    "PROYECTO_TOCORORO": "Tocororo Project, an effort for scientific communication in Cuba",
+    "PROYECTO_VLIR": "VLIR Project",
+    "SCEIBA_PRIVACIDAD_1": "Sceiba is open source and open access and distributes its contents,",
+    "SCEIBA_PRIVACIDAD_2": "unless otherwise noted, under the",
+    "PORTAL_PUB": "Cuban scientific publications portal",
+    "DESARROLLADO_CON": "Developed with"
 }
