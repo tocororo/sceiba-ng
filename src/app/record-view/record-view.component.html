@@ -2,8 +2,7 @@
     fxLayout="row wrap"
     fxLayout.xs="column"
     fxLayoutAlign="space-between center"
-    >
-
+>
     <mat-toolbar-row>
         <!-- <button mat-icon-button (click)="onClick()">
             <mat-icon class="mat-18">arrow_back</mat-icon>
@@ -26,7 +25,6 @@
             <!-- <mat-card-subtitle class="pt-1" *ngIf="record.status">Estatus: {{ record.status }}</mat-card-subtitle> -->
         </mat-card-header>
 
-
         <mat-card-content>
 
             <!-- SOURCE -->
@@ -39,8 +37,6 @@
                 [value]="record.source_repo.name">
             </static-link>
 
-
-
             <!-- CREATORS -->
             <static-table-link
                 *ngIf="record.creators && record.creators.length"
@@ -51,6 +47,7 @@
                 [columnsObjectProperty]="['name', 'affiliations']"
                 [columnsHeaderText]="['Nombre', 'Afiliación']">
             </static-table-link>
+
             <!-- KEYWOARD -->
             <static-chips-link
                 *ngIf="record.keywords && record.keywords.length"
@@ -59,6 +56,7 @@
                 [routerlink]="'/search'"
                 [queryparamVariable]="'keywords'">
             </static-chips-link>
+
             <!-- DESCRIPTION -->
             <mat-card class="mb-1">
                 <mat-card-content>
@@ -147,10 +145,6 @@
                 [columnsObjectProperty]="['name', 'roles']"
                 [columnsHeaderText]="['Nombre', 'Roles']">
             </static-table> -->
-
-
-
-
 
         </mat-card-content>
     </mat-card>

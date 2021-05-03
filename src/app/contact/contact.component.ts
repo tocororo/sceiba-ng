@@ -44,7 +44,7 @@ export class ContactComponent implements OnInit {
           console.log(response);
           if (response) {
             const m = new MessageHandler(this._snackBar);
-            m.showMessage(StatusCode.OK,"Mensaje enviado correctamente");
+            m.showMessage(StatusCode.OK, "Mensaje enviado correctamente");
           }
         },
         error: e => console.log(e),
