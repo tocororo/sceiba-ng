@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs';
+//import { RecaptchaLoaderService } from 'ng-recaptcha';
+//import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
 import { Environment, Response, User, UserProfileService } from 'toco-lib';
 
 export const authConfig: AuthConfig = {
@@ -74,7 +76,9 @@ export class AppComponent
     private oauthStorage: OAuthStorage,
     private userService: UserProfileService,
     protected http: HttpClient,
-    private _translate: TranslateService)
+    private _transServ: TranslateService, 
+    //private _recaptchaDynamicLanguageLoaderServ: RecaptchaLoaderService,
+    /*@Inject(RecaptchaLoaderService) private _recaptchaDynamicLanguageLoaderServ: RecaptchaDynamicLanguageLoaderService*/)
   {
     this.configure()
     // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
@@ -85,9 +89,10 @@ export class AppComponent
     this.languageTexts = [ 'Español', 'English' ];
     this.languageAbbrs = [ 'es', 'en' ];
     this.languageSelected = 0;  /* The default language is Spanish; that is, the zero index. */
-    this._translate.setDefaultLang('es');
-    this._translate.use('es');
-    this._translate.addLangs(this.languageAbbrs);
+    this._transServ.setDefaultLang('es');
+    this._transServ.use('es');
+    this._transServ.addLangs(this.languageAbbrs);
+    //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('es');
 
     this.sceibaHost = this.env.sceibaHost;
 
@@ -149,13 +154,15 @@ export class AppComponent
     {
       case 0:  /* Spanish */
       {
-        this._translate.use('es');
+        this._transServ.use('es');
+        //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('es');
         return;
       }
 
       case 1:  /* English */
       {
-        this._translate.use('en');
+        this._transServ.use('en');
+        //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('en');
         return;
       }
     }
