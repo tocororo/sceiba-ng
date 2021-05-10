@@ -58,6 +58,9 @@
     "SCEIBA_PRIVACIDAD_2": "a no ser que se indique lo contrario, bajo la",
     "PORTAL_PUB": "Portal de publicaciones científicas cubanas",
     "DESARROLLADO_CON": "Desarrollado con",
-    "ESCRIBA_CRITERIO_PRESIONE_ENTER": "Escriba un criterio y presione Enter",
-    "BUSCAR": "Buscar"
+    "TOCO_SEARCH_QUERY_INPUT": {
+        "INPUT_SEARCH_LABEL": "Buscar",
+        "INPUT_SEARCH_PLACEHOLDER": "Escriba un criterio y presione Enter",
+        "BUTTON_SEARCH": "Buscar"
+    }
 }
