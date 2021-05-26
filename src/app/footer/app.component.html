@@ -25,21 +25,21 @@
         fxLayoutGap="15px"
     >
 
-            <!-- <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
-                <mat-icon>share</mat-icon>
-            </button> -->
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menuNetwork" matTooltip="Redes Sociales">
+          <mat-icon>share</mat-icon>
+      </button> -->
 
-            <button mat-icon-button [matMenuTriggerFor]="menuApps" matTooltip="Aplicaciones">
-              <mat-icon>apps</mat-icon>
-            </button>
+      <button mat-icon-button [matMenuTriggerFor]="menuApps" matTooltip="Aplicaciones">
+        <mat-icon>apps</mat-icon>
+      </button>
 
-            <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
-                <mat-icon class="mat-18">help</mat-icon>
-            </button>
+      <button mat-icon-button [matMenuTriggerFor]="menuHelp" matTooltip="Ayuda">
+          <mat-icon class="mat-18">help</mat-icon>
+      </button>
 
-            <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="Usuario">
-                <mat-icon class="mat-18">account_circle</mat-icon>
-            </button>
+      <button mat-icon-button [matMenuTriggerFor]="menuLogin" matTooltip="Usuario">
+          <mat-icon class="mat-18">account_circle</mat-icon>
+      </button>
 
     </div>
 
@@ -128,5 +128,9 @@
 <router-outlet *ngIf="isHome"></router-outlet>
 
 <!--<div [ngStyle]="{'margin-top': '2em'}"> -->
-  <app-footer [sites]="footerSites" [information]="footerInformation"></app-footer>
+<app-footer
+  [sites]="footerSites"
+  [information]="footerInformation"
+>
+</app-footer>
 <!-- </div> -->

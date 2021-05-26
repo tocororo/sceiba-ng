@@ -11,8 +11,6 @@ import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
-
-
 const routes: Routes = [
   {
     path: '',

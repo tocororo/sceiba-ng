@@ -37,14 +37,18 @@ export class ContactComponent implements OnInit {
     console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
 
-  public send(){
-    if (this.formGroup.valid){
+  public send()
+  {
+    //grecaptcha.reset();
+
+    if (this.formGroup.valid)
+    {
       this.contactService.send(this.formGroup.value).subscribe({
         next: response => {
           console.log(response);
           if (response) {
             const m = new MessageHandler(this._snackBar);
-            m.showMessage(StatusCode.OK,"Mensaje enviado correctamente");
+            m.showMessage(StatusCode.OK, "Mensaje enviado correctamente");
           }
         },
         error: e => console.log(e),

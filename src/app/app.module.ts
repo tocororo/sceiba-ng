@@ -1,5 +1,8 @@
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,7 +11,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
-import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaModule/*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
+//import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
 import {
@@ -39,16 +43,14 @@ import { InputOrgSearchComponent } from './user/input-org-search/input-org-searc
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
-
-
-
-export function storageFactory() : OAuthStorage {
+export function storageFactory(): OAuthStorage {
   return sessionStorage
 }
 
-
-
-
+export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
+{
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -82,6 +84,14 @@ export function storageFactory() : OAuthStorage {
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+      }
+    }),
     ReactiveFormsModule,
     MatRadioModule,
     FlexLayoutModule,
@@ -112,6 +122,11 @@ export function storageFactory() : OAuthStorage {
     OrganizationServiceNoAuth,
     { provide: Environment, useValue: environment },
     { provide: OAuthStorage, useFactory: storageFactory },
+    // {
+    //   provide: RecaptchaLoaderService,
+    //   useClass: RecaptchaDynamicLanguageLoaderService,
+    // },
+    //RecaptchaDynamicLanguageLoaderService,
   ],
   bootstrap: [AppComponent]
 })

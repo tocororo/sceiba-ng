@@ -12,15 +12,19 @@ export class ContactService {
 
   constructor(
     private env: Environment,
-    private http: HttpClient) { }
+    private http: HttpClient)
+  { }
 
   public send(body): Observable<any>{
     let url = "";
+
     if (this.backend == AuthBackend.sceiba){
       url = this.env.sceibaApi + "contact";
-    } else if (this.backend == AuthBackend.cuor) {
+    }
+    else if (this.backend == AuthBackend.cuor) {
       url = this.env.cuorApi + "contact";
     }
+
     return this.http.post<any>(url, body)
   }
 }

@@ -2,9 +2,9 @@ import { Environment } from 'toco-lib';
 
 class EnvironmentImpl implements Environment {
   production = false;
-  sceibaHost = 'https://192.168.1.100:5000/';
+  sceibaHost = 'https://sceiba.cu/';
   cuorHost = 'https://orgs.sceiba.cu/';
-  sceibaApi = 'https://192.168.1.100:5000/api/';
+  sceibaApi = 'https://sceiba.cu/api/';
   cuorApi = 'https://orgs.sceiba.cu/api/';
 
   appHost = 'https://localhsot:4200';
@@ -22,7 +22,7 @@ class EnvironmentImpl implements Environment {
   matomoUrl = 'https://crai-stats.upr.edu.cu/';
   matomoSiteId = 7;
 
-  
+
 }
 
 export const environment = new EnvironmentImpl();
