@@ -19,7 +19,7 @@ import {
   AngularMaterialModule, CoreModule,
   Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule
 } from 'toco-lib';
-import { environment } from '../environments/environment';
+import { allowedURLS, environment } from 'src/environments/environment';
 import { AggregationsComponent } from './aggregations/aggregations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -110,7 +110,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
       }),
     OAuthModule.forRoot({
       resourceServer: {
-          allowedUrls: [environment.sceibaApi],
+          allowedUrls: allowedURLS,
           sendAccessToken: true
       }
   }),

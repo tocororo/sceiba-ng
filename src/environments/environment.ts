@@ -1,3 +1,4 @@
+import { env } from 'process';
 import { Environment } from 'toco-lib';
 
 class EnvironmentImpl implements Environment {
@@ -27,3 +28,4 @@ class EnvironmentImpl implements Environment {
 
 export const environment = new EnvironmentImpl();
 
+export const allowedURLS = [environment.sceibaApi];
