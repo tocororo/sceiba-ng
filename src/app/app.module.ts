@@ -17,7 +17,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
 import {
   AngularMaterialModule, CoreModule,
-  Environment, OrganizationServiceNoAuth, SearchModule, SearchService, StaticsModule, TocoFormsModule
+  Environment, OrganizationServiceNoAuth, SearchModule, SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
 } from 'toco-lib';
 import { allowedURLS, environment } from 'src/environments/environment';
 import { AggregationsComponent } from './aggregations/aggregations.component';
@@ -31,7 +31,7 @@ import { PolarChartComponent } from './charts/polar-chart/polar-chart.component'
 import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { RecordViewComponent } from './record-view/record-view.component';
+import { DialogCatalogSourceInfo, RecordViewComponent } from './record-view/record-view.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchComponent } from './search/search.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
@@ -42,6 +42,7 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { SourcerecordViewComponent } from './record-view/sourcerecord-view/sourcerecord-view.component';
 
 export function storageFactory(): OAuthStorage {
   return sessionStorage
@@ -75,11 +76,14 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     UserProfileEditComponent,
     InputOrgSearchComponent,
     InputFileAvatarComponent,
-    SceibaFooterComponent
+    SceibaFooterComponent,
+    DialogCatalogSourceInfo,
+    SourcerecordViewComponent
   ],
   entryComponents:[
     InputOrgSearchComponent,
-    InputFileAvatarComponent
+    InputFileAvatarComponent,
+    DialogCatalogSourceInfo
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -120,6 +124,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
   providers: [
     SearchService,
     OrganizationServiceNoAuth,
+    SourceServiceNoAuth,
     { provide: Environment, useValue: environment },
     { provide: OAuthStorage, useFactory: storageFactory },
     // {

@@ -1,10 +1,4 @@
 
-.chips-mat-form-field
-{
-    width: 100%;
-    //cursor: text;
-}
-
 .static-table-fieldset
 {
     width: auto/* 50%*/;
@@ -26,3 +20,17 @@
     font-size: 10px;
 }
 
+.green-bg {
+  background-color: rgba(0, 127, 63, 0.1) !important;
+}
+
+
+static-table.green-bg > fieldset {
+  background-color: rgba(0, 127, 63, 0.1) !important;
+
+}
+
+static-table.green-bg > fieldset > table {
+  background-color: rgba(0, 127, 63, 0.1);
+
+}
