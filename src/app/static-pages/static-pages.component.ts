@@ -21,6 +21,7 @@ export class StaticPagesComponent implements OnInit {
     constructor(private metadata: MetadataService, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
+
         if (this.src == undefined) this.src = '';
         if (this.title == undefined) this.title = '';
         // this.metadata.setTitleDescription(this.title, '');
@@ -28,9 +29,14 @@ export class StaticPagesComponent implements OnInit {
         this.activatedRoute.data.subscribe({
             next: (data) => {
                 if (data) {
+                    console.log(data);
+                    
                     this.src = data['src'];
                     this.title = data['title'];
                     // this.metadata.setTitleDescription(this.title, '');
+
+                    this.metadata.meta.updateTag({name:"DC.title", content:data['title']});
+                    this.metadata.meta.updateTag({name:"DC.description", content:data['src'].substring(0,100)});
                 }
 
             },
