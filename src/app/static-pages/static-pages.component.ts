@@ -30,13 +30,13 @@ export class StaticPagesComponent implements OnInit {
             next: (data) => {
                 if (data) {
                     console.log(data);
-                    
+
                     this.src = data['src'];
                     this.title = data['title'];
                     // this.metadata.setTitleDescription(this.title, '');
 
                     this.metadata.meta.updateTag({name:"DC.title", content:data['title']});
-                    this.metadata.meta.updateTag({name:"DC.description", content:data['src'].substring(0,100)});
+                    this.metadata.meta.updateTag({name:"DC.description", content:data['src'].substring(0,160)});
                 }
 
             },

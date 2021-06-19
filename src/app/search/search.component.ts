@@ -80,7 +80,7 @@ export class SearchComponent implements OnInit {
   public ngOnInit(): void {
 
     this.activatedRoute.url.subscribe( () =>{
-     
+
       })
 
     this.query = "";
@@ -192,7 +192,7 @@ export class SearchComponent implements OnInit {
   queryChange(event?: string) {
     this.query = event;
     this.updateQueryParams();
-    
+
   }
 
   private updateQueryParams() {
@@ -222,7 +222,7 @@ export class SearchComponent implements OnInit {
   }
 
   public updateMetas(query:string){
-    this.metadata.meta.updateTag({name:"DC.title", content:"Busqueda"});
+    this.metadata.meta.updateTag({name:"DC.title", content:"Búsqueda de publicaciones científicas cubanas"});
     this.metadata.meta.updateTag({name:"DC.description", content:query});
   }
 

@@ -30,10 +30,10 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this._activatedRoute.url.subscribe( () =>{
-    this.metadata.meta.updateTag({name:"DC.title", content:"Inicio"});
-    this.metadata.meta.updateTag({name:"DC.description", content:"Publicaciones Científicas Cubanas"});
+    this.metadata.meta.updateTag({name:"DC.title", content:"Sceiba Publicaciones Científicas Cubanas"});
+    this.metadata.meta.updateTag({name:"DC.description", content:"Repositorio nacional de resultados de Investigación Científicas en Cuba, principalmente de revistas científicas en las universidades y otras organizaciones relacionadas con la actividad científica"});
     })
-    
+
     // this._searchService.getRecords(null).subscribe({
     //   next: (searchResponse: SearchResponse<Record>) => {
 
