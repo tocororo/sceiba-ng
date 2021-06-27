@@ -1,11 +1,11 @@
 ## Política de Privacidad
-Políticas de Privacidad del Portal de publicaciones científicas "Sceiba"
+Políticas de Privacidad del Portal de publicaciones científicas "Sceiba".
 
 ### Uso de la información
 Al registrarse en esta plataforma usted acepta la recopilación y el uso de la información que nos proporciona de acuerdo con esta política. La información personal recopilada se usa de manera compatible con los siguientes fines:
 
 * para permitir su uso de los sitios web de y servicios de SCEIBA
-* para crear su cuenta personal del Registro Nacional de Revistas del Ministerio de Educación * Superior
+* para crear su cuenta personal del Registro Nacional de Revistas del Ministerio de Educación Superior
 * para responder a sus consultas
 * para fines de administración del sistema, atención al cliente y resolución de problemas
 * para anuncios de nuevos servicios y actualizaciones (previa suscripción)
