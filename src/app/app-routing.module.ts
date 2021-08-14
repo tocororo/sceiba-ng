@@ -20,7 +20,7 @@ const routes: Routes = [
     path: ':uuid/view',
     component: RecordViewComponent,  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
     resolve: {
-      'record': RecordResolverService
+      record: RecordResolverService
     }
   },
   {
@@ -72,7 +72,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
     MarkdownModule.forRoot({ loader: HttpClient })
   ],
   exports: [RouterModule, MarkdownModule]
