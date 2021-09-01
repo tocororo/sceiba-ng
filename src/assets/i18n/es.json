@@ -62,5 +62,7 @@
         "INPUT_SEARCH_LABEL": "Buscar",
         "INPUT_SEARCH_PLACEHOLDER": "Escriba un criterio y presione Enter",
         "BUTTON_SEARCH": "Buscar"
-    }
+    },
+    "PAGINA_NO_ENCONTRADA_DISCULPA": "Lo sentimos, la página que usted solicitó no pudo ser encontrada!",
+    "PAGINA_NO_ENCONTRADA_REDIRECCION": "Vamos a llevarlo a la página Principal"
 }

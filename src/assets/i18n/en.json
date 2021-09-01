@@ -62,5 +62,7 @@
         "INPUT_SEARCH_LABEL": "Search",
         "INPUT_SEARCH_PLACEHOLDER": "Write a phrase and press Enter",
         "BUTTON_SEARCH": "Search"
-    }
+    },
+    "PAGINA_NO_ENCONTRADA_DISCULPA": "Sorry, the page you requested could not be found!",
+    "PAGINA_NO_ENCONTRADA_REDIRECCION": "Let us take you Home"
 }
