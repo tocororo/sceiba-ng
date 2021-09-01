@@ -6,8 +6,6 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
-import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
-import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -25,17 +23,11 @@ const routes: Routes = [
 		// }
   },
   {
-    path: 'profile',  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
-    children: [
-      {
-        path: '',
-        component: UserProfileComponent
-      },
-      {
-        path: 'edit',
-        component: UserProfileEditComponent
-      }
-    ],
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule),
+		// data: {
+		// 	preload: true  /* In orden to use a custom preloading strategy (`SelectiveModulesPreload`). */
+		// }
     canActivate: []
   },
 

@@ -35,10 +35,6 @@ import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
 import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
-import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
-import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
-import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
-import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export function storageFactory(): OAuthStorage {
@@ -67,15 +63,9 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     StaticTableLinkComponent,
     StaticChipsLinkComponent,
     ContactComponent,
-    UserProfileComponent,
-    UserProfileEditComponent,
-    InputOrgSearchComponent,
-    InputFileAvatarComponent,
     SceibaFooterComponent
   ],
   entryComponents:[
-    InputOrgSearchComponent,
-    InputFileAvatarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
