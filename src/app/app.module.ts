@@ -43,6 +43,7 @@ import { InputOrgSearchComponent } from './user/input-org-search/input-org-searc
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { SourcerecordViewComponent } from './record-view/sourcerecord-view/sourcerecord-view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export function storageFactory(): OAuthStorage {
   return sessionStorage
@@ -56,6 +57,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
     StaticPagesComponent,
     HomeComponent,
     SearchComponent,
