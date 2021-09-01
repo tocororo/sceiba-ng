@@ -108,4 +108,3 @@ export class DialogCatalogSourceInfo implements OnInit {
     this.dialogRef.close();
   }
 }
-

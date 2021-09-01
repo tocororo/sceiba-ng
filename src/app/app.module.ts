@@ -31,7 +31,6 @@ import { PolarChartComponent } from './charts/polar-chart/polar-chart.component'
 import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { DialogCatalogSourceInfo, RecordViewComponent } from './record-view/record-view.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchComponent } from './search/search.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
@@ -42,7 +41,6 @@ import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-av
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
-import { SourcerecordViewComponent } from './record-view/sourcerecord-view/sourcerecord-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export function storageFactory(): OAuthStorage {
@@ -69,7 +67,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
 		PieGridComponent,
 		AggregationsComponent,
 		GaugeChartComponent,
-		RecordViewComponent,
     LinkStaticComponent,
     StaticTableLinkComponent,
     StaticChipsLinkComponent,
@@ -78,14 +75,11 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     UserProfileEditComponent,
     InputOrgSearchComponent,
     InputFileAvatarComponent,
-    SceibaFooterComponent,
-    DialogCatalogSourceInfo,
-    SourcerecordViewComponent
+    SceibaFooterComponent
   ],
   entryComponents:[
     InputOrgSearchComponent,
-    InputFileAvatarComponent,
-    DialogCatalogSourceInfo
+    InputFileAvatarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

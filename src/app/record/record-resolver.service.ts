@@ -1,8 +1,10 @@
+
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+
 import { Environment, Record, SearchResponse, SearchService } from 'toco-lib';
 
 @Injectable({
