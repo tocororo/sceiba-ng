@@ -105,10 +105,10 @@ export class AppComponent
     // this.footerSites.push({ name: "ROR", url: "https://ror.org/", useRouterLink: false});
     // this.footerSites.push({ name: "Wikidata", url: "https://www.wikidata.org/wiki/Wikidata:Main_Page", useRouterLink: false});
 
-    this.footerInformation.push({ name: "ACERCA_DE", url: "/about", useRouterLink: true });
-    this.footerInformation.push({ name: "PRIVACIDAD", url: "/policy", useRouterLink: true });
+    this.footerInformation.push({ name: "ACERCA_DE", url: "/help/about", useRouterLink: true });
+    this.footerInformation.push({ name: "PRIVACIDAD", url: "/help/policy", useRouterLink: true });
     // this.footerInformation.push({ name: "PRIVACIDAD", url: "https://sceiba-lab.upr.edu.cu/page/politicas", useRouterLink: false});
-    this.footerInformation.push({ name: "CONTACTOS", url: "/contact", useRouterLink: true });
+    this.footerInformation.push({ name: "CONTACTOS", url: "/help/contact", useRouterLink: true });
 
     /* this.urlLogin = this.env.sceibaHost + "login";
     this.urlSignUp = this.env.sceibaHost + "signup"; */

@@ -31,7 +31,6 @@ import { PolarChartComponent } from './charts/polar-chart/polar-chart.component'
 import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
 import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
@@ -50,7 +49,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    StaticPagesComponent,
     HomeComponent,
 
     ChartsComponent,
@@ -93,13 +91,13 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     AppRoutingModule,
     MarkdownModule.forRoot({
       loader: HttpClient
-      }),
+    }),
     OAuthModule.forRoot({
       resourceServer: {
           allowedUrls: allowedURLS,
           sendAccessToken: true
       }
-  }),
+    }),
     MatomoModule
 
   ],

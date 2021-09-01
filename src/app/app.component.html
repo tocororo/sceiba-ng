@@ -118,20 +118,20 @@
 </mat-menu> -->
 
 <mat-menu #menuHelp="matMenu">
-  <!-- <a mat-menu-item [routerLink]="['/help']">
+  <!-- <a mat-menu-item [routerLink]="['/help/help']">
       <mat-icon>help_outline</mat-icon>
       {{ 'AYUDA' | translate }}
   </a> -->
 
-  <a mat-menu-item [routerLink]="['/about']">
+  <a mat-menu-item [routerLink]="['/help/about']">
     <mat-icon>info</mat-icon>
     {{ 'ACERCA_DE' | translate }}
   </a>
-  <a mat-menu-item [routerLink]="['/policy']">
+  <a mat-menu-item [routerLink]="['/help/policy']">
     <mat-icon>security</mat-icon>
     {{ 'PRIVACIDAD' | translate }}
   </a>
-  <a mat-menu-item [routerLink]="['/contact']">
+  <a mat-menu-item [routerLink]="['/help/contact']">
     <mat-icon>contacts</mat-icon>
     {{ 'CONTACTOS' | translate }}
   </a>
