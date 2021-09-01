@@ -3,10 +3,10 @@ import { Component, OnInit } from "@angular/core";
 import { PageEvent } from "@angular/material";
 import {
   ActivatedRoute,
-
   NavigationExtras,
   Params, Router
 } from "@angular/router";
+
 import { AggregationsSelection, Record, SearchResponse, SearchService } from "toco-lib";
 
 @Component({

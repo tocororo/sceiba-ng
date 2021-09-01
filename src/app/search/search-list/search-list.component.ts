@@ -12,12 +12,10 @@ import { AggregationsSelection, HitList, Record } from 'toco-lib';
 })
 export class SearchListComponent implements OnInit
 {
-
 	@Input()
 	public hitList: HitList<Record>;
 
 	queryParams: Params;
-
 
 	// begin paginator stuff
 	pageSize = 5;

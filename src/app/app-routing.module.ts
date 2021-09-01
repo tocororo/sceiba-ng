@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SearchComponent } from './search/search.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
@@ -20,7 +19,10 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    component: SearchComponent  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).
+    loadChildren: () => import('./search/search.module').then(mod => mod.SearchModule),
+		// data: {
+		// 	preload: true  /* In orden to use a custom preloading strategy (`SelectiveModulesPreload`). */
+		// }
   },
   {
     path: 'profile',  // TODO: poner esto en un módulo aparte y que use lazy loading (loadChildren).

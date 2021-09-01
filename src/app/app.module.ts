@@ -31,8 +31,6 @@ import { PolarChartComponent } from './charts/polar-chart/polar-chart.component'
 import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { SearchListComponent } from './search-list/search-list.component';
-import { SearchComponent } from './search/search.component';
 import { StaticPagesComponent } from './static-pages/static-pages.component';
 import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
 import { LinkStaticComponent } from './statics/link/link-static.component';
@@ -58,8 +56,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     PageNotFoundComponent,
     StaticPagesComponent,
     HomeComponent,
-    SearchComponent,
-    SearchListComponent,
 
     ChartsComponent,
 		PolarChartComponent,
