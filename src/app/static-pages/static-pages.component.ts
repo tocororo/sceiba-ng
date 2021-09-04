@@ -42,6 +42,8 @@ export class StaticPagesComponent implements OnInit {
                     this.src = data.src + ((this.transServ.currentLang == 'es') ? 'es.md' : 'en.md');
                     this.title = data.title;
                     // this.metadata.setTitleDescription(this.title, '');
+                    this.metadata.meta.updateTag({name:"DC.title", content:data['title']});
+                    this.metadata.meta.updateTag({name:"DC.description", content:data['src'].substring(0,160)});
 
                     /* Changes the translation when the language changes. */
                     this.transServ.onLangChange.subscribe((params: LangChangeEvent) => {

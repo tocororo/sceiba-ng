@@ -5,10 +5,10 @@
             <h3 class="mat-display-2" style="text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
         </div>
     </div>
-    <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">       
+    <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">
         <mat-toolbar-row fxLayoutAlign="center center" style="height: auto; white-space: normal;">
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex="70%" fxFlex.lt-sm="100%">
-                <toco-search-query-input [buttonColor]="'accent'" [query]="''" (queryChange)="queryChange($event)" class="w-100"></toco-search-query-input>                
+                <toco-search-query-input [buttonColor]="'accent'" [query]="''" (queryChange)="queryChange($event)" class="w-100"></toco-search-query-input>
             </div>
         </mat-toolbar-row>
     </mat-toolbar>
@@ -45,7 +45,7 @@
     <div class="container">
 
         <div class="mySlides fade">
-            <div class="numbertext">{{ slideIndex }} / 4</div>        
+            <div class="numbertext">{{ slideIndex }} / 4</div>
             <div class="text" markdown [src]="'/assets/markdown/home.slider1.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
 
@@ -60,7 +60,7 @@
         </div>
 
         <div class="mySlides fade">
-            <div class="numbertext">{{ slideIndex }} / 4</div>            
+            <div class="numbertext">{{ slideIndex }} / 4</div>
             <div class="text" markdown [src]="'/assets/markdown/home.slider4.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
         </div>
 
@@ -108,7 +108,7 @@
                         <div class="p" markdown [src]="'/assets/markdown/home.orgs.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="https://orgs.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button href="https://organizaciones.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>

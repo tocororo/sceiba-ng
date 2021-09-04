@@ -1,4 +1,4 @@
-    
+
 <img src="assets/icons/sceiba.footer.top.2.svg" alt="" style="margin-bottom: -8px; width: 100%;">
 <div class="w-100 bg-primary-color" fxLayout="row wrap" fxLayout.mx="column" fxLayoutAlign="center center">
 
@@ -6,36 +6,42 @@
         fxLayout="row wrap"
         fxLayout.mx="column"
         fxLayoutAlign="space-between center"
-        fxLayoutGap="20px"  
-        style="width:100%"          
+        fxLayoutGap="20px"
+        style="width:100%"
     >
-        <div class="footer-logo" 
-            fxFlex=40% 
-            fxFlex.xs=100% 
-            fxLayoutAlign="center center" 
+        <div class="footer-logo"
+            fxFlex=40%
+            fxFlex.xs=100%
+            fxLayoutAlign="right center"
             fxLayout="row"
             [ngStyle.xs]="{'padding-top': '40px', 'padding-bottom': '20px'}"
         >
-            <img src="/assets/images/tocororo.png" alt="Tocororo" width="50" height="50">
+        <a href="https://tocororo.upr.edu.cu" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
+          <img src="/assets/images/tocororo.png" alt="Tocororo" width="50" height="50" [alt]="'PROYECTO_TOCORORO' | translate" >
+
+        </a>
+
+        <!-- <img src="/assets/images/tocororo.png" alt="Tocororo" width="50" height="50">
             <span class="text-initial" style="max-width: 30em; padding-left: 10px; color: white;">
                 {{ 'PROYECTO_TOCORORO' | translate }}
-            </span>
+            </span> -->
         </div>
-        <div class="footer-rigtside" 
-            fxLayout="row wrap" 
-            fxLayoutAlign="center center" 
+        <div class="footer-rigtside"
+            fxLayout="row wrap"
+            fxLayoutAlign="center center"
             fxLayoutGap="1em"
             [ngStyle.xs]="{'place-content': 'flex-end'}"
         >
-            <a href="https://www.vliruos.be/en/projects/project/22?pid=4202" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
+            <a href="https://www.vliruos.be/en/projects/project/22?pid=4202" target="_blank" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
                 <img src="/assets/images/vliruos_white.svg" [alt]="'PROYECTO_VLIR' | translate" width="240">
+
             </a>
         </div>
     </div>
 
     <mat-toolbar-row
         fxLayout="row wrap"
-        fxLayoutAlign="center center"                
+        fxLayoutAlign="center center"
         fxLayoutGap="1em"
         style="padding-top: 40px;"
     >
@@ -49,7 +55,7 @@
             <mat-icon svgIcon="github" class="mat-18">home</mat-icon>
         </a>
     </mat-toolbar-row>
-    
+
     <mat-toolbar class="footer-height" fxLayout="row wrap" fxLayout.mx="column" fxLayoutAlign="center center" color="primary">
         <mat-toolbar-row
             fxLayout="row wrap"
@@ -84,7 +90,7 @@
             </ng-container>
         </mat-toolbar-row>
 
-        <mat-toolbar-row 
+        <mat-toolbar-row
             fxLayout="row wrap"
             fxLayoutAlign="center center"
         >
@@ -111,7 +117,7 @@
                     </a>
                 </ng-container>
             </div>
-        </mat-toolbar-row>    
+        </mat-toolbar-row>
 
         <mat-toolbar-row fxLayout="row wrap" fxFlex="100%" fxLayoutAlign="center center">
             <p class="mat-h5" style="width: 80%; text-align: center; color:white; margin: 0; padding-top: 40px;">
@@ -121,7 +127,7 @@
             </p>
         </mat-toolbar-row>
     </mat-toolbar>
-    
+
     <div fxLayout="column wrap" fxLayoutAlign="center center" style="padding: 1em;">
         <a href="https://sceiba.cu" style="color: rgb(0, 0, 0, 0.87); text-decoration: none;">
             <img src="/assets/icons/sceiba_white.svg" alt="Sceiba" width="120" height="50">
