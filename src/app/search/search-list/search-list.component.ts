@@ -1,9 +1,9 @@
 
 import { HttpParams } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Params, Router } from '@angular/router';
-
 import { AggregationsSelection, HitList, Record } from 'toco-lib';
+
 
 @Component({
 	selector: 'search-list',

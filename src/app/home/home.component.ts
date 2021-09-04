@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SearchService } from 'toco-lib';
-import { timer } from 'rxjs';
 import { TranslateService } from "@ngx-translate/core";
-
+import { timer } from 'rxjs';
+import { MetadataService, SearchService } from 'toco-lib';
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -25,10 +24,16 @@ export class HomeComponent implements OnInit {
   public constructor(private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _searchService: SearchService,
-    public transServ: TranslateService)
+    public transServ: TranslateService,
+    private metadata: MetadataService)
   { }
 
   public ngOnInit(): void {
+    this._activatedRoute.url.subscribe( () =>{
+    this.metadata.meta.updateTag({name:"DC.title", content:"Sceiba Publicaciones Científicas Cubanas"});
+    this.metadata.meta.updateTag({name:"DC.description", content:"Repositorio nacional de resultados de Investigación Científicas en Cuba, principalmente de revistas científicas en las universidades y otras organizaciones relacionadas con la actividad científica"});
+    })
+
     // this._searchService.getRecords(null).subscribe({
     //   next: (searchResponse: SearchResponse<Record>) => {
 

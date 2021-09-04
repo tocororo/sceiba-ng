@@ -6,8 +6,7 @@ import {
   NavigationExtras,
   Params, Router
 } from "@angular/router";
-
-import { AggregationsSelection, Record, SearchResponse, SearchService } from "toco-lib";
+import { AggregationsSelection, MetadataService, Record, SearchResponse, SearchService } from "toco-lib";
 
 @Component({
   selector: "app-search",
@@ -72,11 +71,16 @@ export class SearchComponent implements OnInit {
     private _searchService: SearchService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private metadata: MetadataService,
 
     // private dialog: MatDialog
   ) {}
 
   public ngOnInit(): void {
+
+    this.activatedRoute.url.subscribe( () =>{
+
+      })
 
     this.query = "";
 
@@ -98,6 +102,7 @@ export class SearchComponent implements OnInit {
 
             case "q":
               this.query = initQueryParams.get(key);
+              this.updateMetas(this.query)
               break;
 
             default:
@@ -186,6 +191,7 @@ export class SearchComponent implements OnInit {
   queryChange(event?: string) {
     this.query = event;
     this.updateQueryParams();
+
   }
 
   private updateQueryParams() {
@@ -212,6 +218,11 @@ export class SearchComponent implements OnInit {
     };
 
     this.router.navigate(["."], this.navigationExtras);
+  }
+
+  public updateMetas(query:string){
+    this.metadata.meta.updateTag({name:"DC.title", content:"Búsqueda de publicaciones científicas cubanas"});
+    this.metadata.meta.updateTag({name:"DC.description", content:query});
   }
 
 }
