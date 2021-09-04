@@ -39,7 +39,7 @@ export class StaticPagesComponent implements OnInit {
                 {
                     // console.log('data', data);
 
-                    this.src = data.src + ((this.transServ.currentLang == 'es') ? 'es.md' : 'en.md');
+                    this.src = data.src + '.' + this.transServ.currentLang + '.md';
                     this.title = data.title;
                     // this.metadata.setTitleDescription(this.title, '');
                     this.metadata.meta.updateTag({name:"DC.title", content:data['title']});
@@ -47,7 +47,7 @@ export class StaticPagesComponent implements OnInit {
 
                     /* Changes the translation when the language changes. */
                     this.transServ.onLangChange.subscribe((params: LangChangeEvent) => {
-                        this.src = data.src + ((params.lang == 'es') ? 'es.md' : 'en.md');
+                        this.src = data.src + '.' + this.transServ.currentLang + '.md';
                     });
                 }
 

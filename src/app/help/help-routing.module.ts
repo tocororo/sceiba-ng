@@ -15,27 +15,27 @@ const helpRoutes: Routes = [
 			{
 				path: 'faq',
 				component: StaticPagesComponent,
-				data: { src: 'assets/markdown/faq.md', title: 'FAQ' }
+				data: { src: 'assets/markdown/faq', title: 'FAQ' }
 			  },
 			  {
 				path: 'about',
 				component: StaticPagesComponent,
-				data: { src: 'assets/markdown/about.md', title: 'Sobre Nosotros' }
+				data: { src: 'assets/markdown/about', title: 'Sobre Nosotros' }
 			  },
 			  {
 				path: 'help',
 				component: StaticPagesComponent,
-				data: { src: 'assets/markdown/help.md', title: 'Ayuda' }
+				data: { src: 'assets/markdown/help', title: 'Ayuda' }
 			  },
 			  {
 				path: 'contact',
 				component: StaticPagesComponent,
-				data: { src: 'assets/markdown/contact.md', title: 'Contacto' }
+				data: { src: 'assets/markdown/contact', title: 'Contacto' }
 			  },
 			  {
 				path: 'policy',
 				component: StaticPagesComponent,
-				data: { src: 'assets/markdown/policy.md', title: 'Política de Privacidad' }
+				data: { src: 'assets/markdown/policy', title: 'Política de Privacidad' }
 			  }
 		]
 	}

@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { RecaptchaModule/*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
 //import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
@@ -20,20 +19,12 @@ import {
   Environment, OrganizationServiceNoAuth, SearchModule, SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
 } from 'toco-lib';
 import { allowedURLS, environment } from 'src/environments/environment';
-import { AggregationsComponent } from './aggregations/aggregations.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BarVerticalComponent } from './charts/bar-vertical/bar-vertical.component';
-import { ChartsComponent } from './charts/charts.component';
-import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
-import { PieGridComponent } from './charts/pie-grid/pie-grid.component';
-import { PolarChartComponent } from './charts/polar-chart/polar-chart.component';
 import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { StaticChipsLinkComponent } from './statics/chips-link/chips-static-link.component';
-import { LinkStaticComponent } from './statics/link/link-static.component';
-import { StaticTableLinkComponent } from './statics/table-link/table-static-link.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export function storageFactory(): OAuthStorage {
@@ -51,15 +42,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     PageNotFoundComponent,
     HomeComponent,
 
-    ChartsComponent,
-		PolarChartComponent,
-		BarVerticalComponent,
-		PieGridComponent,
-		AggregationsComponent,
-		GaugeChartComponent,
-    LinkStaticComponent,
-    StaticTableLinkComponent,
-    StaticChipsLinkComponent,
     ContactComponent,
     SceibaFooterComponent
   ],
@@ -79,7 +61,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     ReactiveFormsModule,
     MatRadioModule,
     FlexLayoutModule,
-    NgxChartsModule,
     RecaptchaModule,
 
     AngularMaterialModule,

@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: () => import('./search/search.module').then(mod => mod.SearchModule),
+    loadChildren: () => import('./search/search.module').then(mod => mod.SearchPageModule),
   },
   {
     path: 'profile',
