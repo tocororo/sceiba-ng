@@ -50,7 +50,7 @@ export class InputOrgSearchComponent extends InputControl implements OnInit {
 
   ngOnInit() {
     /** SUPER IMPORTANTE PONER */
-    this.init('', false, true);
+    this.init('', '', false, true);
 
     this.params = this.params.set('size', '10');
     this.params = this.params.set('page', '1');
