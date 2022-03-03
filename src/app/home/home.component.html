@@ -1,17 +1,18 @@
 
 <div fxLayout="column" fxLayoutAlign="center center">
+
     <div class="w-100 bg-primary-color" fxLayoutAlign="center center">
-        <div class="pt-50 ph-10">
-            <h3 class="mat-display-2" style="text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
+        <div class="pt-2em pb-2em ph-10">
+            <h3 class="mat-display-2" style="margin: 0; text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
         </div>
     </div>
-    <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">
-        <mat-toolbar-row fxLayoutAlign="center center" style="height: auto; white-space: normal;">
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="70%" fxFlex.lt-sm="100%">
-                <toco-search-query-input [buttonColor]="'accent'" [query]="''" (queryChange)="queryChange($event)" class="w-100"></toco-search-query-input>
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
+
+    <!-- <div class="w-100 bg-primary-color" fxLayout="row" fxLayoutAlign="center center"> -->
+    <div class="w-100" fxLayout="row" fxLayoutAlign="center center">
+        <div class="w-80" style="margin: 1em 0;">
+            <toco-search-query-input [buttonColor]="'primary'" [query]="''" (queryChange)="queryChange($event)"></toco-search-query-input>
+        </div>
+    </div>
 
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
 
