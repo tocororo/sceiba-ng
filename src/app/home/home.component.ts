@@ -1,8 +1,11 @@
+
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { timer } from 'rxjs';
-import { MetadataService, SearchService } from 'toco-lib';
+
+import { getPathWithLangExtension, MetadataService, SearchService } from "toco-lib";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
   public constructor(private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _searchService: SearchService,
-    public transServ: TranslateService,
+    private _transServ: TranslateService,
     private metadata: MetadataService)
   { }
 
@@ -102,5 +105,10 @@ export class HomeComponent implements OnInit {
     }
     slides.item(this.slideIndex - 1).setAttribute("style", "display: block;");
     dots.item(this.slideIndex - 1).className += " active";
+  }
+
+  public getPath(path: string): string
+  {
+    return getPathWithLangExtension(path, this._transServ.currentLang);
   }
 }
