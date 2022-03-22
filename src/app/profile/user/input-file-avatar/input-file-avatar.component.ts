@@ -15,7 +15,7 @@ export class InputFileAvatarComponent extends InputControl implements OnInit {
   }
 
   ngOnInit() {
-    this.init("", false, true);
+    this.init('', '', false, true);
   }
   /**
    * handleFileInput, emit file in a variable

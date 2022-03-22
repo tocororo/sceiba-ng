@@ -6,7 +6,9 @@ import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuth
 import { Observable } from 'rxjs';
 //import { RecaptchaLoaderService } from 'ng-recaptcha';
 //import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
-import { Environment, Response, User, UserProfileService } from 'toco-lib';
+
+import { convertLangFromNumberToString, LanguageAbbrs, LanguageTexts, LANGUAGE_ABBRS_LIST, LANGUAGE_TEXTS_LIST,
+  Environment, Response, User, UserProfileService } from 'toco-lib';
 
 export const authConfig: AuthConfig = {
 
@@ -46,16 +48,17 @@ export class AppComponent
   /**
    * Returns the available language texts. 
    */
-  public languageTexts: string[];
+  public languageTexts: LanguageTexts[];
   /**
    * Returns the available language abbreviations. 
    */
-  public languageAbbrs: string[];
+  public languageAbbrs: LanguageAbbrs[];
   /**
-   * Returns the language selected. 
-   * The default language is Spanish; that is, the zero index. 
+   * Returns the language currently used as number. 
+   * The Spanish language is: 0. It is the default. 
+   * The English language is: 1. 
    */
-  public languageSelected: number;
+  public currentLang: number;
 
   public footerSites: Array<{ name: string, url: string, useRouterLink: boolean }>;
 
@@ -86,13 +89,13 @@ export class AppComponent
 
   public ngOnInit(): void
   {
-    this.languageTexts = [ 'Español', 'English' ];
-    this.languageAbbrs = [ 'es', 'en' ];
-    this.languageSelected = 0;  /* The default language is Spanish; that is, the zero index. */
-    this._transServ.setDefaultLang('es');
-    this._transServ.use('es');
-    this._transServ.addLangs(this.languageAbbrs);
-    //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('es');
+		this.languageTexts = LANGUAGE_TEXTS_LIST;
+		this.languageAbbrs = LANGUAGE_ABBRS_LIST;
+		this.currentLang = 0;  /* The default language is Spanish; that is, the zero index. */
+		this._transServ.setDefaultLang(LanguageAbbrs.es);
+		this._transServ.use(LanguageAbbrs.es);
+		this._transServ.addLangs(this.languageAbbrs);
+		//this._recaptchaDynamicLanguageLoaderServ.updateLanguage(LanguageAbbrs.es);
 
     this.sceibaHost = this.env.sceibaHost;
 
@@ -150,21 +153,15 @@ export class AppComponent
    */
   public setLanguage(index: number): void
   {
-    switch((this.languageSelected = index))
+    if (index != this.currentLang)
     {
-      case 0:  /* Spanish */
-      {
-        this._transServ.use('es');
-        //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('es');
-        return;
-      }
+      // console.log('setLanguage method is called with language: ', index);
 
-      case 1:  /* English */
-      {
-        this._transServ.use('en');
-        //this._recaptchaDynamicLanguageLoaderServ.updateLanguage('en');
-        return;
-      }
+      let currentLangAsString: string = convertLangFromNumberToString((this.currentLang = index));
+
+      /* Informs the new current language. */
+      this._transServ.use(currentLangAsString);
+      // this._recaptchaDynamicLanguageLoaderServ.updateLanguage(currentLangAsString);
     }
   }
 

@@ -1,6 +1,6 @@
 ## About
 
-The National Registry is the official national list of journals managed by institutions attached to the Ministry of Education of Cuba. It is maintained by the Directorates of Science and Computerization of the MES and was developed within the framework of the project [VLIR JOINT 2019-01-27 (SCEIBA)](https://www.vliruos.be/en/projects/project/22?pid=4202) and the national branch project [TOCORORO](https://tocororo.upr.edu.cu).
+The National Registry is the official national list of journals managed by institutions attached to the Ministry of Education of Cuba. It is maintained by the Directorates of Science and Computerization of the MES and was developed within the framework of the national collaboration project [VLIR JOINT 2019-01-27 (SCEIBA)](https://www.vliruos.be/en/projects/project/22?pid=4202) and the branch project [TOCORORO](https://tocororo.upr.edu.cu) entitled “Quality control and monitoring of scientific research output on national and institutional level”.
 
 This platform is free to access and its contents are distributed under the Creative Commons CC by 4.0 License. Its objective is aimed at increasing the visibility of scientific journals in the Cuban higher education system, as well as the implementation of services that allow monitoring and evaluation of their quality.
 

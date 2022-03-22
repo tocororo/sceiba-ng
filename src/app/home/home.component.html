@@ -1,17 +1,18 @@
 
 <div fxLayout="column" fxLayoutAlign="center center">
+
     <div class="w-100 bg-primary-color" fxLayoutAlign="center center">
-        <div class="pt-50 ph-10">
-            <h3 class="mat-display-2" style="text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
+        <div class="pt-2em pb-2em ph-10">
+            <h3 class="mat-display-2" style="margin: 0; text-align: center; color: white;">{{ 'PUB_CIENT_CUBANAS' | translate }}</h3>
         </div>
     </div>
-    <mat-toolbar color="primary" style="font-size: initial;" style="margin-top: -20px;" [ngStyle.xs]="{'padding-bottom': '30px'}">
-        <mat-toolbar-row fxLayoutAlign="center center" style="height: auto; white-space: normal;">
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="70%" fxFlex.lt-sm="100%">
-                <toco-search-query-input [buttonColor]="'accent'" [query]="''" (queryChange)="queryChange($event)" class="w-100"></toco-search-query-input>
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
+
+    <!-- <div class="w-100 bg-primary-color" fxLayout="row" fxLayoutAlign="center center"> -->
+    <div class="w-100" fxLayout="row" fxLayoutAlign="center center">
+        <div class="w-80" style="margin: 1em 0;">
+            <toco-search-query-input [buttonColor]="'primary'" [query]="''" (queryChange)="queryChange($event)"></toco-search-query-input>
+        </div>
+    </div>
 
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
 
@@ -46,22 +47,22 @@
 
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider1.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+            <div class="text" markdown [src]="getPath('/assets/markdown/home.slider1')"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider2.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+            <div class="text" markdown [src]="getPath('/assets/markdown/home.slider2')"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider3.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+            <div class="text" markdown [src]="getPath('/assets/markdown/home.slider3')"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">{{ slideIndex }} / 4</div>
-            <div class="text" markdown [src]="'/assets/markdown/home.slider4.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+            <div class="text" markdown [src]="getPath('/assets/markdown/home.slider4')"></div>
         </div>
 
         <a class="prev" (click)="plusSlides(-1)">
@@ -90,7 +91,7 @@
                         <mat-card-subtitle>{{ 'SCEIBA_CATALOGO_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.catalog.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.catalog')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                         <a mat-button href="https://catalogo.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
@@ -105,7 +106,7 @@
                         <mat-card-subtitle>{{ 'SCEIBA_ORGANIZACIONES_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.orgs.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.orgs')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                         <a mat-button href="https://organizaciones.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
@@ -120,7 +121,7 @@
                         <mat-card-subtitle>{{ 'SCEIBA_VOCABULARIOS_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.vocabularios.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.vocabularios')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                         <a mat-button href="https://vocabularios.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'VOCABULARIOS' | translate }}">{{ 'ACCEDER' | translate }}</a>
@@ -135,7 +136,7 @@
                         <mat-card-subtitle>{{ 'DIRECTORIO_MES_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.mes.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.mes')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                         <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'REVISTAS_MES' | translate }}">{{ 'ACCEDER' | translate }}</a>
@@ -148,7 +149,7 @@
     <img src="assets/icons/sceiba.middle.top.svg" alt="" style="margin-bottom: -4px; width: 100%;">
     <div class="w-100 bg-primary-color" fxLayout="column" fxLayoutAlign="center center">
         <div class="w-70 white-title" fxLayout="center">
-            <div class="p" markdown [src]="'/assets/markdown/home.sceiba.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+            <div class="p" markdown [src]="getPath('/assets/markdown/home.sceiba')"></div>
         </div>
     </div>
     <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;">
@@ -164,7 +165,7 @@
                         <mat-card-subtitle>{{ 'PERSONAS_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.persons.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.persons')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     </mat-card-actions>
@@ -178,7 +179,7 @@
                         <mat-card-subtitle>{{ 'EVALUACION_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.evaluations.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.evaluations')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     </mat-card-actions>
@@ -192,7 +193,7 @@
                         <mat-card-subtitle>{{ 'CARPETAS_PERS_SUB' | translate }}</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
-                        <div class="p" markdown [src]="'/assets/markdown/home.fields.' + ((transServ.currentLang == 'es') ? 'es.md' : 'en.md')"></div>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.fields')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                     </mat-card-actions>
