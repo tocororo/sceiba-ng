@@ -44,7 +44,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": true,
+              "namedChunks": false,
               "commonChunk": true,
               "aot": true,
               "extractLicenses": true,

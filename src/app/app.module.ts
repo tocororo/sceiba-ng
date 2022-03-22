@@ -15,8 +15,8 @@ import { RecaptchaModule/*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
 import {
-  AngularMaterialModule, CoreModule,
-  Environment, OrganizationServiceNoAuth, SearchModule, SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
+  AngularMaterialModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule,
+  SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
 } from 'toco-lib';
 import { allowedURLS, environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +25,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SceibaFooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundSceibaComponent } from './page-not-found-sceiba/page-not-found-sceiba.component';
 
 export function storageFactory(): OAuthStorage {
   return sessionStorage
@@ -39,7 +39,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    PageNotFoundSceibaComponent,
     HomeComponent,
 
     ContactComponent,
