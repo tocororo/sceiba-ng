@@ -102,16 +102,13 @@ export class AppComponent
     this.footerSites = Array();
     this.footerInformation = Array();
 
-    // this.footerSites.push({ name: "MES", url: "https://www.mes.gob.cu", useRouterLink: false});
-    // this.footerSites.push({ name: "ONEI", url: "http://www.onei.gob.cu/", useRouterLink:false});
-    // this.footerSites.push({ name: "GRID", url: "https://www.grid.ac", useRouterLink: false});
-    // this.footerSites.push({ name: "ROR", url: "https://ror.org/", useRouterLink: false});
-    // this.footerSites.push({ name: "Wikidata", url: "https://www.wikidata.org/wiki/Wikidata:Main_Page", useRouterLink: false});
-
-    this.footerInformation.push({ name: "ACERCA_DE", url: "/help/about", useRouterLink: true });
-    this.footerInformation.push({ name: "PRIVACIDAD", url: "/help/policy", useRouterLink: true });
-    // this.footerInformation.push({ name: "PRIVACIDAD", url: "https://sceiba-lab.upr.edu.cu/page/politicas", useRouterLink: false});
-    this.footerInformation.push({ name: "CONTACTOS", url: "/help/contact", useRouterLink: true });
+    this.footerSites.push({ name: "MES", url: "https://www.mes.gob.cu", useRouterLink: false});
+    this.footerSites.push({ name: "ONEI", url: "http://www.onei.gob.cu/", useRouterLink:false});
+    this.footerSites.push({ name: "GRID", url: "https://www.grid.ac", useRouterLink: false});
+    
+    this.footerInformation.push({ name: "ROR", url: "https://ror.org/", useRouterLink: false});
+    this.footerInformation.push({ name: "Wikidata", url: "https://www.wikidata.org/wiki/Wikidata:Main_Page", useRouterLink: false});
+    this.footerInformation.push({ name: "ORCID", url: "https://orcid.org", useRouterLink: false });
 
     /* this.urlLogin = this.env.sceibaHost + "login";
     this.urlSignUp = this.env.sceibaHost + "signup"; */

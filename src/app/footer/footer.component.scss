@@ -44,7 +44,16 @@ mat-toolbar.footer-height{
     padding-right: 40px;
     margin-left: auto;
 }
-
+.w-30
+{
+    width: 30%;
+    min-width: 15em;
+}
+.w-40
+{
+    width: 40%;
+    min-width: 15em;
+}
 .w-50
 {
     width: 50%;
@@ -59,4 +68,8 @@ mat-toolbar.footer-height{
 .pt-2em
 {
     padding-top: 2em;
+}
+.pt-1
+{
+    padding-top: 0.5em;
 }
