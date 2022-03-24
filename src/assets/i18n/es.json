@@ -21,7 +21,7 @@
     "ADMINISTRACION": "Administración",
     "SALIR": "Salir",
     "YO": "Yo",
-    "PUB_CIENT_CUBANAS": "Publicaciones Científicas Cubanas",
+    "PUB_CIENT_CUBANAS": "Portal de Publicaciones Científicas Cubanas",
     "PROD_SERV": "Productos y Servicios",
     "SCEIBA": "Sceiba",
     "CATALOGO": "Catálogo",
@@ -61,6 +61,12 @@
     "SCEIBA_PRIVACIDAD_2": "a no ser que se indique lo contrario, bajo la",
     "PORTAL_PUB": "Portal de publicaciones científicas cubanas",
     "DESARROLLADO_CON": "Desarrollado con",
+    "FOOTER_TEXT": "Sceiba tiene como objetivo establecer un sistema abierto centralizado que facilite el seguimiento y evaluación de las publicaciones científicas a nivel nacional",
+    "FOOTER_TEXT_ENLACE": "Enlaces",
+    "SIGUENOS": "Síguenos",
+    "FOOTER_TEXT_INFORMACION": "Enlaces de Interés",
+    "FOOTER_TEXT_DEVELOP": "desarrollado con",
+    "FOOTER_TEXT_AND": "y",
 
     "TOCO_SEARCH_QUERY_INPUT": {
         "INPUT_SEARCH_LABEL": "Buscar",
