@@ -1,7 +1,5 @@
 {
     "CONJUNCION_Y": "y",
-    "BETA": "BETA",
-    "BETA_TOOLTIP": "Este es un producto BETA configurado con propósitos de prueba. Algunas características pueden no funcionar correctamente.",
     "MENU_INICIO": "Menu de inicio",
     "IDIOMA": "Idioma",
     "REDES_SOC": "Redes sociales",
@@ -67,6 +65,10 @@
     "FOOTER_TEXT_INFORMACION": "Enlaces de Interés",
     "FOOTER_TEXT_DEVELOP": "desarrollado con",
     "FOOTER_TEXT_AND": "y",
+
+    "TOCO_NG_BETA": "BETA",
+    "TOCO_NG_BETA_TOOLTIP": "Este es un producto BETA configurado con propósitos de prueba. Algunas características pueden no funcionar correctamente.",
+    "TOCO_NG_PAGINA_LOGO_IMG_ALT_TEXT": "Sceiba",
 
     "TOCO_SEARCH_QUERY_INPUT": {
         "INPUT_SEARCH_LABEL": "Buscar",
