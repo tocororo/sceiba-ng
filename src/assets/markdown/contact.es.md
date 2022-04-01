@@ -1,8 +1,42 @@
-## Información de Contactos
-**Email:** <sceiba.cu@gmail.com>
+## Equipo del proyecto
+* Email del proyecto: <sceiba.cu@gmail.com>
 
-**Telefono:** (+53) 48-75-04-16
+** Sitio web: https://sceiba.cu/
+## Directores
+** Marc Goovaerts (Flemish promoter)
+> 
+    Universiteit Hasselt
+    www.uhasselt.be
 
-**Direccion:** Calle Martí #300 entre González Alcorta y 27 de noviembre. Pinar del Río. Código Postal: 20100. Pinar del Río, Cuba
+** Yohannis Marti Lahera (South promoter) 
+> 
+    Universidad de La Habana
+    www.uh.cu
+## Representantes de las instituciones participantes (Other flemmish and local partners):
+** Tim Engels & Raf Guns
+> 
+    Universiteit Antwerpen
+    www.uantwerpen.be
 
-**Sitio web:** https://tocororo.upr.edu.cu
+** Eduardo Leuman Fuentes Navarro
+> 
+    Universidad Nacional Agraria La Molina
+    www.lamolina.edu.pe
+
+** Rafael Martínez Estévez
+> 
+    Universidad de Pinar del Río
+    http://www.upr.edu.cu
+
+** Josmel Pacheco Mendoza
+> 
+    Universidad San Ignacio Loyola
+    https://www.usil.edu.pe
+## Desarrolladores y Bibliotecarios
+Eduardo
+Edel 
+Claudia Valera
+Reinier
+## Expertos colaboradores
+Sadia 
+Ann Peters
