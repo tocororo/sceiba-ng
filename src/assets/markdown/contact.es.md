@@ -1,54 +1,189 @@
-## Equipo y contactos
-* Email del proyecto: <sceiba.cu@gmail.com>
+<div style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; text-align-last: center;">
 
-** Sitio web: https://sceiba.cu/
+# Equipo y contactos
+
+
 ## Directores
-** Marc Goovaerts (Flemish promoter)
-> 
-    Universiteit Hasselt
-    www.uhasselt.be
 
-** Yohannis Marti Lahera (South promoter) 
-> 
-    Universidad de La Habana
-    www.uh.cu
+<div style="width: 100%; display: flex; flex-wrap: wrap; align-content: center; justify-content: space-around;">
+
+<div class="markdown-card-green-light">
+Marc Goovaerts (Flemish promoter)
+
+Universiteit Hasselt <br/>
+www.uhasselt.be <br/>
+<sceiba.cu@gmail.com> 
+</div>
+
+<div class="markdown-card-green-light">
+Yohannis Marti Lahera (South promoter) 
+
+Universidad de La Habana <br/>
+www.uh.cu<br/>
+<sceiba.cu@gmail.com> 
+</div>
+
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; text-align-last: center;">
+
 ## Representantes de las instituciones participantes (Other flemmish and local partners):
-** Tim Engels & Raf Guns
-> 
-    Universiteit Antwerpen
-    www.uantwerpen.be
+<div style="width: 100%; display: flex; flex-wrap: wrap; align-content: center; justify-content: space-between;">
 
-** Eduardo Leuman Fuentes Navarro
-> 
-    Universidad Nacional Agraria La Molina
-    www.lamolina.edu.pe
+<div class="markdown-card-green-light">
+Tim Engels & Raf Guns
+ 
+Universiteit Antwerpen<br/>
+www.uantwerpen.be
+</div>
+<div class="markdown-card-green-light">
+Eduardo Leuman Fuentes Navarro
 
-** Rafael Martínez Estévez
-> 
-    Universidad de Pinar del Río
-    http://www.upr.edu.cu
+Universidad Nacional Agraria La Molina<br/>
+www.lamolina.edu.pe
+</div>
+<div class="markdown-card-green-light">
+Rafael Martínez Estévez
 
-** Josmel Pacheco Mendoza
-> 
-    Universidad San Ignacio Loyola
-    https://www.usil.edu.pe
+Universidad de Pinar del Río<br/>
+www.upr.edu.cu
+</div>
+<div class="markdown-card-green-light">
+Josmel Pacheco Mendoza
+
+Universidad San Ignacio Loyola<br/>
+www.usil.edu.pe
+</div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; text-align-last: center;">
+
 ## Desarrolladores y Bibliotecarios
-Eduardo Arencibia Cabeza. IT developer at University library. UPR. Cuba
-Edel Abreu Hernández. IT developer at University library. UPR. Cuba
-Claudia Valera. Librarian. University of Havana. Cuba
-Reinier Lorenzo Cabezas. IT developer at University library. UPR.Cuba
-Edwin Mellisho Salas. Director of Research Management Office. UNALM. Peru
-Maria del Carmen Martínez Díaz. Director of University library. UPR. Cuba
-Lilibeth Capdevila. Information specialist. University of Havana. Cuba
-Alina Ruiz Jhones. University of Havana. Cuba
-Mabel Rodríguez Poo. IT&IS Deparment Chief. University Library. UPR. Cuba
-Pedro Urra Gonzalez. IT division. University of Havana. Cuba
+
+<div style="width: 100%; display: flex; flex-wrap: wrap; align-content: center; justify-content: space-between;">
+
+<div>
+<div class="markdown-card-green-light">
+Eduardo Arencibia Cabeza <br/>
+IT developer at University library. UPR. Cuba
+</div>
+<div class="markdown-card-green-light">
+Edel Abreu Hernández<br/>
+IT developer at University library. UPR. Cuba
+</div>
+<div class="markdown-card-green-light">
+Claudia Valera<br/>
+Librarian. University of Havana. Cuba
+</div>
+<div class="markdown-card-green-light">
+Reinier Lorenzo Cabezas<br/>
+IT developer at University library. UPR.Cuba
+</div>
+</div>
+
+<div>
+<div class="markdown-card-green-light">
+Edwin Mellisho Salas<br/>
+Research Management Office. UNALM. Peru
+</div>
+<div class="markdown-card-green-light">
+Maria del Carmen Martínez Díaz<br/>
+Director of University library. UPR. Cuba
+</div>
+<div class="markdown-card-green-light">
+Lilibeth Capdevila<br/>
+Information specialist. University of Havana. Cuba
+</div>
+<div class="markdown-card-green-light">
+Alina Ruiz Jhones<br/>
+University of Havana. Cuba
+</div>
+</div>
+
+<div>
+<div class="markdown-card-green-light">
+Mabel Rodríguez Poo<br/> 
+University Library. UPR. Cuba
+</div>
+<div class="markdown-card-green-light">
+Pedro Urra Gonzalez<br/>
+IT division. University of Havana. Cuba
+</div>
+<div class="markdown-card-green-light">
+Cristina Pérez García<br/>
+IT Librarian. University of Havana. Cuba
+</div>
+<div class="markdown-card-green-light">
+José Manuel ALonso<br/>
+IT developer. University of Havana.Cuba
+</div>
+</div>
+</div>
+
+<div style="width: 100%; display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; text-align-last: center;">
+
 ## Expertos y colaboradores
-> 
-    Sadia Vancauwenbergh. Director Research and Internationalisation. President euroCRIS
-    Concepción Díaz Mayans. Advisor at IT Division. Ministry of Higher Education
-    Liliam Chang. Advisor at Research Division. Ministry of Higher Education
-    Allan Pierra Conde. Professor. University 
-    Carmen Velezmoro. Profesora. UNALM. Peru
-    Gimena del Rio Riande. Researcher at IIBICRIT-CONICET
-    Pablo de Castro. Eurocris. University of Strathclyde. UK
+
+<div style="width: 100%; display: flex; flex-wrap: wrap; align-content: center; justify-content: space-between;">
+
+<div>
+<div class="markdown-card-green-light">
+Sadia Vancauwenbergh<br/>
+Director Research and Internationalisation. <br/>
+President euroCRIS. UHasselt. Belgium
+</div>
+<div class="markdown-card-green-light">
+Concepción Díaz Mayans<br/>
+Ministry of Higher Education. Cuba
+</div>
+<div class="markdown-card-green-light">
+Liliam Chang.<br/>
+Ministry of Higher Education. Cuba
+</div>
+<div class="markdown-card-green-light">
+Cristina Huidiu<br/>
+Digital Solution Specialist. Digital Science
+</div>
+</div>
+
+<div>
+<div class="markdown-card-green-light">
+Allan Pierra Conde.<br/>
+Professor at University of Informatic Science. Cuba 
+</div>
+<div class="markdown-card-green-light">
+Carmen Velezmoro<br/>
+Professor. UNALM. Peru
+</div>
+<div class="markdown-card-green-light">
+Gimena del Rio Riande<br/>
+Researcher at IIBICRIT-CONICET
+</div>
+<div class="markdown-card-green-light">
+Remedios Meleros <br/>
+CSIC. DOAJ, Redalyc, Scielo. España
+</div>
+</div>
+
+<div>
+<div class="markdown-card-green-light">
+Pablo de Castro<br/>
+Eurocris. University of Strathclyde. UK
+</div>
+<div class="markdown-card-green-light">
+Victor Gómez Razza<br/>
+PeruCRIS. Concytec. Perú
+</div>
+<div class="markdown-card-green-light">
+Ana Cardoso<br/>
+Engagement Lead. ORCID
+</div>
+<div class="markdown-card-green-light">
+Pascal Aventurier<br/>
+Lead of Sientific Information Team. IRD. France
+</div>
+</div>
+
+</div>
+</div>
