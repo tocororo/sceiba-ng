@@ -1,4 +1,4 @@
-## Team & contact
+## Equipo y contactos
 * Email del proyecto: <sceiba.cu@gmail.com>
 
 ** Sitio web: https://sceiba.cu/
