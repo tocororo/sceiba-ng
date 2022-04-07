@@ -87,14 +87,14 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product1-image"></div>
-                        <mat-card-title>{{ 'SCEIBA_CATALOGO' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'SCEIBA_CATALOGO_SUB' | translate }}</mat-card-subtitle>
+                        <!-- <mat-card-title>{{ 'SCEIBA_CATALOGO' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'SCEIBA_CATALOGO_SUB' | translate }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.catalog')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="https://catalogo.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button href="/search" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -102,8 +102,8 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product2-image"></div>
-                        <mat-card-title>{{ 'SCEIBA_ORGANIZACIONES' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'SCEIBA_ORGANIZACIONES_SUB' | translate }}</mat-card-subtitle>
+                        <!-- <mat-card-title>{{ 'SCEIBA_ORGANIZACIONES' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'SCEIBA_ORGANIZACIONES_SUB' | translate }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.orgs')"></div>
@@ -117,8 +117,8 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product3-image"></div>
-                        <mat-card-title>{{ 'SCEIBA_VOCABULARIOS' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'SCEIBA_VOCABULARIOS_SUB' | translate }}</mat-card-subtitle>
+                        <!-- <mat-card-title>{{ 'SCEIBA_VOCABULARIOS' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'SCEIBA_VOCABULARIOS_SUB' | translate }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.vocabularios')"></div>
@@ -132,14 +132,44 @@
                 <mat-card class="ligth-green-card">
                     <mat-card-header>
                         <div mat-card-avatar class="product4-image"></div>
-                        <mat-card-title>{{ 'DIRECTORIO_MES' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'DIRECTORIO_MES_SUB' | translate }}</mat-card-subtitle>
+                        <!-- <mat-card-title>{{ 'DIRECTORIO_MES' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'DIRECTORIO_MES_SUB' | translate }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.mes')"></div>
                     </mat-card-content>
                     <mat-card-actions>
                         <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'REVISTAS_MES' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="card1-header-image"></div>
+                        <!-- <mat-card-title>{{ 'DIRECTORIO_MES' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'PERSONAS_SUB' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.persons')"></div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a mat-button  target="_blank" class="apps" matTooltip="{{ 'PROXIMAMENTE' | translate }}">{{ 'PROXIMAMENTE' | translate }}</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="pt-20" fxFlex=30%>
+                <mat-card class="ligth-green-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="card2-header-image"></div>
+                        <!-- <mat-card-title>{{ 'DIRECTORIO_MES' | translate }}</mat-card-title> -->
+                        <mat-card-title>{{ 'EVALUACION' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="p" markdown [src]="getPath('/assets/markdown/home.evaluations')"></div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a mat-button  target="_blank" class="apps" matTooltip="{{ 'PROXIMAMENTE' | translate }}">{{ 'PROXIMAMENTE' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -154,60 +184,6 @@
     </div> -->
     <!-- <img src="assets/icons/sceiba.top.bottom.2.svg" alt="" style="margin-top: -4px; width: 100%;"> -->
 
-    <div class="pt-50" ngClass.xs="pt-20 ph-30 pb-20">
-        <h1 class="mat-display-1 text-center" style="margin: 0;">{{ 'PROXIMAMENTE' | translate }}</h1>
-        <div class="cards-nexts" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" fxLayout.xs="column">
-            <div fxFlex=25%>
-                <mat-card class="bgtranparent">
-                    <mat-card-header>
-                        <div mat-card-avatar class="card1-header-image"></div>
-                        <mat-card-title>{{ 'PERSONAS' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'PERSONAS_SUB' | translate }}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div class="p" markdown [src]="getPath('/assets/markdown/home.persons')"></div>
-                    </mat-card-content>
-                    <mat-card-actions>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div fxFlex=25%>
-                <mat-card class="bgtranparent">
-                    <mat-card-header>
-                        <div mat-card-avatar class="card2-header-image"></div>
-                        <mat-card-title>{{ 'EVALUACION' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'EVALUACION_SUB' | translate }}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div class="p" markdown [src]="getPath('/assets/markdown/home.evaluations')"></div>
-                    </mat-card-content>
-                    <mat-card-actions>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div fxFlex=25%>
-                <mat-card class="bgtranparent">
-                    <mat-card-header>
-                        <div mat-card-avatar class="card3-header-image"></div>
-                        <mat-card-title>{{ 'CARPETAS_PERS' | translate }}</mat-card-title>
-                        <mat-card-subtitle>{{ 'CARPETAS_PERS_SUB' | translate }}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div class="p" markdown [src]="getPath('/assets/markdown/home.fields')"></div>
-                    </mat-card-content>
-                    <mat-card-actions>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-        </div>
-    </div>
 
-
-    <!-- <mat-card class="mat-elevation-z1 w-70 m-1 mb-1 ligth-green-card">
-        <mat-card-title>{{ 'CONTACTE_CON_NOS' | translate }}</mat-card-title>
-        <mat-card-content>
-            <app-contact></app-contact>
-        </mat-card-content>
-    </mat-card> -->
 
 </div>

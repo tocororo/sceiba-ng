@@ -1,1 +1,1 @@
-Controlled vocabulary services for research information management.
+Controlled vocabulary services for research information management systems.
