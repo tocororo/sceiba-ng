@@ -1,1 +1,1 @@
-Implementation of own evaluation methodologies at institutional and other scales, from the connection between the results and sources, organizations and people involved in the different lines of research.
+Tools based on different methodologies to evaluate scientific publications and organizations dedicated to research.

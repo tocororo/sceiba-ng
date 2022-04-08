@@ -1,1 +1,1 @@
-Identification system of peoples related to Research in Cuba.
+ System for the person persistent identification related to Cuban research.

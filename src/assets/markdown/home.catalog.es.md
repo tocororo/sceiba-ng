@@ -1,1 +1,1 @@
-Colección de revistas científicas cubanas en acceso abierto, incluidas en la base de datos de Sceiba. No es un oficial o exhaustivo de toda revista cubana existente. Incluye el registro de dichas fuentes y su manejo por los editores y gestores del sistema.
+Herramienta de descubrimiento de código abierto para la búsqueda en la colección de registros de revistas científicas de Cuba

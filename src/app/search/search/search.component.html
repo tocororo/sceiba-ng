@@ -1,11 +1,8 @@
-<mat-toolbar
-  color="accent"
-  fxLayout="row wrap"
-  fxLayout.xs="column"
-  fxLayoutAlign="space-between center"
-  style="height: 80px"
->
-  <span>Búsqueda</span>
+<div style="height: 80px; padding: 0 16px; flex-flow: row wrap; box-sizing: border-box; display: flex; place-content: center space-between;
+    align-items: center;"
+  >
+
+    <span class="mat-h2">Búsqueda</span>
 
   <!-- <div *ngIf="search_type; then search_list_button else search_charts_button"></div> -->
 
@@ -20,7 +17,7 @@
         <mat-icon>list</mat-icon>
       </button>
     </ng-template> -->
-</mat-toolbar>
+  </div>
 
 <toco-progress [loading]="loading"></toco-progress>
 
