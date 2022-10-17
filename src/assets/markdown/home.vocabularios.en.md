@@ -1,1 +1,1 @@
-System of controlled vocabularies and terms to achieve standardization and uniqueness in searches and evaluation of results.
+Controlled vocabulary services for research information management systems.

@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this._activatedRoute.url.subscribe( () =>{
-    this.metadata.meta.updateTag({name:"DC.title", content:"Sceiba Publicaciones Científicas Cubanas"});
-    this.metadata.meta.updateTag({name:"DC.description", content:"Repositorio nacional de resultados de Investigación Científicas en Cuba, principalmente de revistas científicas en las universidades y otras organizaciones relacionadas con la actividad científica"});
+    this.metadata.setStandardMeta("Sceiba - Portal de Publicaciones Científicas Cubanas","Plataforma para el monitoreo de publicaciones científicas cubanas", "/assets/images/sceiba-logo.png");    
+    this.metadata.meta.updateTag({name:"keywords", content:"evaluación, revista científica, calidad, metodología, publicación científica, investigación, Cuba"});
     })
 
     // this._searchService.getRecords(null).subscribe({

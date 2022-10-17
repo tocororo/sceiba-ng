@@ -266,16 +266,6 @@
 }
 
 
-.card1-header-image {
-    background-image: url('/assets/images/proximamente/people1.png');
-    background-size: cover;
-}
-
-.card2-header-image {
-    background-image: url('/assets/images/proximamente/evaluation2.png');
-    background-size: cover;
-}
-
 .card3-header-image {
     background-image: url('/assets/images/proximamente/folder1.png');
     background-size: cover;
@@ -292,24 +282,31 @@
 }
 
 
-.product1-image {
-    background-image: url("/assets/icons/catalog.svg");
+.product1-image, .product2-image, .product3-image, .product4-image, .card1-header-image, .card2-header-image{
+    background-image: url("/assets/icons/faro_neg.png");
     background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+}
+.card1-header-image {
+    background-image: url('/assets/icons/community-group-.svg');
+}
+
+.card2-header-image {
+    background-image: url('/assets/icons/chart_icon.svg');
 }
 
 .product2-image {
-    background-image: url("/assets/icons/organizacion.svg");
-    background-size: cover;
+    background-image: url("/assets/icons/map-location.svg");
 }
 
 .product3-image {
-    background-image: url("/assets/icons/vocabs.svg");
-    background-size: cover;
+    background-image: url("/assets/icons/brain_human_ideas.svg");
 }
 
 .product4-image {
-    background-image: url("/assets/icons/mes.svg");
-    background-size: cover;
+    background-image: url("/assets/icons/identificador_MES.png");
 }
 
 .white-title {

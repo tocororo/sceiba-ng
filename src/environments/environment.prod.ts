@@ -1,7 +1,7 @@
 import { Environment } from 'toco-lib';
 
 export class EnvironmentImpl implements Environment {
-  production = false;
+  production = true;
   sceibaHost = 'https://sceiba.cu/';
   cuorHost = 'https://organizaciones.sceiba.cu/';
   sceibaApi = 'https://sceiba.cu/api/';
