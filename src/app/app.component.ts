@@ -1,42 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthConfig, JwksValidationHandler, OAuthErrorEvent, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
-import { Observable } from 'rxjs';
-//import { RecaptchaLoaderService } from 'ng-recaptcha';
-//import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
+import { OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
+import { Observable, Subscription } from 'rxjs';
 
-import { convertLangFromNumberToString, LanguageAbbrs, LanguageTexts, LANGUAGE_ABBRS_LIST, LANGUAGE_TEXTS_LIST,
-  Environment, Response, User, UserProfileService } from 'toco-lib';
-
-export const authConfig: AuthConfig = {
-
-  // Url of the Identity Provider. 
-  issuer: 'https://personas.sceiba.cu/auth/realms/sceiba',
-
-  loginUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/auth',
-
-  tokenEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/token',
-
-  logoutUrl: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/logout',
-
-  oidc: true,
-
-  requireHttps: true,
-
-  userinfoEndpoint: 'https://personas.sceiba.cu/auth/realms/sceiba/protocol/openid-connect/userinfo',
-
-  // URL of the SPA to redirect the user to after login. 
-  redirectUri: 'https://localhost:4200',
-
-  // The SPA's id. The SPA is registered with this id at the auth-server. 
-  clientId: 'sceiba-angular-dev',
-
-  // Sets the scope for the permissions the client should request. 
-  // The first three are defined by OIDC. The 4th is a usecase-specific one. 
-  scope: 'openid profile email',
-}
+import { convertLangFromNumberToString,
+  Environment, Response, User, OauthInfo, OauthAuthenticationService } from 'toco-lib';
 
 @Component({
   selector: 'app-root',
@@ -48,11 +18,11 @@ export class AppComponent
   /**
    * Returns the available language texts. 
    */
-  public languageTexts: LanguageTexts[];
+  public languageTexts: string[];
   /**
    * Returns the available language abbreviations. 
    */
-  public languageAbbrs: LanguageAbbrs[];
+  public languageAbbrs: string[];
   /**
    * Returns the language currently used as number. 
    * The Spanish language is: 0. It is the default. 
@@ -64,83 +34,78 @@ export class AppComponent
 
   public footerInformation: Array<{ name: string, url: string, useRouterLink: boolean }>;
 
-  public urlLogin: string;
+  public user: User;
 
   public sceibaHost: string;
 
-  public user: User;
+  
+  public oauthInfo: OauthInfo = {
+    serverHost: this.env.sceibaHost,
+    loginUrl: this.env.sceibaHost + "oauth/authorize",
+    tokenEndpoint: this.env.sceibaHost + "oauth/token",
+    userInfoEndpoint: this.env.sceibaApi + "me",
+    appHost: this.env.appHost,
+    appName: this.env.appName,
+    oauthRedirectUri: this.env.oauthRedirectUri,
+    oauthClientId: this.env.oauthClientId,
+    oauthScope: this.env.oauthScope,
+  };
 
-  public urlSignUp: string = 'https://personas.sceiba.cu/auth/realms/sceiba/clients-registrations/openid-connect/sceiba-angular-dev';
+  private authenticateSuscription: Subscription = null;
 
   public constructor(private env: Environment,
     // private matomoInjector: MatomoInjector,
     private router: Router,
     private oauthService: OAuthService,
-    private oauthStorage: OAuthStorage,
-    private userService: UserProfileService,
     protected http: HttpClient,
-    private _transServ: TranslateService, 
+    private _transServ: TranslateService,
+    private oauthStorage: OAuthStorage,
+    private authenticateService: OauthAuthenticationService,
     //private _recaptchaDynamicLanguageLoaderServ: RecaptchaLoaderService,
     /*@Inject(RecaptchaLoaderService) private _recaptchaDynamicLanguageLoaderServ: RecaptchaDynamicLanguageLoaderService*/)
   {
-    this.configure()
+    // this.configure()
     // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
   }
 
   public ngOnInit(): void
   {
-		this.languageTexts = LANGUAGE_TEXTS_LIST;
-		this.languageAbbrs = LANGUAGE_ABBRS_LIST;
+		this.languageTexts = ["Español", "English"];
+    this.languageAbbrs = ["es", "en"];
 		this.currentLang = 0;  /* The default language is Spanish; that is, the zero index. */
-		this._transServ.setDefaultLang(LanguageAbbrs.es);
-		this._transServ.use(LanguageAbbrs.es);
+		this._transServ.setDefaultLang('es');
+		this._transServ.use('es');
 		this._transServ.addLangs(this.languageAbbrs);
+    this.sceibaHost = this.env.sceibaHost;
 		//this._recaptchaDynamicLanguageLoaderServ.updateLanguage(LanguageAbbrs.es);
 
-    this.sceibaHost = this.env.sceibaHost;
+    let request = JSON.parse(this.oauthStorage.getItem("user"));
+    if (request) {
+      this.user = request;
+    }
 
-    this.footerSites = Array();
-    this.footerInformation = Array();
-
-    this.footerSites.push({ name: "MES", url: "https://www.mes.gob.cu", useRouterLink: false});
-    this.footerSites.push({ name: "ONEI", url: "http://www.onei.gob.cu/", useRouterLink:false});
-    this.footerSites.push({ name: "GRID", url: "https://www.grid.ac", useRouterLink: false});
-    
-    this.footerInformation.push({ name: "ROR", url: "https://ror.org/", useRouterLink: false});
-    this.footerInformation.push({ name: "Wikidata", url: "https://www.wikidata.org/wiki/Wikidata:Main_Page", useRouterLink: false});
-    this.footerInformation.push({ name: "ORCID", url: "https://orcid.org", useRouterLink: false });
-
-    /* this.urlLogin = this.env.sceibaHost + "login";
-    this.urlSignUp = this.env.sceibaHost + "signup"; */
-
-    this.oauthService.events.subscribe(event => {
-      if (event instanceof OAuthErrorEvent) {
-        console.error(event);
-      } else {
-        console.warn("EVENT:", event);
-        if (event.type == 'token_received') {
-          this.getUserInfo().subscribe({
-            next: (response) => {
-              console.log(response)
-            },
-
-            error: (e) => { },
-
-            complete: () => { },
-          });
-        }
-      }
-    });
-    if (this.oauthService.getAccessToken()) {
-      this.getUserInfo().subscribe({
-        next: (response) => {
-          console.log(response)
+    this.authenticateSuscription =
+      this.authenticateService.authenticationSubjectObservable.subscribe(
+        (request) => {
+          if (request != null) {
+            this.user = request;
+            // if (this.oauthStorage.getItem('access_token')) {
+            //   this.user = this.oauthStorage.getItem('email');
+            // }
+          } else {
+            this.logoff();
+          }
         },
+        (error: any) => {
+          this.user = null;
+        },
+        () => {}
+      );
+  }
 
-        error: (e) => { },
-
-        complete: () => { },
-      });
+  ngOnDestroy(): void {
+    if (this.authenticateSuscription) {
+      this.authenticateSuscription.unsubscribe();
     }
   }
 
@@ -166,11 +131,11 @@ export class AppComponent
     return this.router.url == '/';
   }
 
-  private configure() {
-    this.oauthService.configure(authConfig);
-    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
-  }
+  // private configure() {
+  //   this.oauthService.configure(authConfig);
+  //   this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+  //   this.oauthService.loadDiscoveryDocumentAndTryLogin();
+  // }
 
   public login() {
     console.log('hi');
@@ -180,13 +145,15 @@ export class AppComponent
 
   public logoff() {
     this.oauthService.logOut();
+    this.oauthStorage.removeItem("user");
+    this.user = undefined;
   }
 
   public get name()
   {
-    let claims = this.oauthService.getIdentityClaims();
-    if (!claims) return null;
-    return claims['given_name'];
+    let user = JSON.parse(this.oauthStorage.getItem("user"));
+    if (!user) return null;
+    return user['email'];
   }
 
   getUserInfo(): Observable<Response<any>> {

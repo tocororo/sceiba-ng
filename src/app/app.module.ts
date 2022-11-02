@@ -15,7 +15,7 @@ import { RecaptchaModule/*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
 import {
-  AngularMaterialModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule,
+  AngularMaterialModule, AuthenticationModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule,
   SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
 } from 'toco-lib';
 import { allowedURLS, environment } from 'src/environments/environment';
@@ -68,6 +68,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     StaticsModule,
     TocoFormsModule,
     SearchModule,
+    AuthenticationModule,
 
     AppRoutingModule,
     MarkdownModule.forRoot({
