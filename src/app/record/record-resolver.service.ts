@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-
 import { Environment, Record, SearchResponse, SearchService } from 'toco-lib';
+
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +50,7 @@ export class RecordResolverService implements Resolve<SearchResponse<Record>> {
   getRecordById(id: string): Observable<SearchResponse<Record>>
   {
     // TODO: Esta línea es ineficiente, puede ser optimizada.
-    const req = this.env.sceibaApi + this.prefix + '/' + id;
+    const req = this.env.sceibaApi + '/pid/record/' + id;
 
     return this.http.get<SearchResponse<Record>>(req);
   }
