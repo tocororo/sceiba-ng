@@ -2,10 +2,10 @@ import { Environment } from 'toco-lib';
 
 class EnvironmentImpl implements Environment {
   production = false;
-  sceibaHost = 'https://cuba.sceiba.org/';
-  cuorHost = 'https://organizaciones.cuba.sceiba.org/';
-  sceibaApi = 'https://cuba.sceiba.org/api/';
-  cuorApi = 'https://organizaciones.cuba.sceiba.org/api/';
+  sceibaHost = 'https://localhost:5000/';
+  cuorHost = 'https://localhost:5000/';
+  sceibaApi = 'https://localhost:5000/api/';
+  cuorApi = 'https://localhost:5000/api/';
 
   appHost = 'https://localhost:4200';
   appName = 'Sceiba';
@@ -14,13 +14,14 @@ class EnvironmentImpl implements Environment {
   websiteUsername_Facebook = '@sceiba';
 
   oauthRedirectUri = 'https://localhost:4200/';
-  oauthClientId = 'uLYRoa4mN5870eBby4bElHkrzpDUPFlWTios9njy';
+  oauthClientId = 'AwNeWXGng8C2KraEoYpqFMecao9CCyEDsOlsRIfs';
   oauthScope = 'user:email';
   topOrganizationPID = '';
   cachableUrls = [];
 
   matomoUrl = 'https://crai-stats.upr.edu.cu/';
   matomoSiteId = 7;
+
 
 
 }
