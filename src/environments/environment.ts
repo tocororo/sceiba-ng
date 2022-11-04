@@ -22,6 +22,7 @@ class EnvironmentImpl implements Environment {
   matomoUrl = 'https://crai-stats.upr.edu.cu/';
   matomoSiteId = 7;
 
+  sceiba = 'https://cuba.sceiba.org';
   discover = '/search';
   catalog = 'https://cuba-catalogo.sceiba.org/';
   revistasmes = 'https://cuba-revistasmes.sceiba.org/';

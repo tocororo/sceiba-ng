@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-import { EnvironmentImpl } from 'src/environments/environment.prod';
 import { Environment } from 'toco-lib';
 
 @Component({
