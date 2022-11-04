@@ -47,7 +47,7 @@
     "ngx-translate": "0.0.1-security",
     "rxjs": "~6.4.0",
     "serve": "^13.0.2",
-    "toco-lib": "0.0.6",
+    "toco-lib": "0.0.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
