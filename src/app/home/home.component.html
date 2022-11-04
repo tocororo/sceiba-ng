@@ -94,7 +94,7 @@
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.catalog')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="/search" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button [routerLink]="[env.discover]" class="apps" matTooltip="{{ 'CATALOGO' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -109,7 +109,7 @@
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.orgs')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="https://organizaciones.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button href="{{env.organizations}}" target="_blank" class="apps" matTooltip="{{ 'ORGANIZACIONES' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -124,7 +124,7 @@
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.vocabularios')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="https://vocabularios.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'VOCABULARIOS' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button href="{{env.vocabularies}}" target="_blank" class="apps" matTooltip="{{ 'VOCABULARIOS' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -139,7 +139,7 @@
                         <div class="p" markdown [src]="getPath('/assets/markdown/home.mes')"></div>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="https://revistasmes.sceiba.cu" target="_blank" class="apps" matTooltip="{{ 'REVISTAS_MES' | translate }}">{{ 'ACCEDER' | translate }}</a>
+                        <a mat-button href="{{env.revistasmes}}" target="_blank" class="apps" matTooltip="{{ 'REVISTAS_MES' | translate }}">{{ 'ACCEDER' | translate }}</a>
                     </mat-card-actions>
                 </mat-card>
             </div>

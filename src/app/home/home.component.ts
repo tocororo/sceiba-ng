@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { timer } from 'rxjs';
+import { Environment } from 'toco-lib';
 
 import { getPathWithLangExtension, MetadataService, SearchService } from "toco-lib";
 
@@ -28,7 +29,8 @@ export class HomeComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _searchService: SearchService,
     private _transServ: TranslateService,
-    private metadata: MetadataService)
+    private metadata: MetadataService,
+    private env: Environment)
   { }
 
   public ngOnInit(): void {
