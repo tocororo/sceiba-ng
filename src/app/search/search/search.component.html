@@ -17,6 +17,13 @@
         <mat-icon>list</mat-icon>
       </button>
     </ng-template> -->
+    <button
+          mat-icon-button
+          (click)="drawer.toggle()"
+          matTooltip="Filtros avanzados"
+        >
+          <mat-icon>filter_list</mat-icon>
+        </button>
   </div>
 
 <toco-progress [loading]="loading"></toco-progress>
@@ -50,13 +57,7 @@
   <ng-template #search_list>
     <div class="m-1" *ngIf="sr">
       <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
-        <button
-          mat-icon-button
-          (click)="drawer.toggle()"
-          matTooltip="Filtros avanzados"
-        >
-          <mat-icon>filter_list</mat-icon>
-        </button>
+        
         <toco-search-query-input
           [query]="query"
           class="p-1"

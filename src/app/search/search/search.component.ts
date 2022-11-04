@@ -1,6 +1,6 @@
 import { HttpParams } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
-import { PageEvent } from "@angular/material";
+import { Component, HostListener, OnInit, ViewChild } from "@angular/core";
+import { MatDrawer, PageEvent } from "@angular/material";
 import {
   ActivatedRoute,
   NavigationExtras,
@@ -66,6 +66,8 @@ export class SearchComponent implements OnInit {
   navigationExtras: NavigationExtras;
 
   loading: boolean = true;
+
+  @ViewChild(MatDrawer, { static: false }) drawer: MatDrawer;
 
   public constructor(
     private _searchService: SearchService,
@@ -223,6 +225,15 @@ export class SearchComponent implements OnInit {
   public updateMetas(query:string){
     this.metadata.meta.updateTag({name:"DC.title", content:"Búsqueda de publicaciones científicas cubanas"});
     this.metadata.meta.updateTag({name:"DC.description", content:query});
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event){
+    // console.log("window:resize", window.innerWidth);
+    if (window.innerWidth <= 740){
+      this.drawer.opened = false;
+    } else {
+      this.drawer.opened = true;
+    }
   }
 
 }
