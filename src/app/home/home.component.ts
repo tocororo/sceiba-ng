@@ -3,9 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { timer } from 'rxjs';
-import { Environment } from 'toco-lib';
+import { Environment, getPathWithLangExtension, MetadataService, SearchService } from 'toco-lib';
 
-import { getPathWithLangExtension, MetadataService, SearchService } from "toco-lib";
 
 @Component({
   selector: "app-home",
@@ -24,18 +23,20 @@ export class HomeComponent implements OnInit {
   loadCharts = false;
 
   slideIndex = 1;
+  public env;
 
   public constructor(private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _searchService: SearchService,
     private _transServ: TranslateService,
     private metadata: MetadataService,
-    private env: Environment)
+    private _env: Environment)
   { }
 
   public ngOnInit(): void {
+    this.env = this._env;
     this._activatedRoute.url.subscribe( () =>{
-    this.metadata.setStandardMeta("Sceiba - Portal de Publicaciones Científicas Cubanas","Plataforma para el monitoreo de publicaciones científicas cubanas", "/assets/images/sceiba-logo.png");    
+    this.metadata.setStandardMeta("Sceiba - Portal de Publicaciones Científicas Cubanas","Plataforma para el monitoreo de publicaciones científicas cubanas", "/assets/images/sceiba-logo.png");
     this.metadata.meta.updateTag({name:"keywords", content:"evaluación, revista científica, calidad, metodología, publicación científica, investigación, Cuba"});
     })
 
