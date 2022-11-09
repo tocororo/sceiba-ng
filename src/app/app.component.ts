@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { Observable, Subscription } from 'rxjs';
+import {
+  convertLangFromNumberToString,
+  Environment, OauthAuthenticationService, OauthInfo, Response, User
+} from 'toco-lib';
 
-import { convertLangFromNumberToString,
-  Environment, Response, User, OauthInfo, OauthAuthenticationService } from 'toco-lib';
 
 @Component({
   selector: 'app-root',
@@ -16,17 +18,17 @@ import { convertLangFromNumberToString,
 export class AppComponent
 {
   /**
-   * Returns the available language texts. 
+   * Returns the available language texts.
    */
   public languageTexts: string[];
   /**
-   * Returns the available language abbreviations. 
+   * Returns the available language abbreviations.
    */
   public languageAbbrs: string[];
   /**
-   * Returns the language currently used as number. 
-   * The Spanish language is: 0. It is the default. 
-   * The English language is: 1. 
+   * Returns the language currently used as number.
+   * The Spanish language is: 0. It is the default.
+   * The English language is: 1.
    */
   public currentLang: number;
 
@@ -38,22 +40,11 @@ export class AppComponent
 
   public sceibaHost: string;
 
-  
-  public oauthInfo: OauthInfo = {
-    serverHost: this.env.sceibaHost,
-    loginUrl: this.env.sceibaHost + "oauth/authorize",
-    tokenEndpoint: this.env.sceibaHost + "oauth/token",
-    userInfoEndpoint: this.env.sceibaApi + "me",
-    appHost: this.env.appHost,
-    appName: this.env.appName,
-    oauthRedirectUri: this.env.oauthRedirectUri,
-    oauthClientId: this.env.oauthClientId,
-    oauthScope: this.env.oauthScope,
-  };
+  public oauthInfo: OauthInfo;
 
   private authenticateSuscription: Subscription = null;
 
-  public constructor(private env: Environment,
+  public constructor(private environment: Environment,
     // private matomoInjector: MatomoInjector,
     private router: Router,
     private oauthService: OAuthService,
@@ -65,6 +56,8 @@ export class AppComponent
     /*@Inject(RecaptchaLoaderService) private _recaptchaDynamicLanguageLoaderServ: RecaptchaDynamicLanguageLoaderService*/)
   {
     // this.configure()
+    let env: any = this.environment;
+    this.oauthInfo = env.oauthInfo;
     // this.matomoInjector.init('https://crai-stats.upr.edu.cu/', 6);
   }
 
@@ -76,7 +69,7 @@ export class AppComponent
 		this._transServ.setDefaultLang('es');
 		this._transServ.use('es');
 		this._transServ.addLangs(this.languageAbbrs);
-    this.sceibaHost = this.env.sceibaHost;
+    this.sceibaHost = this.environment.sceibaHost;
 		//this._recaptchaDynamicLanguageLoaderServ.updateLanguage(LanguageAbbrs.es);
 
     let request = JSON.parse(this.oauthStorage.getItem("user"));
@@ -110,8 +103,8 @@ export class AppComponent
   }
 
   /**
-   * Sets the current language. 
-   * @param index Zero-based index that indicates the current language. 
+   * Sets the current language.
+   * @param index Zero-based index that indicates the current language.
    */
   public setLanguage(index: number): void
   {
@@ -165,7 +158,7 @@ export class AppComponent
     // const options = {
     //   headers: headers
     // };
-    return this.http.get<Response<any>>(this.env.sceibaApi + 'me');
+    return this.http.get<Response<any>>(this.environment.sceibaApi + 'me');
   }
 
   public me()
