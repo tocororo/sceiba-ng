@@ -1,27 +1,49 @@
-<div class="agregations-modal-container" style="max-height: 500px;">
+<div class="agregations-modal-container" >
   <div class="header-modal">
     <mat-toolbar style="width: 100%; ">
-      <h2 style="flex: auto;">Seleccione:</h2> <mat-paginator [length]="typesOfAgregations.size" [pageSize]="10"
-        [pageSizeOptions]="[5, 10, 25, 100]">
-      </mat-paginator>
+      <h2 style="flex: auto;">Seleccione:</h2>
+      <p>
+        Options selected: {{agregations_selected.selectedOptions.selected.length}}
+      </p>
+
+
     </mat-toolbar>
 
 
   </div>
 
-  <div class="list-modal-container">
-    <mat-selection-list #agregations>
-      <mat-list-option *ngFor="let agregation of typesOfAgregations">
-        {{agregation}}
-      </mat-list-option>
-    </mat-selection-list>
+  <div  class="list-modal-container">
+
+
+
+
+
+    <cdk-virtual-scroll-viewport  itemSize="5" class="vscroll-viewport">
+      <mat-selection-list #agregations_selected class="list-modal" (selectionChange)="onListSelectionChange(agregations_selected)">
+
+          <mat-list-option *cdkVirtualFor="let agregation of agregations,let i" class="example-item" [value]="agregation">
+            {{agregation.key}}
+          </mat-list-option>
+
+      </mat-selection-list>
+    </cdk-virtual-scroll-viewport>
+
+
+
+
   </div>
 
 
   <div class="footer">
-    <p>
-      Options selected: {{agregations.selectedOptions.selected.length}}
-    </p>
+
+
+    <button mat-button [mat-dialog-close]="agregations_selected._value" cdkFocusInitial>Ok</button>
+   <div class="+">
+    <mat-paginator class="paginator-column" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="changesOnParameters($event)">
+  </mat-paginator></div>
+
+
   </div>
 
 

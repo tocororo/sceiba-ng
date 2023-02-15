@@ -39,12 +39,12 @@
       [aggregations]="sr.aggregations"
       [selectedAggr]="aggrsSelection"
       (keySelect)="aggrChange($event)"
-    > 
+      (modal_open)="openAggModal($event)"
+    >
   </toco-search-aggregations>
-  <button mat-raised-button (click)="openDialog()">Pick one</button>
- 
- 
-    
+
+
+
 
     <!-- <toco-search-aggregations-visual
         *ngIf="sr"
@@ -53,7 +53,7 @@
         (keySelect)="aggrChange($event)"
       ></toco-search-aggregations-visual> -->
   </mat-drawer>
- 
+
   <div *ngIf="search_type; then search_list; else search_charts">
     {{ search_type }}
   </div>
@@ -62,11 +62,12 @@
   <ng-template #search_list>
     <div class="m-1" *ngIf="sr">
       <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
-        
+
         <toco-search-query-input
           [query]="query"
           class="p-1"
           (queryChange)="queryChange($event)"
+
           style="width: 100%"
         ></toco-search-query-input>
       </div>
@@ -124,7 +125,7 @@
         [selectedAggr]="aggrsSelection"
         (keySelect)="aggrChange($event)"
       ></toco-search-aggregations-visual>
-     
+
     </div>
   </ng-template>
 </mat-drawer-container>

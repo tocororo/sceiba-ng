@@ -1,16 +1,38 @@
 .agregations-modal-container {
-    height: 100%;
-    width: 600px;
-  
- 
- .header-modal{
-  height: 15%;
- } 
-.list-modal-container{
-  max-height: 80%;
-  margin: 1%;
+  height: 100%;
+  width: 700px;
+  max-height: 500px;
+  max-width: 700px;
+  border-radius: 30px;
 
-}.footer{
-  height: 5%;
-}}
+  .header-modal {
+    height: 15%;
+  }
+
+  .list-modal-container {
+    max-height: 80%;
+    margin: 1%;
+
+  .vscroll-viewport {
+    height: 300px;
+    width: 95%;
+
+    .example-item {
+      height: 50px;
+    }
+  }
+
+
+
+
+  }
+
+  .footer {
+    height: 5%;
+    .paginator-modal{
+
+    }
+
+  }
+}
 

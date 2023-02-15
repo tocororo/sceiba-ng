@@ -1,12 +1,26 @@
 import { HttpParams } from "@angular/common/http";
-import { Component, HostListener, OnInit, ViewChild } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+  ViewChild,
+} from "@angular/core";
 import { MatDialog, MatDrawer, PageEvent } from "@angular/material";
 import {
   ActivatedRoute,
   NavigationExtras,
-  Params, Router
+  Params,
+  Router,
 } from "@angular/router";
-import { AggregationsSelection, MetadataService, Record, SearchResponse, SearchService } from "toco-lib";
+import {
+  AggregationsSelection,
+  MetadataService,
+  Record,
+  SearchResponse,
+  SearchService,
+} from "toco-lib";
 import { AgregationsModalComponent } from "../agregations-modal/agregations-modal.component";
 
 @Component({
@@ -15,10 +29,11 @@ import { AgregationsModalComponent } from "../agregations-modal/agregations-moda
   styleUrls: ["./search.component.scss"],
 })
 export class SearchComponent implements OnInit {
-
-  aggr_keys:Array<any>
-  search_type:Boolean = true
-  typeChart: "Polar Chart" | "Vertical Bar" | /* "Pie Grid" | */ "Gauge Chart"= "Polar Chart"
+  agregations_selected_in_modal: any[];
+  aggr_keys: Array<any>;
+  search_type: Boolean = true;
+  typeChart: "Polar Chart" | "Vertical Bar" | /* "Pie Grid" | */ "Gauge Chart" =
+    "Polar Chart";
 
   layoutPosition = [
     {
@@ -62,6 +77,8 @@ export class SearchComponent implements OnInit {
   aggrsSelection: AggregationsSelection = {};
 
   params: HttpParams;
+  @Output()
+  key_to_open_modal = new EventEmitter<string>();
   sr: SearchResponse<Record>;
   queryParams: Params;
   navigationExtras: NavigationExtras;
@@ -75,22 +92,18 @@ export class SearchComponent implements OnInit {
     private _searchService: SearchService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private metadata: MetadataService,
-
-    // private dialog: MatDialog
+    private metadata: MetadataService // private dialog: MatDialog
   ) {}
 
   public ngOnInit(): void {
-
-    this.activatedRoute.url.subscribe( () =>{
-
-      })
+    this.activatedRoute.url.subscribe(() => {});
 
     this.query = "";
 
     this.activatedRoute.queryParamMap.subscribe({
       next: (initQueryParams) => {
         this.aggrsSelection = {};
+        console.log("init", initQueryParams);
 
         for (let index = 0; index < initQueryParams.keys.length; index++) {
           const key = initQueryParams.keys[index];
@@ -106,7 +119,7 @@ export class SearchComponent implements OnInit {
 
             case "q":
               this.query = initQueryParams.get(key);
-              this.updateMetas(this.query)
+              this.updateMetas(this.query);
               break;
 
             default:
@@ -120,8 +133,6 @@ export class SearchComponent implements OnInit {
 
         this.updateFetchParams();
         this.fetchSearchRequest();
-
-
       },
 
       error: (e) => {},
@@ -131,7 +142,7 @@ export class SearchComponent implements OnInit {
   }
 
   changeView(): void {
-    this.search_type = !this.search_type
+    this.search_type = !this.search_type;
   }
 
   private updateFetchParams() {
@@ -153,29 +164,28 @@ export class SearchComponent implements OnInit {
   public fetchSearchRequest() {
     this._searchService.getRecords(this.params).subscribe(
       (response: SearchResponse<Record>) => {
+        console.log("res", response);
 
         // this.pageEvent.length = response.hits.total;
         this.sr = response;
 
-
         this.aggr_keys = [
-          {value: this.sr.aggregations.creators, key: 'Creadores'},
-          {value: this.sr.aggregations.keywords, key: 'Palabras Claves'},
-          {value: this.sr.aggregations.sources, key: 'Fuentes'},
-          {value: this.sr.aggregations.terms, key: 'Términos'},
-        ]
-        this.sr.aggregations.creators['label'] = 'Autores';
-        this.sr.aggregations.keywords['label'] = 'Palabras Clave';
-        this.sr.aggregations.sources['label'] = 'Fuentes';
-        this.sr.aggregations.terms['label'] = 'Términos';
-
-        console.log(this.sr)
+          { value: this.sr.aggregations.creators, key: "Creadores" },
+          { value: this.sr.aggregations.keywords, key: "Palabras Claves" },
+          { value: this.sr.aggregations.sources, key: "Fuentes" },
+          { value: this.sr.aggregations.terms, key: "Términos" },
+        ];
+        this.sr.aggregations.creators["label"] = "Autores";
+        this.sr.aggregations.keywords["label"] = "Palabras Clave";
+        this.sr.aggregations.sources["label"] = "Fuentes";
+        this.sr.aggregations.terms["label"] = "Términos";
       },
       (error: any) => {
         console.log("ERROR");
       },
       () => {
         console.log("END...");
+
         this.loading = false;
       }
     );
@@ -187,7 +197,7 @@ export class SearchComponent implements OnInit {
     this.updateQueryParams();
   }
 
-  public aggrChange(event/* ?: AggregationsSelection */): void {
+  public aggrChange(event /* ?: AggregationsSelection */): void {
     this.aggrsSelection = event;
     this.updateQueryParams();
   }
@@ -195,11 +205,9 @@ export class SearchComponent implements OnInit {
   queryChange(event?: string) {
     this.query = event;
     this.updateQueryParams();
-
   }
 
   private updateQueryParams() {
-
     this.loading = true;
 
     this.queryParams = {};
@@ -220,31 +228,100 @@ export class SearchComponent implements OnInit {
       queryParams: this.queryParams,
       queryParamsHandling: "",
     };
-
+    console.log("pa1", this.queryParams);
     this.router.navigate(["."], this.navigationExtras);
   }
-
-  public updateMetas(query:string){
-    this.metadata.meta.updateTag({name:"DC.title", content:"Búsqueda de publicaciones científicas cubanas"});
-    this.metadata.meta.updateTag({name:"DC.description", content:query});
+  public updateMetas(query: string) {
+    this.metadata.meta.updateTag({
+      name: "DC.title",
+      content: "Búsqueda de publicaciones científicas cubanas",
+    });
+    this.metadata.meta.updateTag({ name: "DC.description", content: query });
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event){
+  @HostListener("window:resize", ["$event"])
+  onResize(event: Event) {
     // console.log("window:resize", window.innerWidth);
-    if (window.innerWidth <= 740){
+    if (window.innerWidth <= 740) {
       this.drawer.opened = false;
     } else {
       this.drawer.opened = true;
     }
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(AgregationsModalComponent);
+  /**
+   * this method receives the child event and open the modal dialog by sending
+   * him the data to be displayed,when closing the modal he saves the result in a variable
+   * and then performs the search with those agregations
+   * @param event the event recibed from the click that is made on the toco-search-agregations component
+   * represent the key ,depending on the key,the respective agregations are shown
+   */
+  openAggModal(event: any) {
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    this.key_to_open_modal.emit(event);
+
+    const dialogRef = this.dialog.open(AgregationsModalComponent, {
+      data: this.sr.aggregations[event.key].buckets,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.aggrsSelection={}
+
+        this.aggrsSelection[event.key] = result;
+console.log("quer",this.query);
+
+        this.updateQueryParamsbyModal()
+
+
+
     });
   }
+  /**
+   * that method use the same idea of the updateQueryParams method
+   * ,just have a litter change,it take an array of agregations selected
+   * on the modal and with that make the request
+   */
+  private updateQueryParamsbyModal() {
+    this.loading = true;
+
+    this.queryParams = {};
+
+    this.params = this.params.set("size", this.pageSize.toString(10));
+
+    this.params = this.params.set("page", (this.pageIndex + 1).toString(10));
+
+    this.params = this.params.set("q", this.query);
+    console.log("query", this.query);
+
+    let array = new Array();
+    for (const aggrKey in this.aggrsSelection) {
+      if (this.aggrsSelection[aggrKey]!=undefined) {
+
+        this.aggrsSelection[aggrKey].forEach((item: any, i: number) => {
+          if (item != undefined) {
+            array.push(item.key);
+          }
+
+          if (this.aggrsSelection[aggrKey].length == i + 1) {
+            if (this.queryParams[aggrKey]) {
+              this.queryParams[aggrKey].push(array);
+            }else
+{
+  this.queryParams[aggrKey]=array;}
+
+            array = [];
+
+          }
+        });
+      }
+
+    }
+    console.log("pa", this.queryParams);
+
+    this.navigationExtras = {
+      relativeTo: this.activatedRoute,
+      queryParams: this.queryParams,
+      queryParamsHandling: "",
+    };
+
+    this.router.navigate(["."], this.navigationExtras);
+  }
 }
-
-
-
