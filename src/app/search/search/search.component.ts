@@ -1,12 +1,13 @@
 import { HttpParams } from "@angular/common/http";
 import { Component, HostListener, OnInit, ViewChild } from "@angular/core";
-import { MatDrawer, PageEvent } from "@angular/material";
+import { MatDialog, MatDrawer, PageEvent } from "@angular/material";
 import {
   ActivatedRoute,
   NavigationExtras,
   Params, Router
 } from "@angular/router";
 import { AggregationsSelection, MetadataService, Record, SearchResponse, SearchService } from "toco-lib";
+import { AgregationsModalComponent } from "../agregations-modal/agregations-modal.component";
 
 @Component({
   selector: "app-search",
@@ -70,6 +71,7 @@ export class SearchComponent implements OnInit {
   @ViewChild(MatDrawer, { static: false }) drawer: MatDrawer;
 
   public constructor(
+    private dialog: MatDialog,
     private _searchService: SearchService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -170,7 +172,7 @@ export class SearchComponent implements OnInit {
         console.log(this.sr)
       },
       (error: any) => {
-        console.log("ERROPR");
+        console.log("ERROR");
       },
       () => {
         console.log("END...");
@@ -235,5 +237,14 @@ export class SearchComponent implements OnInit {
       this.drawer.opened = true;
     }
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(AgregationsModalComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+
+
+

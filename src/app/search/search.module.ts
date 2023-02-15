@@ -15,6 +15,8 @@ import { ChartsComponent } from './charts/charts.component';
 import { GaugeChartComponent } from './charts/gauge-chart/gauge-chart.component';
 import { PieGridComponent } from './charts/pie-grid/pie-grid.component';
 import { PolarChartComponent } from './charts/polar-chart/polar-chart.component';
+import { AgregationsModalComponent } from './agregations-modal/agregations-modal.component';
+import {  ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
 	declarations: [
@@ -22,21 +24,32 @@ import { PolarChartComponent } from './charts/polar-chart/polar-chart.component'
 		SearchListComponent,
 		AggregationsComponent,
 
-    ChartsComponent,
+		ChartsComponent,
 		PolarChartComponent,
 		BarVerticalComponent,
 		PieGridComponent,
 		GaugeChartComponent,
+		AgregationsModalComponent,
+		
+
 	],
+	/**
+	 * Specifies a list of components that should be compiled when this 
+	 * module is defined. For each component listed here, Angular will 
+	 * create a ComponentFactory and store it in the ComponentFactoryResolver,that avoid the error
+	 */
+	entryComponents: [AgregationsModalComponent],
 
 	imports: [
 		CommonModule,
 		SearchRoutingModule,
-    AngularMaterialModule,
-    CoreModule,
-    NgxChartsModule,
-    SearchModule
+		AngularMaterialModule,
+		CoreModule,
+		NgxChartsModule,
+		SearchModule,
+		ScrollingModule,
+		
+	
 	]
 })
-export class SearchPageModule
-{ }
+export class SearchPageModule { }
