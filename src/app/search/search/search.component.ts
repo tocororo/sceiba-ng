@@ -255,73 +255,26 @@ export class SearchComponent implements OnInit {
    * represent the key ,depending on the key,the respective agregations are shown
    */
   openAggModal(event: any) {
-
+    let agg_array = [];
     this.key_to_open_modal.emit(event);
 
-    const dialogRef = this.dialog.open(AgregationsModalComponent, {
+    const dialogRef = this.dialog.open(AgregationsModalComponent, {width:"50%",
       data: this.sr.aggregations[event.key].buckets,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      this.aggrsSelection={}
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result != undefined) {
+        console.log("r", result);
 
-        this.aggrsSelection[event.key] = result;
-console.log("quer",this.query);
+        result.forEach((agregation: any, index: number) => {
+          agg_array.push(agregation.key);
+        });
+        this.aggrsSelection[event.key] = agg_array;
 
-        this.updateQueryParamsbyModal()
+        console.log("agg", this.aggrsSelection);
 
-
-
+      }
     });
   }
-  /**
-   * that method use the same idea of the updateQueryParams method
-   * ,just have a litter change,it take an array of agregations selected
-   * on the modal and with that make the request
-   */
-  private updateQueryParamsbyModal() {
-    this.loading = true;
 
-    this.queryParams = {};
-
-    this.params = this.params.set("size", this.pageSize.toString(10));
-
-    this.params = this.params.set("page", (this.pageIndex + 1).toString(10));
-
-    this.params = this.params.set("q", this.query);
-    console.log("query", this.query);
-
-    let array = new Array();
-    for (const aggrKey in this.aggrsSelection) {
-      if (this.aggrsSelection[aggrKey]!=undefined) {
-
-        this.aggrsSelection[aggrKey].forEach((item: any, i: number) => {
-          if (item != undefined) {
-            array.push(item.key);
-          }
-
-          if (this.aggrsSelection[aggrKey].length == i + 1) {
-            if (this.queryParams[aggrKey]) {
-              this.queryParams[aggrKey].push(array);
-            }else
-{
-  this.queryParams[aggrKey]=array;}
-
-            array = [];
-
-          }
-        });
-      }
-
-    }
-    console.log("pa", this.queryParams);
-
-    this.navigationExtras = {
-      relativeTo: this.activatedRoute,
-      queryParams: this.queryParams,
-      queryParamsHandling: "",
-    };
-
-    this.router.navigate(["."], this.navigationExtras);
-  }
 }

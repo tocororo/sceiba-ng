@@ -1,12 +1,17 @@
 .agregations-modal-container {
   height: 100%;
-  width: 700px;
+  width: 100%;
   max-height: 500px;
   max-width: 700px;
+  min-width: 200px;
   border-radius: 30px;
 
   .header-modal {
     height: 15%;
+    .modal-title{
+      font-size: 20px;
+      flex: auto;
+    }
   }
 
   .list-modal-container {
@@ -29,10 +34,21 @@
 
   .footer {
     height: 5%;
-    .paginator-modal{
+    .paginator-container{
+width: 420px;
+
+        display: inline-block;
+      }
+      .button-container{
+
+          display: inline-block;
+
+          margin-left: 27%;
+
+      }
 
     }
 
   }
-}
+
 
