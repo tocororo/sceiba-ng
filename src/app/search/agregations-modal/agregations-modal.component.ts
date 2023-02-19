@@ -11,18 +11,18 @@ import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
   changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
-export class AgregationsModalComponent implements OnChanges {
+export class AgregationsModalComponent implements OnInit {
 
 @Output()
 agregations_selected=new EventEmitter<any>();
 page:number=0
-length = 100;
+
 pageSize = 10;
 pageSizeOptions: number[] = [5, 10, 25, 100];
 pageEvent: PageEvent;
 aggrsSelection: any = {};
 
-  items = Array.from({length: 100}).map((_, i) => `Item #${i}`);
+
 
   constructor(public dialog: MatDialog,  private _searchService: SearchService,public dialogRef: MatDialogRef<AgregationsModalComponent>,
    /**
@@ -30,9 +30,7 @@ aggrsSelection: any = {};
     */
     @Inject(MAT_DIALOG_DATA) public agregations: any,
    ) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("agre",this.agregations_selected)
-  }
+
 
    ngOnInit() {
     console.log("agregations",this.agregations);

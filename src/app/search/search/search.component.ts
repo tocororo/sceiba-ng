@@ -73,7 +73,7 @@ export class SearchComponent implements OnInit {
   pageSizeOptions: number[] = [5, 15, 25, 50, 100];
   // end paginator stuff
 
-  query = "";
+  query :string= "";
   aggrsSelection: AggregationsSelection = {};
 
   params: HttpParams;
@@ -98,7 +98,7 @@ export class SearchComponent implements OnInit {
   public ngOnInit(): void {
     this.activatedRoute.url.subscribe(() => {});
 
-    this.query = "";
+
 
     this.activatedRoute.queryParamMap.subscribe({
       next: (initQueryParams) => {
@@ -153,6 +153,8 @@ export class SearchComponent implements OnInit {
     this.params = this.params.set("page", (this.pageIndex + 1).toString(10));
 
     this.params = this.params.set("q", this.query);
+    console.log(this.params);
+
 
     for (const aggrKey in this.aggrsSelection) {
       this.aggrsSelection[aggrKey].forEach((bucketKey) => {
@@ -162,6 +164,9 @@ export class SearchComponent implements OnInit {
   }
 
   public fetchSearchRequest() {
+
+console.log("query",this.params);
+
     this._searchService.getRecords(this.params).subscribe(
       (response: SearchResponse<Record>) => {
         console.log("res", response);
@@ -189,7 +194,7 @@ export class SearchComponent implements OnInit {
         this.loading = false;
       }
     );
-  }
+    }
 
   public pageChange(event?: PageEvent): void {
     this.pageSize = event.pageSize;
@@ -204,6 +209,7 @@ export class SearchComponent implements OnInit {
 
   queryChange(event?: string) {
     this.query = event;
+    this.aggrsSelection={}
     this.updateQueryParams();
   }
 
@@ -216,7 +222,11 @@ export class SearchComponent implements OnInit {
 
     this.queryParams["page"] = this.pageIndex.toString(10);
 
+
     this.queryParams["q"] = this.query;
+
+    console.log("quey", this.queryParams["q"]);
+
 
     for (const aggrKey in this.aggrsSelection) {
       this.aggrsSelection[aggrKey].forEach((bucketKey) => {
@@ -230,6 +240,7 @@ export class SearchComponent implements OnInit {
     };
     console.log("pa1", this.queryParams);
     this.router.navigate(["."], this.navigationExtras);
+
   }
   public updateMetas(query: string) {
     this.metadata.meta.updateTag({
@@ -269,9 +280,11 @@ export class SearchComponent implements OnInit {
         result.forEach((agregation: any, index: number) => {
           agg_array.push(agregation.key);
         });
+        this.aggrsSelection={}
         this.aggrsSelection[event.key] = agg_array;
 
         console.log("agg", this.aggrsSelection);
+        this.updateQueryParams()
 
       }
     });

@@ -2,9 +2,9 @@
   <div class="header-modal">
     <mat-toolbar style="width: 100%; ">
       <h2 class="modal-title" >Seleccione:</h2>
-      <p>
+
         <h3>Opciones Seleccionadas:</h3> <span>{{agregations_selected.selectedOptions.selected.length}}</span>
-      </p>
+
 
 
     </mat-toolbar>
@@ -21,7 +21,7 @@
     <cdk-virtual-scroll-viewport  itemSize="5" class="vscroll-viewport">
       <mat-selection-list #agregations_selected class="list-modal" (selectionChange)="onListSelectionChange(agregations_selected)">
 
-          <mat-list-option *cdkVirtualFor="let agregation of agregations,let i" class="example-item" [value]="agregation">
+          <mat-list-option  *cdkVirtualFor="let agregation of agregations,let i" class="example-item" [value]="agregation">
            <h6> {{agregation.key}}</h6>
           </mat-list-option>
 
@@ -35,13 +35,13 @@
 
 
   <div class="footer">
-    <div  class="paginator-container">
-      <mat-paginator class="paginator-column" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-      (page)="changesOnParameters($event)">
-    </mat-paginator></div>
+
 <div class="button-container">
   <button mat-button [mat-dialog-close]="agregations_selected._value" cdkFocusInitial>Ok</button></div>
-
+  <div  class="paginator-container">
+    <mat-paginator class="paginator-column" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="changesOnParameters($event)">
+  </mat-paginator></div>
 
 
   </div>
