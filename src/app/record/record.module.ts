@@ -21,10 +21,6 @@ import { StaticTableLinkComponent } from './statics/table-link/table-static-link
     StaticChipsLinkComponent,
 	],
 
-	entryComponents:[
-		DialogCatalogSourceInfo
-	],
-
 	imports: [
 		CommonModule,
 		RecordRoutingModule,

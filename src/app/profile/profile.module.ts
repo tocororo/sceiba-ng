@@ -17,12 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 		UserProfileComponent,
 		UserProfileEditComponent
 	],
-
-	entryComponents:[
-		InputFileAvatarComponent,
-		InputOrgSearchComponent
-	],
-
 	imports: [
     ReactiveFormsModule,
 		CommonModule,

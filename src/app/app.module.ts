@@ -47,8 +47,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
     SceibaFooterComponent,
     SceibaMenuAppsComponent
   ],
-  entryComponents:[
-  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
