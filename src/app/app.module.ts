@@ -10,7 +10,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { RecaptchaModule /*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
-//import { RecaptchaDynamicLanguageLoaderService } from 'ng-recaptcha-dynamic-language';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
 import { allowedURLS, environment } from 'src/environments/environment';
