@@ -79,7 +79,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader
           sendAccessToken: true
       }
     }),
-    MatomoModule
+    // MatomoModule
 
   ],
   providers: [

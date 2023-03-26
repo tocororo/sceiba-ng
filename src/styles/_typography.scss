@@ -4,7 +4,7 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url('assets/fonts/MaterialIcons-Regular.woff') format('woff');
+    src: url('../assets/fonts/MaterialIcons-Regular.woff') format('woff');
 }
 
 .material-icons {
@@ -35,7 +35,7 @@
 /* - typography - */
 @font-face {
     font-family: 'MyriadPro Regular';
-    src: url('assets/fonts/MyriadPro-Regular.woff') format('woff');
+    src: url('../assets/fonts/MyriadPro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -72,4 +72,13 @@ $toco-typography: mat.define-typography-config(
 // Override typography for all Angular Material, including mat-base-typography and all components.
 @include mat.all-component-typographies($toco-typography);
 
-@include mat.core($toco-typography);
+// TODO(v15): As of v15 mat.core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.typography-hierarchy($toco-typography);`
+@include mat.all-component-typographies($toco-typography);
+@include mat.core();
