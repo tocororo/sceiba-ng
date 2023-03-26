@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { StaticTableLinkComponent } from './table-static-link.component';
 
@@ -6,7 +6,7 @@ describe('StaticTableComponent', () => {
   let component: StaticTableLinkComponent;
   let fixture: ComponentFixture<StaticTableLinkComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ StaticTableLinkComponent ]
     })

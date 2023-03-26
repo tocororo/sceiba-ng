@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PageNotFoundSceibaComponent } from './page-not-found-sceiba.component';
 
@@ -6,7 +6,7 @@ describe('PageNotFoundSceibaComponent', () => {
   let component: PageNotFoundSceibaComponent;
   let fixture: ComponentFixture<PageNotFoundSceibaComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PageNotFoundSceibaComponent ]
     })

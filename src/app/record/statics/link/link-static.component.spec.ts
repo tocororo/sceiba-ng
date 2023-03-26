@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LinkStaticComponent } from './link-static.component';
 
@@ -6,7 +6,7 @@ describe('LinkStaticComponent', () => {
   let component: LinkStaticComponent;
   let fixture: ComponentFixture<LinkStaticComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LinkStaticComponent ]
     })
