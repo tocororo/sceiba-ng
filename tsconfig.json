@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -23,6 +23,15 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "preserveWhitespaces": false
-  }
+    "enableIvy": true,
+    "preserveWhitespaces": false,
+    "buildOptimizer": true,
+    "sourceMap": true,
+    "polyfills": "./polyfills.ts",
+    "browserTarget": "app:build:production"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js"
+  ],
 }

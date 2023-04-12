@@ -12,7 +12,7 @@ import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { RecaptchaModule /*, RecaptchaLoaderService*/ } from 'ng-recaptcha';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatomoModule } from 'ngx-matomo';
-import { allowedURLS, environment } from 'src/environments/environment';
+import { allowedURLS, environment } from '../environments/environment';
 import {
   AngularMaterialModule, AuthenticationModule, CoreModule, Environment, OrganizationServiceNoAuth, SearchModule,
   SearchService, SourceServiceNoAuth, StaticsModule, TocoFormsModule
