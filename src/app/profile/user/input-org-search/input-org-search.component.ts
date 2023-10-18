@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { AbstractControl, FormControl, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormControl, ValidationErrors, Validators } from '@angular/forms';
 import { HttpParams } from '@angular/common/http';
 import { ExtraValidators, HitList, InputControl, Organization, OrganizationServiceNoAuth } from 'toco-lib';
 
@@ -91,8 +91,8 @@ export class InputOrgSearchComponent extends InputControl implements OnInit {
     return org ? org.name : undefined;
   }
 
-  public static getFormControlByDefault(): FormControl {
-    return new FormControl('', this.isOrganization);
+  public static getFormControlByDefault(): UntypedFormControl {
+    return new UntypedFormControl('', this.isOrganization);
   }
 
   private static isOrganization(control: AbstractControl): ValidationErrors | null{

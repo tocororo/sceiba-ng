@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { StaticChipsLinkComponent } from './chips-static-link.component';
 
@@ -6,7 +6,7 @@ describe('StaticChipsLinkComponent', () => {
   let component: StaticChipsLinkComponent;
   let fixture: ComponentFixture<StaticChipsLinkComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ StaticChipsLinkComponent ]
     })

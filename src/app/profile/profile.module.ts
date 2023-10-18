@@ -1,14 +1,15 @@
 
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { TocoFormsModule } from 'toco-lib';
+import { SharedModule } from '../shared/shared.module';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { InputFileAvatarComponent } from './user/input-file-avatar/input-file-avatar.component';
 import { InputOrgSearchComponent } from './user/input-org-search/input-org-search.component';
-import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserProfileEditComponent } from './user/user-profile-edit/user-profile-edit.component';
-import { AngularMaterialModule, TocoFormsModule } from 'toco-lib';
-import { ReactiveFormsModule } from '@angular/forms';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 @NgModule({
 	declarations: [
@@ -17,18 +18,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 		UserProfileComponent,
 		UserProfileEditComponent
 	],
-
-	entryComponents:[
-		InputFileAvatarComponent,
-		InputOrgSearchComponent
-	],
-
 	imports: [
     ReactiveFormsModule,
 		CommonModule,
 		ProfileRoutingModule,
-    AngularMaterialModule,
-    TocoFormsModule
+    TocoFormsModule,
+    SharedModule
 	]
 })
 export class ProfileModule

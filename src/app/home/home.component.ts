@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { timer } from 'rxjs';
-import { Environment, getPathWithLangExtension, MetadataService, SearchService } from 'toco-lib';
+import { Environment, MetadataService, SearchService, getPathWithLangExtension } from 'toco-lib';
 
 
 @Component({
@@ -90,24 +90,24 @@ export class HomeComponent implements OnInit {
   }
 
   showSlides(n: number) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides")
-    var dots = document.getElementsByClassName("dot");
+    // var i;
+    // var slides = document.getElementsByClassName("mySlides")
+    // var dots = document.getElementsByClassName("dot");
 
-    if (n > slides.length) {
-      this.slideIndex = 1
-    }
-    if (n < 1) {
-      this.slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].setAttribute("style", "display: none;");
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides.item(this.slideIndex - 1).setAttribute("style", "display: block;");
-    dots.item(this.slideIndex - 1).className += " active";
+    // if (n > slides.length) {
+    //   this.slideIndex = 1
+    // }
+    // if (n < 1) {
+    //   this.slideIndex = slides.length
+    // }
+    // for (i = 0; i < slides.length; i++) {
+    //   slides[i].setAttribute("style", "display: none;");
+    // }
+    // for (i = 0; i < dots.length; i++) {
+    //   dots[i].className = dots[i].className.replace(" active", "");
+    // }
+    // slides.item(this.slideIndex - 1).setAttribute("style", "display: block;");
+    // dots.item(this.slideIndex - 1).className += " active";
   }
 
   public getPath(path: string): string

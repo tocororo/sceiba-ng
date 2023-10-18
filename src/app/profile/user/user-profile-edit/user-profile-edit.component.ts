@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ContainerPanelComponent, FormFieldType, HintPosition, HintValue, InputEmailComponent, InputTextComponent, Organization, OrganizationServiceNoAuth, PanelActionContent, TextInputAppearance, UserProfile, UserProfileService } from 'toco-lib';
 
 import { InputFileAvatarComponent } from '../input-file-avatar/input-file-avatar.component';
@@ -13,13 +13,13 @@ import { InputOrgSearchComponent } from '../input-org-search/input-org-search.co
 })
 export class UserProfileEditComponent implements OnInit {
 
-  public userProfileFormGroup: FormGroup;
+  public userProfileFormGroup: UntypedFormGroup;
 
   userProfilePanel: PanelActionContent = null;
 
   userprofile: UserProfile;
 
- constructor(private formBuilder: FormBuilder, private userProfileService: UserProfileService) { }
+ constructor(private formBuilder: UntypedFormBuilder, private userProfileService: UserProfileService) { }
 
   ngOnInit() {
     // TODO: resolver de userprofile para cargar los datos del usuario
