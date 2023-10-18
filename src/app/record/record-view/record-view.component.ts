@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MatDialog, MatDialogRef, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef as MatDialogRef, MAT_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar as MatSnackBar } from '@angular/material/snack-bar';
 
 import { SourceVersion, MessageHandler, MetadataService, Record, SourceServiceNoAuth, StatusCode } from 'toco-lib';
 //import { MetadataService } from 'toco-lib/lib/core/metadata.service';

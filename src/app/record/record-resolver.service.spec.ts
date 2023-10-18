@@ -6,7 +6,7 @@ describe('RecordResolverService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RecordResolverService = TestBed.get(RecordResolverService);
+    const service: RecordResolverService = TestBed.inject(RecordResolverService);
     expect(service).toBeTruthy();
   });
 });

@@ -2,10 +2,10 @@ import { Environment } from 'toco-lib';
 
 class EnvironmentImpl implements Environment {
   production = false;
-  sceibaHost = 'https://localhost:5000/';
-  cuorHost = 'https://localhost:5000/';
-  sceibaApi = 'https://localhost:5000/api/';
-  cuorApi = 'https://localhost:5000/api/';
+  sceibaHost = 'https://sceiba.reduniv.edu.cu/';
+  cuorHost = 'https://sceiba.reduniv.edu.cu/';
+  sceibaApi = 'https://sceiba.reduniv.edu.cu/api/';
+  cuorApi = 'https://sceiba.reduniv.edu.cu/api/';
 
   appHost = 'https://localhost:4200';
   appName = 'Organizaciones - Sceiba';
@@ -49,4 +49,4 @@ class EnvironmentImpl implements Environment {
 
 export const environment = new EnvironmentImpl();
 
-export const allowedURLS = [environment.sceibaApi];
+export const allowedURLS = ['https://sceiba.reduniv.edu.cu/api/'];
