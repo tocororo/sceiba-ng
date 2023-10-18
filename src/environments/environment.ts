@@ -49,4 +49,4 @@ class EnvironmentImpl implements Environment {
 
 export const environment = new EnvironmentImpl();
 
-export const allowedURLS = [environment.sceibaApi];
+export const allowedURLS = ['https://sceiba.reduniv.edu.cu/api/'];
