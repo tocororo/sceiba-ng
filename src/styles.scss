@@ -301,6 +301,7 @@ body { margin: 0; }
  .triangle{
     border-left: 80px solid mat.get-color-from-palette($toco-warn, A700) !important;
  }
+
  .primary-color{
      background-color: mat.get-color-from-palette($toco-primary);
      color: #fff;

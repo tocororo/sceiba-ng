@@ -10234,7 +10234,7 @@ to-regex@^3.0.1, to-regex@^3.0.2:
 
 toco-lib@^0.0.8:
   version "0.0.7"
-  resolved "https://nexus.uclv.edu.cu/repository/npm/toco-lib/-/toco-lib-0.0.7.tgz#1b94c28205a4f923df9dfa37001af8f08b6a0cb5"
+  resolved "https://registry.yarnpkg.com/toco-lib/-/toco-lib-0.0.7.tgz#1b94c28205a4f923df9dfa37001af8f08b6a0cb5"
   integrity sha512-V5c6EPSWosGicDKB+xA1RMhr7YdG3362zSm67f7J+DojSlD6UEJigKYmEQ4jW10cEzFJ8JPNk2Cj2FhXYu8aHw==
   dependencies:
     tslib "^1.9.0"
