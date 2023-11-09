@@ -9,12 +9,14 @@ import { SearchComponent } from "./search/search.component";
 
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 
-import { SharedModule } from "../shared/shared.module";
 import { BarVerticalComponent } from "./charts/bar-vertical/bar-vertical.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { GaugeChartComponent } from "./charts/gauge-chart/gauge-chart.component";
 import { PieGridComponent } from "./charts/pie-grid/pie-grid.component";
 import { PolarChartComponent } from "./charts/polar-chart/polar-chart.component";
+
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { AgregationsModalComponent } from "./agregations-modal/agregations-modal.component";
 
 @NgModule({
   declarations: [
@@ -32,10 +34,18 @@ import { PolarChartComponent } from "./charts/polar-chart/polar-chart.component"
   imports: [
     CommonModule,
     SearchRoutingModule,
+    AngularMaterialModule,
     CoreModule,
-    SharedModule,
     NgxChartsModule,
     SearchModule,
+    ScrollingModule,
   ],
+
+  /**
+   * Specifies a list of components that should be compiled when this
+   * module is defined. For each component listed here, Angular will
+   * create a ComponentFactory and store it in the ComponentFactoryResolver,that avoid the error
+   */
+  entryComponents: [AgregationsModalComponent],
 })
 export class SearchPageModule {}
