@@ -23,7 +23,7 @@ import { AgregationsModalComponent } from "./agregations-modal/agregations-modal
     SearchComponent,
     SearchListComponent,
     AggregationsComponent,
-
+    AgregationsModalComponent,
     ChartsComponent,
     PolarChartComponent,
     BarVerticalComponent,
@@ -34,7 +34,6 @@ import { AgregationsModalComponent } from "./agregations-modal/agregations-modal
   imports: [
     CommonModule,
     SearchRoutingModule,
-    AngularMaterialModule,
     CoreModule,
     NgxChartsModule,
     SearchModule,
@@ -46,6 +45,5 @@ import { AgregationsModalComponent } from "./agregations-modal/agregations-modal
    * module is defined. For each component listed here, Angular will
    * create a ComponentFactory and store it in the ComponentFactoryResolver,that avoid the error
    */
-  entryComponents: [AgregationsModalComponent],
 })
 export class SearchPageModule {}
